@@ -1,0 +1,25 @@
+@mixin box-shadow($level: 1, $opacity: 0.15) {
+    box-shadow: get-shadow($level, 'box', $opacity);
+}
+
+@mixin text-shadow($level: 1, $opacity: 0.15) {
+    text-shadow: get-shadow($level, 'text', $opacity);
+}
+
+@mixin button-shadow() {
+    box-shadow: 0 2px 4px rgba(color(primary), 0.2);
+}
+
+@function get-shadow($level: 1, $type: 'box', $opacity: 0.15) {
+    $-x: 0px;
+    $-y: 2px * $level;
+    $-blur: 6px * $level;
+    $-spread: 2px * $level;
+
+    @if $type == 'box' {
+        @return $-x $-y $-blur $-spread rgba(color(primary), $opacity);
+    }
+
+    // $type: text
+    @return $-x $-y $-blur rgba(color(primary), $opacity);
+}

@@ -1,0 +1,30 @@
+.state {
+	display: block;
+	margin: 2rem auto;
+	background-size: cover;
+	opacity: 0.25;
+
+	&.empty {
+		background-image: url('/img/states/flamenco-list-is-empty-bw.png');
+		width: 320px;
+		height: 268px;
+	}
+
+	&.searching {
+		background-image: url('/img/states/flamenco-searching-bw.png');
+		width: 370px;
+		height: 266px;
+	}
+
+	&.fatal-error {
+		background-image: url('/img/states/flamenco-fatal-error-bw.png');
+		width: 252px;
+		height: 320px;
+	}
+
+	&.signup {
+		background-image: url('/img/states/flamenco-sign-up-bw.png');
+		width: 320px;
+		height: 316px;
+	}
+}

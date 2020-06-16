@@ -1,0 +1,460 @@
+#home-without-feed #hero {
+	display: block;
+	padding-top: map-get($header-height, large);
+	text-align: center;
+	color: color(white);
+	mask: url('/img/home-v2/shape-hero-2.svg');
+	mask-repeat: no-repeat;
+	mask-position: bottom center;
+	mask-size: cover;
+	background-image: url('https://res.cloudinary.com/radplaid/image/upload/f_auto/v1580699186/site/hero.jpg');
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	.hero-content {
+		padding: 10rem 0 16rem;
+	}
+
+	.typography-hero-headline {
+		margin-bottom: 1rem;
+		text-shadow: 0 0 16px rgba(color(accent-two), 1.0);
+	}
+
+	.hero-copy {
+		max-width: 380px;
+		margin: .2em auto 1.5em;
+	}
+
+	@include small() {
+		.hero-content {
+			padding: 10rem 0 12rem;
+		}
+
+		.typography-hero-headline {
+			padding-right: 1rem;
+			padding-left: 1rem;
+		}
+	}
+}
+
+#phones {
+	position: relative;
+	display: block;
+	width: 702px;
+	height: 906px;
+	margin: -8rem auto -12rem;
+	background-image: url('https://res.cloudinary.com/radplaid/image/upload/f_auto/v1580699186/site/phones.png');
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+
+	@include small() {
+		width: 336px;
+		height: 434px;
+	}
+}
+
+#home-without-feed {
+	overflow: hidden;
+
+	.section-content {
+		padding: 4rem 0 0;
+		font-size: 0;
+		text-align: center;
+		color: color(white);
+		background-color: color(accent-two);
+
+		.typography-hero-subheadline {
+			font-weight: 900;
+		}
+
+		.grid {
+			@include typography-reset();
+			@include typography(hero-body);
+		}
+
+		figure {
+			display: block;
+			margin: 0 auto 1rem;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: 100% auto;
+
+			&.complete {
+				width: 106px;
+				height: 121px;
+				background-image: url('https://res.cloudinary.com/radplaid/image/upload/f_auto/v1580699198/site/complete.png');
+			}
+
+			&.listen-follow {
+				width: 121px;
+				height: 121px;
+				background-image: url('https://res.cloudinary.com/radplaid/image/upload/f_auto/v1580699198/site/listen-follow.png');
+			}
+
+			&.personalized {
+				width: 121px;
+				height: 122px;
+				background-image: url('https://res.cloudinary.com/radplaid/image/upload/f_auto/v1580699198/site/personalized.png');
+			}
+		}
+
+		.app-download {
+			padding-top: 2rem;
+		}
+	}
+}
+
+.section-features {
+	.text-beard {
+		@include typography(hero-subheadline);
+		font-weight: 900;
+	}
+
+	.features-top,
+	.features-bottom {
+		display: block;
+		width: 100%;
+		height: 190px;
+		background-image: url('https://res.cloudinary.com/radplaid/image/upload/f_auto/v1580699186/site/features-top.png');
+		background-position: center top;
+		background-repeat: no-repeat;
+		background-size: 1680px 204px;
+	}
+
+	.features-bottom {
+		background-position: center bottom;
+		background-image: url('https://res.cloudinary.com/radplaid/image/upload/f_auto/v1580699186/site/features-bottom.png');
+	}
+
+	@include viewport(medium, small) {
+		.text-beard {
+			font-weight: 900;
+		}
+	}
+
+	@include small() {
+		.row {
+			justify-content: center;
+		}
+
+		.col {
+			margin-bottom: 4rem;
+
+			&:last-child {
+				margin-bottom: 2rem;
+			}
+		}
+
+		.features-bottom {
+			height: 100px;
+		}
+	}
+}
+
+.section-features,
+.section-music-news {
+	margin-bottom: 4rem;
+
+	@include small() {
+		margin-bottom: 2rem;
+	}
+}
+
+.section-trending,
+.section-music-news {
+	.show-similar {
+		overflow: visible;
+	}
+
+	.news {
+		margin-bottom: 0;
+		padding-bottom: 0;
+
+		.news-headline {
+			@include typography(hero-subheadline);
+			margin-bottom: 0.6rem;
+			padding-bottom: 0.6rem;
+			font-weight: 900;
+			text-transform: none;
+			border-bottom: none;
+		}
+
+		.news-title {
+			@include typography(headline);
+			font-weight: 900;
+			line-height: 1;
+			margin-bottom: 0.45rem;
+		}
+
+		.news-content {
+			@include typography(hero-body);
+			margin-bottom: 0.5rem;
+		}
+	}
+
+	@include viewport(medium, small) {
+		.news {
+			.news-headline {
+				font-weight: 900;
+			}
+
+			.news-title {
+				@include typography(subheadline);
+				font-weight: 900;
+				line-height: 1;
+			}
+
+			.news-content {
+				@include typography(body);
+			}
+		}
+	}
+
+	@include small() {
+		.news.show-similar .glide__slide a .showitem-artwork {
+			margin-bottom: 0;
+		}
+
+		.news.show-similar .glide__slide .showitem--featured a .showitem-artwork {
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+		}
+	}
+}
+
+.section-addshow {
+	margin-bottom: 6rem;
+
+	.hero-addshow {
+		position: relative;
+		padding-top: 46.4%;
+		color: color(white);
+		background-image: url('https://res.cloudinary.com/radplaid/image/upload/f_auto/v1580699186/site/banner-addshow.jpg');
+		background-position: center top;
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		.col {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			margin-top: 2.6%;
+			transform: translate(0, -50%);
+		}
+	}
+
+	@include small() {
+		width: 100%;
+		margin-bottom: 2rem;
+
+		.hero-addshow {
+			padding-top: 0;
+			background-image: url('https://res.cloudinary.com/radplaid/image/upload/f_auto/v1580699186/site/banner-addshow-mobile.jpg');
+
+			.col {
+				position: relative;
+				top: auto;
+				left: auto;
+				margin-top: 14rem;
+				margin-bottom: 4rem;
+				text-align: center;
+				transform: none;
+			}
+
+			p {
+				padding: 0 2rem;
+			}
+		}
+	}
+}
+
+.section-partners {
+	padding: 4rem 0;
+
+	.row {
+		margin-top: 130px;
+	}
+
+	.partner-logos {
+		align-items: center;
+		position: absolute;
+		left: 50%;
+		padding-bottom: 1rem;
+		transform: translateX(-50%);
+
+		img {
+			width: 100%;
+			min-width: 114px;
+			height: auto;
+		}
+
+		a {
+			box-sizing: border-box;
+			margin: auto;
+			padding: 0 10px;
+		}
+	}
+
+	@include small() {
+		.row {
+			margin-top: 2rem;
+		}
+
+		.partner-logos {
+			flex-wrap: wrap;
+			position: relative;
+			left: auto;
+			width: 100%;
+			transform: none;
+
+			a {
+				width: 33.33%;
+
+				img {
+					min-width: auto;
+				}
+			}
+		}
+	}
+}
+
+.carousel-readmore {
+	.showitem-artwork {
+		@include typography(subheadline);
+		font-weight: 900;
+		text-align: center;
+		color: color(accent-two);
+		border: 4px solid color(accent-two);
+		background-image: none;
+		background-color: transparent;
+		border-radius: 10px;
+
+		@include can-hover() {
+			&:hover {
+				color: color(white);
+				background-color: color(accent-two);
+			}
+		}
+
+		@include small() {
+			@include typography(headline);
+			font-weight: 900;
+		}
+	}
+}
+
+.app-download {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	a {
+		display: inline-block;
+		margin: 0.5rem;
+	}
+
+	.apple {
+		width: 172px;
+		height: 57px;
+		background-image: url('https://res.cloudinary.com/radplaid/image/upload/f_auto/v1580699042/badges/download-apple-dark.png');
+		background-size: cover;
+	}
+
+	.google {
+		width: 194px;
+		height: 57px;
+		background-image: url('https://res.cloudinary.com/radplaid/image/upload/f_auto/v1580699042/badges/download-google-dark.png');
+		background-size: cover;
+	}
+
+	&.app-download--light {
+		.apple {
+			background-image: url('https://res.cloudinary.com/radplaid/image/upload/f_auto/v1580699042/badges/download-apple-light.png');
+		}
+		.google {
+			background-image: url('https://res.cloudinary.com/radplaid/image/upload/f_auto/v1580699042/badges/download-google-light.png');
+		}
+	}
+
+	&.app-download--small {
+		.apple {
+			width: 142px;
+			height: 47px;
+		}
+
+		.google {
+			width: 164px;
+			height: 47px;
+		}
+	}
+
+	&.text-left {
+		text-align: left;
+		justify-content: flex-start;
+	}
+
+	@include small() {
+		.apple {
+			width: 150px;
+			height: 50px;
+		}
+
+		.google {
+			width: 170px;
+			height: 50px;
+		}
+	}
+}
+
+.view-home.is-logged-out:not(.is-searching) {
+	background-image: url('/img/home-v2/background.jpg');
+	background-size: 50%;
+
+	header,
+	header.active {
+		margin-bottom: map-get($header-height, large) * -1;
+	}
+
+	header:not(.active) {
+		color: color(white);
+		background-color: transparent;
+
+		.logotype svg path,
+		.btn.btn-menu,
+		.btn.btn-search {
+			fill: color(white);
+			color: color(white);
+		}
+
+		.btn.btn--primary.btn--noborder,
+		a.btn.btn--primary.btn--noborder {
+			color: color(white);
+			text-shadow: 0 0 16px rgba(color(accent-two), 1.0);
+		}
+
+		.header-search.header-search--simple {
+			.form-input {
+				background-color: color(white);
+
+				&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+					color: darken(color(keyline), 20%);
+				}
+				&::-moz-placeholder { /* Firefox 19+ */
+					color: darken(color(keyline), 20%);
+				}
+				&:-ms-input-placeholder { /* IE 10+ */
+					color: darken(color(keyline), 20%);
+				}
+				&:-moz-placeholder { /* Firefox 18- */
+					color: darken(color(keyline), 20%);
+				}
+			}
+		}
+	}
+
+	@include small() {
+		background-size: 100%;
+	}
+}

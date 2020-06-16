@@ -1,0 +1,307 @@
+.livestream-alert {
+	display: inline-block;
+	vertical-align: middle;
+	width: 12px;
+	height: 12px;
+	margin-top: -0.2rem;
+	margin-right: 0.6rem;
+	background-color: color(white);
+	border-radius: 6px;
+
+	&.is-live {
+		background-color: color(error);
+		animation: recording 3s ease-in-out 0s infinite;
+	}
+
+	.violator & {
+		width: 6px;
+		height: 6px;
+
+		&.is-live {
+			background-color: color(white);
+		}
+	}
+
+	@include can-hover() {
+		.btn-action:hover &.is-live {
+			background-color: color(white);
+		}
+	}
+}
+
+.btn.btn-action {
+	@include box-shadow(0);
+	box-sizing: border-box;
+	vertical-align: middle;
+	margin: 0.6rem 0;
+	padding: 0 0.42rem;
+	text-transform: capitalize;
+	color: color(accent-two);
+	fill: color(accent-two);
+
+	.icon {
+		margin: -0.2rem 0.4rem 0 0;
+	}
+
+	&.is-live {
+		color: color(error);
+	}
+
+	&.medium {
+		width: 50px;
+		min-width: 50px;
+		max-width: 50px;
+
+		.icon {
+			margin-right: 0;
+		}
+	}
+
+	& > * {
+		pointer-events: none;
+	}
+
+	& + &,
+	& + .more-menu {
+		margin-left: 0.4rem;
+	}
+
+	&:not(.btn--buy) {
+		border-color: transparent;
+	}
+
+	//
+	// Follow
+	//
+	&.active {
+		color: color(white);
+		background-color: color(accent-two);
+		transition: none;
+	}
+
+	&.active svg {
+		fill: color(white);
+	}
+
+	@include can-hover() {
+		&:hover {
+			@include box-shadow();
+			color: color(white);
+			fill: color(white);
+			background-color: color(accent-two);
+
+			.is-live {
+				background-color: color(white);
+			}
+		}
+
+		&.active:hover {
+			color: color(white);
+			background-color: color(secondary);
+		}
+
+		&.active:hover svg {
+			fill: color(white);
+		}
+	}
+}
+
+.show-control {
+	display: flex;
+	align-items: flex-start;
+
+	& > div {
+		flex-grow: 1;
+		align-self: flex-start;
+		width: 100%;
+
+		&:last-child {
+			width: auto;
+		}
+	}
+
+	.buy {
+		padding-right: 1rem;
+
+		.btn-action {
+			border-width: 0;
+		}
+
+		.buy-source {
+			@include typography(small);
+
+			a {
+				@include typography(small-headline);
+				color: color(copy);
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.btn {
+		box-sizing: border-box;
+		width: 100%;
+		text-transform: capitalize;
+
+		svg,
+		path {
+			pointer-events: none;
+		}
+
+		&.btn-action {
+			margin-top: 0;
+			margin-bottom: 0.4rem;
+
+			.icon,
+			.btn-value,
+			.btn-value-hover {
+				display: inline-block;
+			}
+
+			.btn-value,
+			.btn-value-hover {
+				margin: -0.3rem 0 0;
+			}
+
+			.btn-value-hover {
+				display: none;
+			}
+
+			* {
+				vertical-align: middle;
+			}
+
+			&.btn-follow {
+				border: 2px solid color(accent-two);
+			}
+		}
+	}
+
+	@include can-hover() {
+		.btn.btn-action.btn-following:hover,
+		.btn.btn--accent-two--secondary:hover {
+			color: color(white);
+			background-color: color(error);
+
+			.btn-value { display: none; }
+			.btn-value-hover { display: inline-block; }
+		}
+	}
+
+	@include small() {
+		padding-right: 1rem;
+		padding-left: 1rem;
+
+		.buy {
+			max-width: 64%;
+			padding-right: 0.6rem;
+		}
+
+		.btn.btn-action .icon {
+			width: 16px;
+			height: 16px;
+		}
+
+		.btn.btn--hero,
+		.btn.btn-action.btn--hero {
+			@include typography(button);
+		}
+	}
+}
+
+.showitem-control {
+	position: relative;
+	display: flex;
+	align-items: center;
+	margin: 0 0 -1rem;
+	padding: 0 0.5rem;
+	border-radius: 0 0 $border-width $border-width;
+
+	.more-menu {
+		display: inline-block;
+
+		a * {
+			pointer-events: none;
+		}
+
+		a:hover {
+			background-color: transparent;
+		}
+	}
+
+	& > li {
+		display: inline-block;
+		color: color(white);
+
+		&:last-child {
+			flex-grow: 1;
+			min-width: 140px;
+			margin-left: 0.2rem;
+			text-align: right;
+		}
+	}
+
+	.btn.btn-action {
+		.icon {
+			margin-right: 0;
+		}
+
+		&.btn--buy {
+			padding: 0 1rem;
+		}
+	}
+
+	.show-actionavatars {
+		float: right;
+		margin-top: -2px;
+	}
+}
+
+.show-control-wrapper {
+	.show-controlcount {
+		display: none;
+	}
+
+	.bubble-content:first-child {
+		padding-bottom: 1rem;
+	}
+
+	@include small() {
+		.show-controlcount {
+			display: block;
+		}
+
+		.bubble-content + .bubble-content {
+			padding: 1rem;
+			border-bottom: 1px solid color(keyline);
+		}
+	}
+}
+
+.show-actionavatars {
+	padding: 0 1rem 2rem;
+	text-align: center;
+
+	li {
+		display: inline-block;
+		vertical-align: middle;
+
+		.avatar {
+			@include box-shadow(0);
+			margin-right: 0;
+			border: $border-width solid color(page);
+		}
+
+		.icon {
+			margin: auto;
+		}
+
+		&.show-actionavatar {
+			margin-right: -0.8rem;
+		}
+
+		&.show-actioncount {
+			margin-left: 1rem;
+		}
+	}
+}

@@ -1,0 +1,35 @@
+$border-width: 4px;
+$pill-radius: 22px;
+$modal-opacity: 0.35;
+$header-height: (
+	large: 68px, // 76px,
+	medium: 72px, // 76px,
+	small: 56px // 52px
+);
+
+//
+// Layout
+//
+$gutter-width: (
+	large: 1rem,
+	medium: 1rem,
+	small: 0px
+);
+
+$grid-width: (
+	large: 90%,
+	medium: 90%,
+	small: 95%
+);
+
+$grid-max-width: 1000px;
+$grid-columns: (4, 8, 12);
+$m-columns: (2, 4, 6, 8);
+$s-columns: (2, 4, 6);
+
+//
+// Buttons
+//
+$-btn-min-height: 36px;
+$-btn-min-height-small: 29px;
+$-btn-min-height-tiny: 20px;

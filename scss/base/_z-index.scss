@@ -1,0 +1,67 @@
+nav { z-index: 1; }
+.hero-content { z-index: 2; }
+.marketingcopy { z-index: 2; }
+
+//
+// Show
+//
+#show,
+#show .grid { z-index: 1; }
+.showlist { z-index: 1; }
+.showitem .showitem-artwork::before { z-index: 1; }
+.showartwork-hero { z-index: 2; }
+.showitem .showitem-tags { z-index: 2; }
+
+//
+// Add Show
+//
+#add-show .bubble { z-index: 2; }
+#add-step-three { z-index: 2; }
+.DayPicker { z-index: 3; }
+
+//
+// Forms
+//
+.form-label--center { z-index: 1; }
+.m-input-moment { z-index: 2; }
+
+//
+// Profile
+//
+.profile-nav-small { z-index: 4; }
+
+//
+// Player
+//
+.player-title { z-index: 1; }
+#player { z-index: 15; }
+
+//
+// Voter
+//
+.voter-header { z-index: 5; }
+.voter-confirm { z-index: 14; }
+
+//
+// Application
+//
+.search-summary { z-index: 4; }
+.react-tiny-popover-container { z-index: 5; }
+header { z-index: 6; }
+header .btn { z-index: 7; } // add show
+.header-control { z-index: 8; }
+.header-search { z-index: 9; }
+.header-menu { z-index: 10; }
+.header-control .icon-close { z-index: 11; }
+.progress { z-index: 12; }
+.addshow-progress { z-index: 13; } // add show
+.modal { z-index: 14; }
+#drift-widget-container { z-index: 16 !important; }
+#admin { z-index: 17; }
+.DateRangePicker_picker { z-index: 18; }
+
+@include small() {
+	.addshow-progress { z-index: 5; }
+	header.enable-search { z-index: 16; }
+	.modal { z-index: 17; }
+}

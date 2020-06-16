@@ -1,0 +1,73 @@
+.form-autocomplete {
+	.Select-clear-zone,
+	.Select-arrow-zone {
+		display: none;
+	}
+
+	.Select-control,
+	.Select-menu-outer {
+		position: relative;
+		// right: 0;
+		// left: 30%;
+		// width: 70%;
+
+		&:hover {
+			box-shadow: none;
+		}
+	}
+
+	.Select-control {
+		border: none;
+	}
+
+	.Select-loading-zone {
+		float: left;
+	}
+
+	.Select-placeholder {
+		padding-left: 0;
+	}
+
+	.Select-menu-outer {
+		position: absolute;
+		top: calc(100% + 0.5rem);
+	}
+
+	.Select--multi {
+		.Select-input {
+			margin-left: 0;
+		}
+
+		.Select-value {
+			vertical-align: middle;
+			margin-top: 2px;
+			margin-right: 5px;
+			margin-bottom: 2px;
+			margin-left: 0;
+			font-size: 1rem;
+		}
+	}
+
+	.form-label:not(.form-label--center) {
+		z-index: 1;
+		padding-bottom: 0;
+	}
+
+	&.form-autocomplete--left {
+		.Select {
+			padding: 0.4rem 0;
+		}
+
+		.Select-control,
+		.Select-menu-outer {
+			position: relative;
+			left: auto;
+			width: 100%;
+			// border: none;
+
+			&:hover {
+				box-shadow: none;
+			}
+		}
+	}
+}

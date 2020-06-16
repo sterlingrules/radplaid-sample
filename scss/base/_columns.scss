@@ -1,0 +1,117 @@
+//
+// TODO: Move to `_base`
+// Actual css, change this at your own risk
+//
+.#{$container-classname} {
+	width: map-get($grid-width, 'large');
+	max-width: $grid-max-width;
+	margin: 0 auto;
+
+	@include small() {
+		width: map-get($grid-width, 'small');
+	}
+}
+
+.#{$grid-classname} {
+	display: flex;
+	flex-direction: column;
+	width: map-get($grid-width, 'large');
+	max-width: $grid-max-width;
+	margin: 0 auto;
+
+	&.full-width {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	@include small() {
+		width: map-get($grid-width, 'small');
+	}
+}
+
+.#{$row-classname} {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	flex-wrap: wrap;
+}
+
+.#{$column-classname} {
+	box-sizing: border-box;
+	margin: map-get($gutter-width, 'large') / 2;
+	vertical-align: top;
+
+	@include medium() {
+		margin: map-get($gutter-width, 'medium') / 2;
+	}
+
+	@include small() {
+		margin: map-get($gutter-width, 'small') / 2;
+	}
+}
+
+@each $col-count in $grid-columns {
+	@for $i from 1 through $col-count {
+		@include columns($i, $col-count);
+
+		@include medium() {
+			@include columns($i, $col-count, 'medium')
+		}
+
+		@include small() {
+			@include columns($i, $col-count, 'small')
+		}
+	}
+}
+
+@each $breakpoint in $breakpoints {
+	$breakpoint-name: nth($breakpoint, 1);
+	$breakpoint-width: nth(nth($breakpoint, 2), 1);
+	$breakpoint-col-counts: nth(nth($breakpoint, 2), 2);
+
+	@media (max-width: $breakpoint-width) {
+		$-gutter-width: map-get($gutter-width, $breakpoint-name);
+
+		.#{$breakpoint-name}-hide {
+			display: none;
+		}
+
+		.w-#{$breakpoint-name}-auto {
+			flex: 1
+		}
+
+		.#{$breakpoint-name}-un-push {
+			margin-left: $-gutter-width / 2;
+		}
+
+		.#{$breakpoint-name}-un-pull {
+			margin-right: $-gutter-width / 2;
+		}
+
+		@each $col-count in $breakpoint-col-counts {
+			@for $i from 1 through $col-count {
+				.#{$column-classname}-#{$breakpoint-name}-#{$i}-of-#{$col-count} {
+					width: calc(#{percentage($i / $col-count)} - #{$-gutter-width});
+				}
+
+				@if ($pushes) {
+					.push-#{$breakpoint-name}-#{$i}-of-#{$col-count} {
+						margin-left: calc(#{percentage($i / $col-count)} + #{$-gutter-width} / 2);
+					}
+				}
+
+				@if ($pulls) {
+					.pull-#{$breakpoint-name}-#{$i}-of-#{$col-count} {
+						margin-right: calc(#{percentage($i / $col-count)} + #{$-gutter-width} / 2);
+					}
+				}
+			}
+		}
+	}
+}
+
+.col {
+	&.left { margin-right: auto; }
+	&.right { margin-left: auto; }
+	&.w-auto { flex: 1 }
+}

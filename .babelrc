@@ -1,0 +1,13 @@
+{
+	"presets": [
+		"env",
+		"react",
+		"stage-0"
+	],
+	"plugins": [
+		"dynamic-import-webpack",
+		"transform-react-remove-prop-types",
+		"transform-class-properties",
+		"react-hot-loader/babel"
+	]
+}

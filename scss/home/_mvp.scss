@@ -1,0 +1,134 @@
+#mvp {
+	.hero.hero-mvp {
+		margin-bottom: 0;
+		padding: 100px 0 120px;
+		background-image: url('https://res.cloudinary.com/radplaid/image/upload/f_auto/v1571763232/featured/mvp-background.jpg');
+		background-color: color(accent-two);
+		background-position: center;
+		background-size: cover;
+
+		.typography-hero-headline {
+			display: block;
+			position: relative;
+			max-width: 800px;
+			margin: 2rem auto;
+			padding-bottom: 56.7%;
+			background-image: url('../img/mvp/mvp-title.png');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 100% auto;
+
+			figcaption {
+				position: absolute;
+				visibility: hidden;
+			}
+		}
+
+		.typography-subheadline {
+			@include text-shadow(1, 0.5);
+		}
+
+		// .grid {
+		// 	position: relative;
+		// 	z-index: 2;
+		// }
+
+		// .bg-mvp {
+		// 	position: fixed;
+		// 	z-index: 1;
+		// 	top: 0;
+		// 	right: 0;
+		// 	bottom: 0;
+		// 	left: 0;
+		// 	background-image: url('https://res.cloudinary.com/radplaid/image/upload/f_auto/v1571763232/featured/mvp-background.jpg');
+		// 	background-position: center;
+		// 	background-size: cover;
+		// }
+	}
+
+	.logo-hottrash {
+		display: block;
+		margin: 0 auto 2rem;
+		max-width: 440px;
+		max-height: 66px;
+		padding-bottom: 14.9%;
+		background-image: url('/img/mvp/logo-hottrashportland.png');
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+	}
+
+	.marketing-content {
+		padding: 4rem 0;
+	}
+
+	.marketingsignup.bg-relationships {
+		background-color: color(accent-two);
+	}
+
+	@include small() {
+		.hero.hero-mvp {
+			padding: 64px 0 72px;
+		}
+
+		.hero .btn {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.countdown {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-bottom: 1rem;
+
+	.countdown-item {
+		min-width: 140px;
+		margin-right: 1rem;
+		padding: 1rem 0;
+		text-align: center;
+		color: color(white);
+		background-color: color(accent-two);
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	.countdown-time {
+		@include typography(hero-headline);
+		font-size: 6rem;
+	}
+
+	.countdown-caption {
+		@include typography(hero-body);
+	}
+
+	&.countdown--small {
+		.countdown-item {
+			min-width: 80px;
+			padding: 0.6rem 0;
+		}
+
+		.countdown-time {
+			@include typography(hero-headline);
+		}
+
+		.countdown-caption {
+			@include typography(body);
+		}
+	}
+
+	@include small() {
+		flex-direction: column;
+
+		.countdown-item,
+		.countdown-item:last-child {
+			margin: 0 1rem 1rem;
+		}
+
+		.countdown-item:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

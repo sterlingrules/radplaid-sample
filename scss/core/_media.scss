@@ -1,0 +1,81 @@
+@mixin large() {
+    @media screen
+        and (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin medium() {
+    @media screen
+        and (min-width: 768px)
+        and (max-width: 1023px) {
+        @content;
+    }
+}
+
+@mixin small() {
+    @media screen
+        and (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin retina() {
+    @media screen
+        and (-webkit-min-device-pixel-ratio: 2)
+        and (min-resolution: 192dpi) {
+        @content;
+    }
+}
+
+@mixin landscape() {
+    @media screen
+        and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin short() {
+    @media screen
+        and (max-height: 748px) {
+        @content;
+    }
+}
+
+@mixin can-hover() {
+    html.no-touch & {
+        @content;
+    }
+}
+
+@mixin viewport($viewports...) {
+    @each $viewport in $viewports {
+        @if $viewport == 'large' {
+            @content;
+        }
+
+        @if $viewport == 'medium' {
+            @include medium() {
+                @content;
+            }
+        }
+
+        @if $viewport == 'small' {
+            @include small() {
+                @content;
+            }
+        }
+    }
+}
+
+//
+// Custom
+//
+@mixin is-home() {
+    .view-home &,
+    .view-weekend &,
+    .view-next-week &,
+    .view-next-weekend & {
+        @content;
+    }
+}

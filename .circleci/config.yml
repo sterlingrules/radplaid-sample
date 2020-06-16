@@ -1,0 +1,95 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+general:
+  branches:
+    only:
+      - master
+      - staging
+
+jobs:
+  build_and_test:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:10.6.0
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      # - restore_cache:
+      #     keys:
+      #     # - ${CACHE_VERSION}-dependencies-{{ checksum "radplaid-api/package.json" }}
+      #     - ${CACHE_VERSION}-dependencies-{{ .Environment.CIRCLE_SHA1 }}
+      #     # fallback to using the latest cache if no exact match is found
+      #     - ${CACHE_VERSION}-dependencies-
+
+      - run:
+          command: npm install
+
+      # - save_cache:
+      #     paths:
+      #       - ~/radplaid-api/
+      #     # key: ${CACHE_VERSION}-dependencies-{{ checksum "radplaid-api/package.json" }}
+      #     key: ${CACHE_VERSION}-dependencies-{{ .Environment.CIRCLE_SHA1 }}
+
+    # run tests!
+      - run:
+          command: npm test
+          environment:
+            NODE_ENV: staging
+          # working_directory: radplaid-api
+
+  deploy_staging:
+    machine:
+      enabled: true
+
+    steps:
+      - run:
+          name: digital-ocean
+          command: ssh -o "StrictHostKeyChecking no" ${USER}@${IP_STAGING} "
+            cd ~/apps/staging.getradplaid.com/radplaid-ssr/;
+            git fetch origin;
+            git checkout staging;
+            git reset --hard origin/staging;
+            npm install;
+            npm run staging"
+
+  deploy_production:
+    machine:
+      enabled: true
+
+    working_directory: ~/
+
+    steps:
+      - run:
+          name: digital-ocean
+          command: ssh -o "StrictHostKeyChecking no" ${USER}@${IP_PRODUCTION} "
+            cd ~/apps/getradplaid.com/radplaid-ssr/;
+            git fetch origin;
+            git checkout master;
+            git reset --hard origin/master;
+            export NODE_ENV=staging && npm install;
+            export NODE_ENV=production && npm install --production;
+            npm run prod"
+
+workflows:
+  version: 2
+  build_test_and_deploy:
+    jobs:
+      - build_and_test
+      - deploy_staging:
+          filters:
+            branches:
+              only: staging
+          requires:
+            - build_and_test
+      - deploy_production:
+          filters:
+            branches:
+              only: master
+          requires:
+            - build_and_test
+

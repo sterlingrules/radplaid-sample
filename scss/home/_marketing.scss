@@ -1,0 +1,707 @@
+.marketingsignup-simple-headline {
+	@include typography(subheadline);
+	margin-left: 0.5rem;
+	margin-bottom: 0.2rem;
+	line-height: 1;
+	color: color(accent-two);
+
+	@include small() {
+		margin-left: 1rem;
+	}
+}
+
+.marketingsignup-simple {
+	@include typography(body-headline);
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	padding: 1rem;
+	color: color(white);
+	background-color: color(accent-two);
+	border-radius: $border-width;
+
+	.flex {
+		align-items: center;
+	}
+
+	.app-download {
+		width: 100%;
+	}
+
+	.marketingsignup-simple-carousel {
+		overflow: hidden;
+		max-width: calc(100% - 120px);
+
+		.glide__header {
+			display: none;
+		}
+
+		.glide__slides {
+			padding-bottom: 0;
+		}
+	}
+
+	.marketingsignup-simple-image {
+		box-sizing: border-box;
+		width: 1em;
+		min-width: 48px;
+		height: 1em;
+		padding: 0 0.4rem 0 0;
+		font-size: 2rem;
+	}
+
+	.marketingsignup-simple-content {
+		padding: 0 0.8rem;
+		text-align: left;
+	}
+
+	&,
+	&:hover,
+	&:active,
+	&:visited,
+	&:focus {
+		color: color(white);
+		text-decoration: none;
+	}
+
+	&.block {
+		display: block;
+	}
+
+	.showdetail-item & {
+		display: block;
+		text-align: center;
+		margin: 0 -2rem 2rem;
+		padding: 1rem 2rem;
+	}
+
+	@include small() {
+		display: block;
+		border-radius: 0;
+
+		&,
+		.showdetail-item & {
+			margin: 0 -2.5vw;
+			padding: 1rem 0;
+		}
+
+		.marketingsignup-simple-image {
+			float: left;
+			margin-top: 0.5rem;
+			padding: 0;
+			min-width: 40px;
+		}
+
+		.marketingsignup-simple-action,
+		.marketingsignup-simple-carousel {
+			display: block;
+			max-width: 100%;
+		}
+
+		.marketingsignup-simple-action {
+			padding: 0.8rem 0 0 44px;
+		}
+	}
+}
+
+.showitem-signup {
+	@include box-shadow(2);
+	box-sizing: border-box;
+	margin: 64px 0;
+	padding: 5rem 3rem;
+	background: url('https://res.cloudinary.com/radplaid/image/upload/f_auto/v1545074157/press/hero-joey-thompson.jpg') center center / cover no-repeat;
+	border-radius: $border-width;
+
+	.showitem-signup-content {
+		display: block;
+		margin: auto;
+		text-align: center;
+	}
+}
+
+.signupbanner {
+	box-sizing: border-box;
+	position: absolute;
+	bottom: 100%;
+	left: 0;
+	width: 100%;
+	padding: 1rem;
+	text-align: center;
+	color: color(white);
+	background: color(secondary);
+	transform: translateY(250%);
+	transition: transform 0.5s ease-in 0s;
+	transition-property: transform, opacity;
+	opacity: 0;
+
+	.typography-body-headline {
+		margin-bottom: 0.2rem;
+	}
+
+	.signupbanner-content {
+		color: color(white);
+	}
+
+	.btn {
+		margin-left: 0.6rem;
+		padding: 0 16px;
+	}
+
+	&.active {
+		transform: translateY(0);
+		opacity: 1.0;
+	}
+
+	@include small() {
+		.typography-body-headline {
+			margin-bottom: 0.6rem;
+		}
+	}
+}
+
+.marketingcopy {
+	@include typography-reset();
+	box-sizing: border-box;
+	pointer-events: none;
+	display: none;
+	// position: absolute;
+	position: relative;
+	top: 0;
+	left: 50%;
+	// width: 100vw;
+	width: auto;
+	color: color(accent-two);
+	transition: all 0.3s ease-in 0s;
+	transform: translateX(-50%) translateY(10%);
+	opacity: 0;
+
+	.col {
+		margin-top: 0;
+	}
+
+	// Specific Blocks
+	// &.press-play {
+	// 	top: 1rem;
+	// 	margin-top: 0;
+
+	// 	.marketingcopy-title {
+	// 		margin-top: 0;
+	// 	}
+	// }
+	// &.personal { margin-top: 0.6rem; }
+	// &.take-part { margin-top: -6px; }
+	// &.explore { top: 50%; }
+
+	&.press-play { display: none; }
+	&.personal { display: none; }
+	&.take-part { display: none; }
+	&.explore { display: none; }
+
+	.marketingcopy-content {
+		box-sizing: border-box;
+		position: relative;
+		margin: 0 0 2rem;
+		padding: 1rem;
+		border-bottom: 2px solid color(accent-two);
+
+		&:after,
+		&:before {
+			content: '';
+			position: absolute;
+			top: 100%;
+			left: 1rem;
+			width: 0;
+			height: 0;
+			border-left: 20px solid transparent;
+			border-right: 20px solid transparent;
+			border-top: 20px solid color(accent-two);
+		}
+
+		&:after {
+			left: calc(1rem + 2px);
+			border-left: 18px solid transparent;
+			border-right: 18px solid transparent;
+			border-top: 18px solid color(page);
+		}
+	}
+
+	.arrow--right .marketingcopy-content {
+		&:after,
+		&:before {
+			right: 1rem;
+			left: auto;
+		}
+
+		&:after {
+			right: calc(1rem + 2px);
+			left: auto;
+		}
+	}
+
+	.arrow--top-right,
+	.arrow--top-right-follow {
+		.marketingcopy-content {
+			margin: 2rem 0 3rem;
+			padding: 1rem;
+			border-top: 2px solid color(accent-two);
+			border-bottom: none;
+
+			&:after,
+			&:before {
+				top: auto;
+				bottom: 100%;
+				right: 2rem;
+				left: auto;
+				border-left: 20px solid transparent;
+				border-right: 20px solid transparent;
+				border-bottom: 20px solid color(accent-two);
+				border-top: none;
+			}
+
+			&:after {
+				top: auto;
+				bottom: 100%;
+				right: calc(2rem + 2px);
+				left: auto;
+				border-left: 18px solid transparent;
+				border-right: 18px solid transparent;
+				border-bottom: 18px solid color(page);
+				border-top: none;
+			}
+		}
+	}
+
+	.arrow--top-right-follow .marketingcopy-content {
+		&:after,
+		&:before {
+			right: 3.6rem;
+		}
+
+		&:after {
+			right: calc(3.6rem + 2px);
+		}
+	}
+
+	.engaged & {
+		transform: translateX(-50%) translateY(0);
+		opacity: 1.0;
+	}
+
+	@include is-home() {
+		display: block;
+	}
+
+	@include small() {
+		.marketingcopy-content {
+			margin: 0 1rem 2rem;
+			padding: 1rem 0;
+		}
+
+		.arrow--top-right,
+		.arrow--top-right-follow {
+			.marketingcopy-content {
+				margin: 2rem 1rem 3rem;
+				padding: 1rem 0;
+
+				&:before {
+					right: 1rem;
+				}
+
+				&:after {
+					right: calc(1rem + 2px);
+				}
+			}
+		}
+
+		.arrow--top-right-follow .marketingcopy-content {
+			&:after,
+			&:before {
+				right: 2.6rem;
+			}
+
+			&:after {
+				right: calc(2.6rem + 2px);
+			}
+		}
+	}
+}
+
+.marketingcopy-headline {
+	@include typography(hero-headline);
+	margin-bottom: 0;
+	color: color(accent-two);
+
+	@include small() {
+		@include typography(headline);
+	}
+}
+
+.marketingcopy-title,
+.marketingcopy-subheadline {
+	@include typography(hero-subheadline);
+	display: inline-block;
+	position: relative;
+	color: color(accent-two);
+}
+
+.marketingcopy-title {
+	@include typography(small-headline);
+	margin-bottom: 0.4rem;
+	text-transform: uppercase;
+
+	@include medium() {
+		@include typography(subheadline);
+		@include typography-bold();
+	}
+
+	@include small() {
+		@include typography(small-headline);
+		margin-bottom: 0.4rem;
+		text-transform: uppercase;
+	}
+}
+
+.marketingcopy-body {
+	@include typography(subheadline);
+}
+
+.marketingcopy--bottom {
+	.marketingcopy-subheadline {
+		padding-bottom: 1rem;
+
+		&:before {
+			top: auto;
+			bottom: 0;
+		}
+	}
+}
+
+.marketingcopy--right {
+	text-align: right;
+
+	.marketingcopy-title:before,
+	.marketingcopy-subheadline:before {
+		right: 0;
+		left: auto;
+		transform-origin: 100% 50%;
+	}
+}
+
+.marketingcopy--left {
+	text-align: left;
+
+	.marketingcopy-title:before,
+	.marketingcopy-subheadline:before {
+		right: auto;
+		left: 0;
+		transform-origin: 0 50%;
+	}
+}
+
+.marketingsignup {
+	box-sizing: border-box;
+	display: block;
+	position: relative;
+	// margin-top: -160px;
+	margin-top: 6rem;
+	margin-bottom: -80px;
+	padding: 280px 0 100px;
+	background: url('https://res.cloudinary.com/radplaid/image/upload/f_auto/v1545074157/press/hero-joey-thompson.jpg') center center / cover no-repeat;
+
+	&.bg-fan {
+		background-image: url('https://res.cloudinary.com/radplaid/image/upload/f_auto/v1545074156/press/hero-fan-hannah-busing-v2.jpg');
+	}
+
+	&.bg-promoters {
+		padding: 100px 0;
+		background-image: url('https://res.cloudinary.com/radplaid/image/upload/f_auto/v1545074158/press/hero-promoters.jpg');
+		background-position: center top;
+	}
+
+	&.bg-relationships {
+		padding: 80px 0;
+		background-color: color(secondary);
+		background-image: none;
+
+		.flex {
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.relationship {
+			flex-grow: 1;
+			text-align: center;
+		}
+
+		img {
+			width: auto;
+			max-height: 120px;
+		}
+	}
+
+	& + .marketingsignup {
+		margin-top: 80px + $border-width;
+	}
+
+	@include small() {
+		h1:first-child,
+		h1:nth-child(2) {
+			margin-bottom: 0;
+		}
+
+		.btn {
+			margin: 0 0.5rem 1rem;
+		}
+
+		a.btn + a.btn {
+			margin-left: 0.5rem;
+		}
+
+		.btn-addshow {
+			display: none;
+		}
+
+		&.bg-promoters {
+			background-position: left top;
+
+			.col {
+				padding-left: 1rem;
+			}
+
+			.btn {
+				margin-left: 0;
+			}
+		}
+
+		&.bg-relationships {
+			padding: 64px 0;
+
+			img {
+				margin: 1rem 0.4rem;
+				max-height: 80px;
+			}
+		}
+	}
+}
+
+// .marketingcopy {
+// 	@include typography-reset();
+// 	box-sizing: border-box;
+// 	pointer-events: none;
+// 	display: none;
+// 	position: absolute;
+// 	top: 0;
+// 	left: 50%;
+// 	width: 100vw;
+// 	color: color(accent-two);
+// 	transition: all 0.3s ease-in 0s;
+// 	transform: translateX(-50%) translateY(10%);
+// 	opacity: 0;
+
+// 	.col {
+// 		margin-top: 0;
+// 	}
+
+// 	// Specific Blocks
+// 	&.press-play {
+// 		top: 1rem;
+// 		margin-top: 0;
+
+// 		.marketingcopy-title {
+// 			margin-top: 0;
+// 		}
+// 	}
+
+// 	&.personal { margin-top: 0.6rem; }
+// 	&.take-part { margin-top: -6px; }
+// 	&.explore { top: 50%; }
+
+// 	.engaged & {
+// 		transform: translateX(-50%) translateY(0);
+// 		opacity: 1.0;
+// 	}
+
+// 	@include is-home() {
+// 		display: block;
+// 	}
+
+// 	@include small() {
+// 		position: relative;
+
+// 		&.press-play { display: none; }
+// 		&.personal { display: none; }
+// 		&.take-part { display: none; }
+// 		&.explore { display: none; }
+
+// 		.marketingcopy-content {
+// 			box-sizing: border-box;
+// 			position: relative;
+// 			margin: 0 1rem 2rem;
+// 			padding: 1rem 0 1.5rem;
+// 			border-bottom: 2px solid color(accent-two);
+
+// 			&:after,
+// 			&:before {
+// 				content: '';
+// 				position: absolute;
+// 				top: 100%;
+// 				left: 1rem;
+// 				width: 0;
+// 				height: 0;
+// 				border-left: 20px solid transparent;
+// 				border-right: 20px solid transparent;
+// 				border-top: 20px solid color(accent-two);
+// 			}
+
+// 			&:after {
+// 				left: calc(1rem + 2px);
+// 				border-left: 18px solid transparent;
+// 				border-right: 18px solid transparent;
+// 				border-top: 18px solid color(page);
+// 			}
+// 		}
+
+// 		.arrow--right .marketingcopy-content {
+// 			&:after,
+// 			&:before {
+// 				right: 1rem;
+// 				left: auto;
+// 			}
+
+// 			&:after {
+// 				right: calc(1rem + 2px);
+// 				left: auto;
+// 			}
+// 		}
+
+// 		.arrow--top-right,
+// 		.arrow--top-right-follow {
+// 			.marketingcopy-content {
+// 				margin: 2rem 1rem 3rem;
+// 				padding: 1.5rem 0 1rem;
+// 				border-top: 2px solid color(accent-two);
+// 				border-bottom: none;
+
+// 				&:after,
+// 				&:before {
+// 					top: auto;
+// 					bottom: 100%;
+// 					right: 1rem;
+// 					left: auto;
+// 					border-left: 20px solid transparent;
+// 					border-right: 20px solid transparent;
+// 					border-bottom: 20px solid color(accent-two);
+// 					border-top: none;
+// 				}
+
+// 				&:after {
+// 					top: auto;
+// 					bottom: 100%;
+// 					right: calc(1rem + 2px);
+// 					left: auto;
+// 					border-left: 18px solid transparent;
+// 					border-right: 18px solid transparent;
+// 					border-bottom: 18px solid color(page);
+// 					border-top: none;
+// 				}
+// 			}
+// 		}
+
+// 		.arrow--top-right-follow .marketingcopy-content {
+// 			&:after,
+// 			&:before {
+// 				right: 3rem;
+// 			}
+
+// 			&:after {
+// 				right: calc(3rem + 2px);
+// 			}
+// 		}
+// 	}
+// }
+
+// .marketingcopy-headline {
+// 	@include typography(hero-headline);
+// 	margin-bottom: 0;
+// 	color: color(accent-two);
+
+// 	@include small() {
+// 		@include typography(headline);
+// 	}
+// }
+
+// .marketingcopy-title,
+// .marketingcopy-subheadline {
+// 	@include typography(hero-subheadline);
+// 	display: inline-block;
+// 	position: relative;
+// 	color: color(accent-two);
+// }
+
+// .marketingcopy-title {
+// 	@include typography(headline);
+// 	margin-bottom: 0.6rem;
+
+// 	@include medium() {
+// 		@include typography(subheadline);
+// 		@include typography-bold();
+// 	}
+
+// 	@include small() {
+// 		@include typography(small-headline);
+// 		margin-bottom: 0.4rem;
+// 		text-transform: uppercase;
+// 	}
+// }
+
+// .marketingcopy-body {
+// 	@include typography(subheadline);
+
+// 	@include medium() {
+// 		@include typography(body);
+// 	}
+
+// 	@include small() {
+// 		@include typography(subheadline);
+// 	}
+// }
+
+// .marketingcopy--bottom {
+// 	.marketingcopy-subheadline {
+// 		padding-bottom: 1rem;
+
+// 		&:before {
+// 			top: auto;
+// 			bottom: 0;
+// 		}
+// 	}
+// }
+
+// .marketingcopy--right {
+// 	.marketingcopy-title:before,
+// 	.marketingcopy-subheadline:before {
+// 		right: 0;
+// 		left: auto;
+// 		transform-origin: 100% 50%;
+// 	}
+
+// 	@include small() {
+// 		text-align: right;
+// 	}
+// }
+
+// .marketingcopy--left {
+// 	text-align: right;
+
+// 	.marketingcopy-title:before,
+// 	.marketingcopy-subheadline:before {
+// 		right: auto;
+// 		left: 0;
+// 		transform-origin: 0 50%;
+// 	}
+
+// 	@include small() {
+// 		text-align: left;
+// 	}
+// }

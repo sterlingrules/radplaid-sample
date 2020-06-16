@@ -1,0 +1,1204 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About renders correctly 1`] = `
+<AboutPage
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "clear": [Function],
+        "get": [Function],
+        "notify": [Function],
+        "subscribe": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": [Function],
+    }
+  }
+  user={null}
+  viewportName="large"
+/>
+`;
+
+exports[`Home renders correctly 1`] = `
+<Route>
+  <Component />
+</Route>
+`;
+
+exports[`HomeWithFeed renders correctly 1`] = `
+<div
+  className=""
+  id="home-with-feed"
+>
+  <Marketing
+    progress={Array []}
+    shows={Array []}
+    type="compact"
+    user={Object {}}
+  />
+  <div
+    id="home"
+  >
+    <div
+      className="complete-profile grid"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col col-6-of-12 push-1-of-12 col-medium-7-of-12 medium-un-push col-small-12-of-12 relative center"
+        >
+          <div
+            className="addshow-progress addshow-progress--large"
+            style={
+              Object {
+                "marginBottom": "0.8rem",
+              }
+            }
+          >
+            <div
+              className="addshow-progress-4"
+            >
+              <div
+                className="addshow-progress-bar-wrapper"
+              >
+                <div
+                  className="addshow-progress-bar"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            className="flex"
+            style={
+              Object {
+                "alignItems": "center",
+              }
+            }
+          >
+            <div
+              className="typography-body color-accent-two"
+            >
+              You're almost done!
+            </div>
+            <div
+              className="text-right"
+              style={
+                Object {
+                  "flexGrow": 1,
+                }
+              }
+            >
+              <Link
+                className="btn btn--secondary "
+                onClick={[Function]}
+                replace={false}
+                to={
+                  Object {
+                    "search": "?modal=editprofile&step=2",
+                  }
+                }
+              >
+                Complete Your Profile
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="grid"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col col-10-of-12 push-1-of-12 col-medium-12-of-12 medium-un-push col-small-12-of-12 relative"
+        >
+          <div
+            className="showlist-banner"
+          >
+            <div
+              className="showlist-banner-image"
+            />
+            <div
+              className="showlist-banner-content typography--formatted"
+            >
+              <div
+                className="typography-subheadline"
+              >
+                Quarantined? Why not Live Stream?
+              </div>
+              <p
+                className="typography-small"
+              >
+                We've recently added support for Live Video Streaming. Connect with your local music scene while keeping everyone healthy and safe.
+              </p>
+              <p
+                className="typography-small"
+              >
+                In a 
+                <a
+                  href="https://www.cdc.gov/coronavirus/2019-ncov/community/large-events/mass-gatherings-ready-for-covid-19.html"
+                  target="_blank"
+                >
+                  Guidance Announcement
+                </a>
+                 issued 3/15, the CDC is recommending the cancellation or postponement of in-person events that consist of 50+ people.
+              </p>
+              <div
+                className="list list--inline"
+              >
+                <Link
+                  className="btn btn--accent-two--secondary"
+                  replace={false}
+                  to="/add/1"
+                >
+                  Add Event
+                </Link>
+                <div
+                  className="btn btn--accept"
+                  onClick={[Function]}
+                >
+                  Search Live Streaming Events
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="col col-6-of-12 push-1-of-12 col-medium-7-of-12 medium-un-push col-small-12-of-12 relative"
+        >
+          <div
+            className="feed-gutter"
+          >
+            <withRouter(Connect(FollowingCarousel)) />
+            <SearchSummary />
+            <ShowList
+              isLoading={false}
+              loadingCopyComponent={[Function]}
+              onScrollToBottom={[Function]}
+              shows={Array []}
+              title=""
+            />
+          </div>
+        </div>
+        <div
+          className="col col-4-of-12 col-medium-5-of-12"
+        >
+          <div
+            className="sidebar"
+          >
+            <withRouter(undefined) />
+            <div
+              className="break"
+              name="filter"
+            />
+            <withRouter(undefined) />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Press renders correctly 1`] = `
+<div
+  id="press"
+>
+  <HeadMeta
+    artwork={
+      Object {
+        "height": "1067",
+        "secure_url": "undefined/img/promoter-alice-donovan-rouse.jpg",
+        "url": "undefined/img/promoter-alice-donovan-rouse.jpg",
+        "width": "1600",
+      }
+    }
+    canonicalUrl="undefined/what-is-rad-plaid"
+    description="Using your Spotify play history, we craft a feed of local shows built just for you, with real playable songs."
+    title="Press | Rad Plaid"
+  />
+  <div
+    className="hero hero-press"
+    id="hero"
+  >
+    <div
+      className="hero-content grid"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col col-8-of-12 push-2-of-12 col-small-12-of-12 push-small-0-of-12 text-uppercase"
+        >
+          <h1
+            className="hero-headline typography-hero-headline"
+          >
+            <div
+              className="hero-headline-copy"
+            >
+              Press
+              <span />
+            </div>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="grid"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col col-8-of-12 push-2-of-12 col-small-12-of-12 push-small-0-of-12"
+      >
+        <div
+          className="bubble"
+        >
+          <div
+            className="bubble-content"
+          >
+            <h2
+              className="typography-body-headline"
+            >
+              A little bit about us
+            </h2>
+            <p>
+              Rad Plaid makes enriching your life with local music as simple, friendly, and delightful as possible. It's easy to feel overwhelmed when it comes to attending intimate shows, but based on your Spotify listening history, we'll find you the best shows to attend accompanied by songs from the show. Learn more about your local bands, local venues, even buy tickets—all before you step inside. Be part of your local music scene.
+            </p>
+            <h2
+              className="typography-body-headline"
+            >
+              How it all works
+            </h2>
+            <p>
+              Show discovery for those yet to be discovered. We aim to be much more than just another way to fill your time on a Friday night. While we all love the band releasing their 12th record on their 40th world tour, we also believe that live local music matters; because even they were once just a local artist. So, based on your music history our algorithms find you the best shows featuring up-and-coming local artists—not just the popular ones. We believe the local music scene is important because the best ideas are often fragile and without a healthy support system they can be lost—leaving us with nothing more than the status quo.
+            </p>
+            <p>
+              Have any questions? Hit us up!
+              <br />
+              <a
+                href="mailto:press@getradplaid.com"
+              >
+                press@getradplaid.com
+              </a>
+            </p>
+          </div>
+        </div>
+        <div
+          className="bubble"
+        >
+          <div
+            className="bubble-content"
+          >
+            <h2
+              className="typography-body-headline"
+            >
+              Why, as told by co-founder Sterling Salzberg
+            </h2>
+            <p>
+              "I play in a band, I’ve booked shows, played in even more, but most importantly I’ve attended countless shows as a fan of music. Most of them local. A lot of shows for friends and with friends. However, since growing up in the Miami music scene, I’ve moved a lot and getting acclimated to a new music scene has always been difficult. I merely wanted a clear way to understand the artists, venues, and sounds of my new city. And..."
+            </p>
+            <a
+              className="btn btn--accept"
+              href="https://medium.com/@sterlingrules/why-i-built-rad-plaid-the-concert-discovery-platform-you-can-hear-f06bce2413ef"
+              target="_blank"
+            >
+              Read the full story on Medium
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="row relative"
+    >
+      <div
+        className="press-map col col-8-of-12 push-4-of-12 col-small-12-of-12 push-small-0-of-12"
+      >
+        <Map
+          height={400}
+          venue={
+            Object {
+              "formattedAddress": Array [
+                "Portland",
+                "ME",
+              ],
+              "lat": 43.6671733,
+              "lng": -70.3515974,
+              "name": "Rad Plaid",
+            }
+          }
+        />
+      </div>
+      <div
+        className="press-summary col col-4-of-12 push-2-of-12 col-small-10-of-12 push-small-1-of-12"
+      >
+        <div
+          className="bubble"
+        >
+          <div
+            className="bubble-content"
+          >
+            <h2
+              className="typography-body-headline"
+            >
+              Rad Plaid
+            </h2>
+            <ul
+              className="list"
+            >
+              <li>
+                <strong>
+                  Founded:
+                </strong>
+                 November 2017
+              </li>
+              <li>
+                <strong>
+                  Location:
+                </strong>
+                 Portland, Maine, USA
+              </li>
+              <li>
+                <strong>
+                  Team Size:
+                </strong>
+                 5
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="row founders-content"
+    >
+      <a
+        className="col col-10-of-12 col-small-12-of-12 push-small-0-of-12"
+        href="undefined/img/press/founders_hires.jpg"
+        target="_blank"
+      >
+        <figure
+          className="founders"
+          title="Click for High Resolution"
+        >
+          <h2
+            className="typography-hero-headline color-white"
+          >
+            Founders
+          </h2>
+        </figure>
+      </a>
+      <div
+        className="col col-4-of-12 push-2-of-12 col-small-12-of-12 push-small-0-of-12 founders-copy typography--formatted"
+      >
+        <h2
+          className="typography-body-headline"
+        >
+          Caitlin Salzberg
+        </h2>
+        <h3
+          className="typography-small-headline"
+        >
+          COO / Co-Founder
+        </h3>
+        <p>
+          Caitlin has always had a passion for entertaining and bringing people together. She’s taken that passion from Professional Event Coordinator to Chef and back again. She not only brings her ability to put on a good show to the Rad Plaid team, but the frustration of missing out on great bands while she could still see them in a tiny dive bar and approach them without a backstage pass.
+        </p>
+      </div>
+      <div
+        className="col col-4-of-12 col-small-12-of-12 founders-copy typography--formatted"
+      >
+        <h2
+          className="typography-body-headline"
+        >
+          Sterling Salzberg
+        </h2>
+        <h3
+          className="typography-small-headline"
+        >
+          CEO / Co-Founder
+        </h3>
+        <p>
+          The only thing Sterling has worked on longer than web development is making music. For over 20 years Sterling has taken part in music scenes from Miami to Chicago to San Francisco. Ironically, in order to focus on music he began freelancing in web development, until his efforts took him all the way to companies such as 
+          <a
+            className="inlineblock"
+            href="https://reverb.com/"
+            target="_blank"
+          >
+            Reverb.com
+          </a>
+           and 
+          <a
+            className="inlineblock"
+            href="https://apple.com/"
+            target="_blank"
+          >
+            Apple.
+          </a>
+           During his over 10 years in the tech world, he's still managed to run a music production company, and put out 7 releases from 5 different music projects, with many more releases on the horizon. Music has always been where he's wanted to be and now he's taking what he knows about tech to make the music around him and those who make it, better and more accessible.
+        </p>
+      </div>
+    </div>
+    <div
+      className="press-content row"
+    >
+      <div
+        className="press-heading col col-8-of-12 push-2-of-12 col-small-12-of-12 push-small-0-of-12"
+      >
+        <a
+          className="btn btn--accept inlineblock right center-vertical"
+          download={true}
+          href="undefined/img/press/Rad Plaid Logos.zip"
+          target="_blank"
+        >
+          Download
+          <span
+            className="small-hide"
+          >
+             Logos
+          </span>
+        </a>
+        <h2
+          className="typography-hero-headline hero-headline"
+          style={
+            Object {
+              "marginLeft": "1rem",
+            }
+          }
+        >
+          <div
+            className="hero-headline-copy"
+          >
+            Logos
+            <span />
+          </div>
+        </h2>
+      </div>
+      <div
+        className="col col-4-of-12 col-small-6-of-12"
+      >
+        <a
+          download={true}
+          href="undefined/img/press/Rad-Plaid-Logo-Purple.png"
+          target="_blank"
+        >
+          <img
+            height="auto"
+            src="undefined/img/press/Rad-Plaid-Logo-Purple.png"
+            width="100%"
+          />
+        </a>
+      </div>
+      <div
+        className="col col-4-of-12 col-small-6-of-12"
+      >
+        <a
+          className="background-transparent"
+          download={true}
+          href="undefined/img/press/Rad-Plaid-Logo-White.png"
+          target="_blank"
+        >
+          <img
+            height="auto"
+            src="undefined/img/press/Rad-Plaid-Logo-White.png"
+            width="100%"
+          />
+        </a>
+      </div>
+      <div
+        className="col col-4-of-12 col-small-12-of-12"
+      >
+        <div
+          className="col col-12-of-12"
+        >
+          <a
+            download={true}
+            href="undefined/img/press/Rad-Plaid-Logotype-on-Purple.png"
+            target="_blank"
+          >
+            <img
+              height="auto"
+              src="undefined/img/press/Rad-Plaid-Logotype-on-Purple.png"
+              width="100%"
+            />
+          </a>
+        </div>
+        <div
+          className="col col-12-of-12"
+        >
+          <a
+            download={true}
+            href="undefined/img/press/Rad-Plaid-Logotype-on-White.png"
+            target="_blank"
+          >
+            <img
+              height="auto"
+              src="undefined/img/press/Rad-Plaid-Logotype-on-White.png"
+              width="100%"
+            />
+          </a>
+        </div>
+        <div
+          className="col col-12-of-12"
+        >
+          <a
+            download={true}
+            href="undefined/img/press/Rad-Plaid-Logotype-Purple.png"
+            target="_blank"
+          >
+            <img
+              height="auto"
+              src="undefined/img/press/Rad-Plaid-Logotype-Purple.png"
+              width="100%"
+            />
+          </a>
+        </div>
+        <div
+          className="col col-12-of-12"
+        >
+          <a
+            className="background-transparent"
+            download={true}
+            href="undefined/img/press/Rad-Plaid-Logotype-White.png"
+            target="_blank"
+          >
+            <img
+              height="auto"
+              src="undefined/img/press/Rad-Plaid-Logotype-White.png"
+              width="100%"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      className="press-content"
+    >
+      <div
+        className="press-heading row"
+      >
+        <div
+          className="col col-8-of-12 push-2-of-12 col-small-12-of-12 push-small-0-of-12"
+        >
+          <a
+            className="btn btn--accept inlineblock right center-vertical"
+            download={true}
+            href="undefined/img/press/Rad Plaid Product Screens.zip"
+            target="_blank"
+          >
+            Download
+            <span
+              className="small-hide"
+            >
+               Screens
+            </span>
+          </a>
+          <h2
+            className="typography-hero-headline hero-headline"
+            style={
+              Object {
+                "marginLeft": "1rem",
+              }
+            }
+          >
+            <div
+              className="hero-headline-copy"
+            >
+              Product
+              <span />
+            </div>
+          </h2>
+        </div>
+      </div>
+      <div
+        className="row product-screens"
+      >
+        <div
+          className="col col-4-of-12 col-small-12-of-12"
+        >
+          <figure>
+            <a
+              download={true}
+              href="undefined/img/press/product/rp-product.jpg"
+              style={
+                Object {
+                  "border": "4px solid #fff",
+                }
+              }
+              target="_blank"
+            >
+              <img
+                height="auto"
+                src="undefined/img/press/product/rp-product.jpg"
+                width="100%"
+              />
+            </a>
+            <figcaption>
+              The Rad Plaid Flyer
+            </figcaption>
+          </figure>
+        </div>
+        <div
+          className="col col-4-of-12 col-small-12-of-12"
+        >
+          <figure>
+            <a
+              download={true}
+              href="undefined/img/press/product/rp-product-mobile.jpg"
+              target="_blank"
+            >
+              <img
+                height="auto"
+                src="undefined/img/press/product/rp-product-mobile.jpg"
+                width="100%"
+              />
+            </a>
+            <figcaption>
+              Mobile friendly
+            </figcaption>
+          </figure>
+        </div>
+        <div
+          className="col col-4-of-12 col-small-12-of-12"
+        >
+          <figure>
+            <a
+              download={true}
+              href="undefined/img/press/product/rp-product-listen.jpg"
+              target="_blank"
+            >
+              <img
+                height="auto"
+                src="undefined/img/press/product/rp-product-listen.jpg"
+                width="100%"
+              />
+            </a>
+            <figcaption>
+              Listen to the show before you go
+            </figcaption>
+          </figure>
+        </div>
+        <div
+          className="col col-4-of-12 col-small-12-of-12"
+        >
+          <figure>
+            <a
+              download={true}
+              href="undefined/img/press/product/rp-product-similar.jpg"
+              target="_blank"
+            >
+              <img
+                height="auto"
+                src="undefined/img/press/product/rp-product-similar.jpg"
+                width="100%"
+              />
+            </a>
+            <figcaption>
+              Local shows based on your most‑loved Spotify songs
+            </figcaption>
+          </figure>
+        </div>
+        <div
+          className="col col-4-of-12 col-small-12-of-12"
+        >
+          <figure>
+            <a
+              download={true}
+              href="undefined/img/press/product/rp-product-follow.jpg"
+              target="_blank"
+            >
+              <img
+                height="auto"
+                src="undefined/img/press/product/rp-product-follow.jpg"
+                width="100%"
+              />
+            </a>
+            <figcaption>
+              Stay in the know with the artists you follow
+            </figcaption>
+          </figure>
+        </div>
+        <div
+          className="col col-4-of-12 col-small-12-of-12"
+        >
+          <figure>
+            <a
+              download={true}
+              href="undefined/img/press/product/rp-product-show-by-song.jpg"
+              target="_blank"
+            >
+              <img
+                height="auto"
+                src="undefined/img/press/product/rp-product-show-by-song.jpg"
+                width="100%"
+              />
+            </a>
+            <figcaption>
+              Create show lineups from Spotify and SoundCloud songs
+            </figcaption>
+          </figure>
+        </div>
+        <div
+          className="col col-4-of-12 col-small-12-of-12"
+        >
+          <figure>
+            <a
+              download={true}
+              href="undefined/img/press/product/rp-product-location.jpg"
+              target="_blank"
+            >
+              <img
+                height="auto"
+                src="undefined/img/press/product/rp-product-location.jpg"
+                width="100%"
+              />
+            </a>
+            <figcaption>
+              Learn where the artists are from
+            </figcaption>
+          </figure>
+        </div>
+        <div
+          className="col col-4-of-12 col-small-12-of-12"
+        >
+          <figure>
+            <a
+              download={true}
+              href="undefined/img/press/product/rp-product-notifications.jpg"
+              target="_blank"
+            >
+              <img
+                height="auto"
+                src="undefined/img/press/product/rp-product-notifications.jpg"
+                width="100%"
+              />
+            </a>
+            <figcaption>
+              Stay in the know
+            </figcaption>
+          </figure>
+        </div>
+        <div
+          className="col col-4-of-12 col-small-12-of-12"
+        >
+          <figure>
+            <a
+              download={true}
+              href="undefined/img/press/product/rp-product-listenlocal.jpg"
+              target="_blank"
+            >
+              <img
+                height="auto"
+                src="undefined/img/press/product/rp-product-listenlocal.jpg"
+                width="100%"
+              />
+            </a>
+            <figcaption>
+              Eat local. Shop local. #ListenLocal
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PrivacyPolicy renders correctly 1`] = `
+<Page
+  className="typography--formatted"
+  id="privacy-policy"
+  title="Privacy Policy"
+>
+  <p>
+    This privacy policy has been compiled to better serve those who are concerned with how their 'Personally Identifiable Information' (PII) is being used online. PII, as described in US privacy law and information security, is information that can be used on its own or with other information to identify, contact, or locate a single person, or to identify an individual in context. Please read our privacy policy carefully to get a clear understanding of how we collect, use, protect or otherwise handle your Personally Identifiable Information in accordance with our website.
+  </p>
+  <h2
+    className="typography-subheadline"
+  >
+    What personal information do we collect from the people that visit our blog, website or app?
+  </h2>
+  <p>
+    When ordering or registering on our site, as appropriate, you may be asked to enter your name, email address, mailing address, phone number  or other details to help you with your experience.
+  </p>
+  <h2
+    className="typography-subheadline"
+  >
+    When do we collect information?
+  </h2>
+  <p>
+    We collect information from you when you register on our site, subscribe to a newsletter, respond to a survey, fill out a form, provide us with feedback on our products or services, open a Support Ticket or enter information on our site.
+  </p>
+  <h2
+    className="typography-subheadline"
+  >
+    How do we use your information?
+  </h2>
+  <p>
+    We may use the information we collect from you when you register, make a purchase, sign up for our newsletter, respond to a survey or marketing communication, surf the website, or use certain other site features in the following ways:
+  </p>
+  <ul
+    className="list list--default"
+  >
+    <li>
+      To personalize your experience and to allow us to deliver the type of content and product offerings in which you are most interested.
+    </li>
+    <li>
+      To improve our website in order to better serve you.
+    </li>
+    <li>
+      To allow us to better service you in responding to your customer service requests.
+    </li>
+    <li>
+      To administer a contest, promotion, survey or other site feature.
+    </li>
+    <li>
+      To ask for ratings and reviews of services or products
+    </li>
+    <li>
+      To follow up with them after correspondence (live chat, email or phone inquiries)
+    </li>
+  </ul>
+  <h2
+    className="typography-subheadline"
+  >
+    How do we protect your information?
+  </h2>
+  <p>
+    Our website is scanned on a regular basis for security holes and known vulnerabilities in order to make your visit to our site as safe as possible.
+  </p>
+  <p>
+    We use regular Malware Scanning.
+  </p>
+  <p>
+    Your personal information is contained behind secured networks and is only accessible by a limited number of persons who have special access rights to such systems, and are required to keep the information confidential. In addition, all sensitive/credit information you supply is encrypted via Secure Socket Layer (SSL) technology.
+  </p>
+  <p>
+    We implement a variety of security measures when a user places an order, enters, submits, or accesses their information to maintain the safety of your personal information.
+  </p>
+  <p>
+    All transactions are processed through a gateway provider and are not stored or processed on our servers.
+  </p>
+  <h2
+    className="typography-subheadline"
+  >
+    Do we use 'cookies'?
+  </h2>
+  <p>
+    Yes. Cookies are small files that a site or its service provider transfers to your computer's hard drive through your Web browser (if you allow) that enables the site's or service provider's systems to recognize your browser and capture and remember certain information. For instance, we use cookies to help us remember and process the items in your shopping cart. They are also used to help us understand your preferences based on previous or current site activity, which enables us to provide you with improved services. We also use cookies to help us compile aggregate data about site traffic and site interaction so that we can offer better site experiences and tools in the future.
+  </p>
+  <h2
+    className="typography-subheadline"
+  >
+    We use cookies to:
+  </h2>
+  <ul
+    className="list list--default"
+  >
+    <li>
+      Understand and save user's preferences for future visits.
+    </li>
+    <li>
+      Compile aggregate data about site traffic and site interactions in order to offer better site experiences and tools in the future. We may also use trusted third-party services that track this information on our behalf.
+    </li>
+  </ul>
+  <p>
+    You can choose to have your computer warn you each time a cookie is being sent, or you can choose to turn off all cookies. You do this through your browser settings. Since each browser is a little different, look at your browser's Help Menu to learn the correct way to modify your cookies.
+  </p>
+  <h2
+    className="typography-subheadline"
+  >
+    If users disable cookies in their browser:
+  </h2>
+  <p>
+    If you turn cookies off, some of the features that make your site experience more efficient may not function properly.
+  </p>
+  <h2
+    className="typography-subheadline"
+  >
+    Third-party disclosure
+  </h2>
+  <p>
+    We do not sell, trade, or otherwise transfer to outside parties your Personally Identifiable Information (PII).
+  </p>
+  <h2
+    className="typography-subheadline"
+  >
+    Third-party links
+  </h2>
+  <p>
+    Occasionally, at our discretion, we may include or offer third-party products or services on our website. These third-party sites have separate and independent privacy policies. We therefore have no responsibility or liability for the content and activities of these linked sites. Nonetheless, we seek to protect the integrity of our site and welcome any feedback about these sites.
+  </p>
+  <h2
+    className="typography-subheadline"
+  >
+    We have implemented the following:
+  </h2>
+  <ul
+    className="list list--default"
+  >
+    <li>
+      Demographics and Interests Reporting
+    </li>
+  </ul>
+  <p>
+    We, along with third-party vendors such as Google use first-party cookies (such as the Google Analytics cookies) and third-party cookies (such as the DoubleClick cookie) or other third-party identifiers together to compile data regarding user interactions with ad impressions and other ad service functions as they relate to our website.
+  </p>
+  <h2
+    className="typography-subheadline"
+  >
+    Opting out:
+  </h2>
+  <p>
+    Users can set preferences for how Google advertises to you using the Google Ad Settings page. Alternatively, you can opt out by visiting the Network Advertising Initiative Opt Out page or by using the Google Analytics Opt Out Browser add on.
+  </p>
+  <h2
+    className="typography-subheadline"
+  >
+    California Online Privacy Protection Act
+  </h2>
+  <p>
+    CalOPPA is the first state law in the nation to require commercial websites and online services to post a privacy policy. The law's reach stretches well beyond California to require any person or company in the United States (and conceivably the world) that operates websites collecting Personally Identifiable Information from California consumers to post a conspicuous privacy policy on its website stating exactly the information being collected and those individuals or companies with whom it is being shared.
+  </p>
+  <p>
+    See more at: 
+    <a
+      href="http://consumercal.org/california-online-privacy-protection-act-caloppa/#sthash.0FdRbT51.dpuf"
+      target="_blank"
+    >
+      http://consumercal.org/california-online-privacy-protection-act-caloppa/#sthash.0FdRbT51.dpuf
+    </a>
+  </p>
+  <h2
+    className="typography-subheadline"
+  >
+    According to CalOPPA, we agree to the following:
+  </h2>
+  <p>
+    Users can visit our site anonymously.
+  </p>
+  <p>
+    Once this privacy policy is created, we will add a link to it on our home page or as a minimum, on the first significant page after entering our website.
+  </p>
+  <p>
+    Our Privacy Policy link includes the word 'Privacy' and can easily be found on the page specified above.
+  </p>
+  <p>
+    You will be notified of any Privacy Policy changes:
+  </p>
+  <ul
+    className="list list--default"
+  >
+    <li>
+      Via Email
+    </li>
+  </ul>
+  <p>
+    You can change your personal information at anytime:
+  </p>
+  <ul
+    className="list list--default"
+  >
+    <li>
+      By emailing us
+    </li>
+    <li>
+      By logging in to your account
+    </li>
+    <li>
+      By chatting with us or by sending us a support ticket
+    </li>
+  </ul>
+  <h2
+    className="typography-subheadline"
+  >
+    How does our site handle Do Not Track signals?
+  </h2>
+  <p>
+    We honor Do Not Track signals and Do Not Track, plant cookies, or use advertising when a Do Not Track (DNT) browser mechanism is in place.
+  </p>
+  <h2
+    className="typography-subheadline"
+  >
+    Does our site allow third-party behavioral tracking?
+  </h2>
+  <p>
+    It's also important to note that we do not allow third-party behavioral tracking
+  </p>
+  <h2
+    className="typography-subheadline"
+  >
+    COPPA (Children Online Privacy Protection Act)
+  </h2>
+  <p>
+    When it comes to the collection of personal information from children under the age of 13 years old, the Children's Online Privacy Protection Act (COPPA) puts parents in control. The Federal Trade Commission, United States' consumer protection agency, enforces the COPPA Rule, which spells out what operators of websites and online services must do to protect children's privacy and safety online.
+  </p>
+  <p>
+    We do not specifically market to children under the age of 13 years old.
+  </p>
+  <h2
+    className="typography-subheadline"
+  >
+    Fair Information Practices
+  </h2>
+  <p>
+    The Fair Information Practices Principles form the backbone of privacy law in the United States and the concepts they include have played a significant role in the development of data protection laws around the globe. Understanding the Fair Information Practice Principles and how they should be implemented is critical to comply with the various privacy laws that protect personal information.
+  </p>
+  <h2
+    className="typography-subheadline"
+  >
+    In order to be in line with Fair Information Practices we will take the following responsive action, should a data breach occur:
+  </h2>
+  <p>
+    We will notify you via email:
+  </p>
+  <ul
+    className="list list--default"
+  >
+    <li>
+      Within 1 business day
+    </li>
+    <li>
+      We also agree to the Individual Redress Principle which requires that individuals have the right to legally pursue enforceable rights against data collectors and processors who fail to adhere to the law. This principle requires not only that individuals have enforceable rights against data users, but also that individuals have recourse to courts or government agencies to investigate and/or prosecute non-compliance by data processors.
+    </li>
+  </ul>
+  <h2
+    className="typography-subheadline"
+  >
+    CAN-SPAM Act
+  </h2>
+  <p>
+    The CAN-SPAM Act is a law that sets the rules for commercial email, establishes requirements for commercial messages, gives recipients the right to have emails stopped from being sent to them, and spells out tough penalties for violations.
+  </p>
+  <h2
+    className="typography-subheadline"
+  >
+    We collect your email address in order to:
+  </h2>
+  <ul
+    className="list list--default"
+  >
+    <li>
+      Send information, respond to inquiries, and/or other requests or questions
+    </li>
+    <li>
+      Market to our mailing list or continue to send emails to our clients after the original transaction has occurred.
+    </li>
+  </ul>
+  <h2
+    className="typography-subheadline"
+  >
+    To be in accordance with CAN-SPAM, we agree to the following:
+  </h2>
+  <ul
+    className="list list--default"
+  >
+    <li>
+      Not use false or misleading subjects or email addresses.
+    </li>
+    <li>
+      Identify the message as an advertisement in some reasonable way.
+    </li>
+    <li>
+      Include the physical address of our business or site headquarters.
+    </li>
+    <li>
+      Monitor third-party email marketing services for compliance, if one is used.
+    </li>
+    <li>
+      Honor opt-out/unsubscribe requests quickly.
+    </li>
+    <li>
+      Allow users to unsubscribe by using the link at the bottom of each email.
+    </li>
+  </ul>
+  <h2
+    className="typography-subheadline"
+  >
+    If at any time you would like to unsubscribe from receiving future emails, you can:
+  </h2>
+  <ul
+    className="list list--default"
+  >
+    <li>
+      Follow the instructions at the bottom of each email and we will promptly remove you from 
+      <strong>
+        ALL
+      </strong>
+       correspondence.
+    </li>
+    <li>
+      Email us at 
+      <a
+        href="mailto:hello@getradplaid.com?subject=Unsubscribe%20Please"
+      >
+        hello@getradplaid.com
+      </a>
+    </li>
+  </ul>
+  <h2
+    className="typography-subheadline"
+  >
+    Contacting Us
+  </h2>
+  <p>
+    If there are any questions regarding this privacy policy, you may contact us using the information below.
+  </p>
+  <h2
+    className="typography-subheadline"
+  >
+    Rad Plaid, LLC
+  </h2>
+  <address>
+    576 Washington Ave
+    <br />
+    Portland, ME 04103
+    <br />
+    United States
+  </address>
+  <p>
+    <a
+      href="mailto:hello@getradplaid.com"
+    >
+      hello@getradplaid.com
+    </a>
+    <br />
+    <a
+      href="getradplaid.com"
+    >
+      getradplaid.com
+    </a>
+    <br />
+  </p>
+  <time
+    className="typography-small"
+  >
+    Last Edited on 2018-01-07
+  </time>
+</Page>
+`;

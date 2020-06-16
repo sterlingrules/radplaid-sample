@@ -1,0 +1,32 @@
+.error-boundary {
+	display: block;
+	width: 100vw;
+	height: 100vh;
+
+	.grid {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		.bubble {
+			overflow: hidden;
+			position: relative;
+
+			// &:before {
+			// 	@include gradient();
+			// 	content: '';
+			// 	display: block;
+			// 	position: absolute;
+			// 	top: 0;
+			// 	right: 0;
+			// 	left: 0;
+			// 	height: $border-width * 2;
+			// }
+		}
+	}
+
+	.icon {
+		margin-bottom: 1rem;
+	}
+}

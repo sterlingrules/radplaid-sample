@@ -1,0 +1,51 @@
+@mixin background($name, $ext, $options: center center / 100% auto no-repeat) {
+	$-path: '../img/';
+
+	@include large() {
+		background: url('#{$-path}#{$name}_large.#{$ext}') $options;
+
+		@include retina() {
+			background: url('#{$-path}#{$name}_large@2x.#{$ext}') $options;
+		}
+	}
+
+	@include medium() {
+		background: url('#{$-path}#{$name}_medium.#{$ext}') $options;
+
+		@include retina() {
+			background: url('#{$-path}#{$name}_medium@2x.#{$ext}') $options;
+		}
+	}
+
+	@include small() {
+		background: url('#{$-path}#{$name}_small.#{$ext}') $options;
+
+		@include retina() {
+			background: url('#{$-path}#{$name}_small@2x.#{$ext}') $options;
+		}
+	}
+}
+
+@mixin gradient() {
+	background: rgb(246,166,146); /* Old browsers */
+	background: -moz-linear-gradient(-45deg, rgba(246,166,146,1) 0%, rgba(139,97,169,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg, rgba(246,166,146,1) 0%, rgba(139,97,169,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg, rgba(246,166,146,1) 0%, rgba(139,97,169,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6a692', endColorstr='#8b61a9',GradientType=1 ); /* IE6-9 */
+}
+
+@mixin reverse-gradient() {
+	background: rgb(246,166,146); /* Old browsers */
+	background: -moz-linear-gradient(-45deg, rgba(139,97,169, 1) 0%, rgba(246,166,146, 1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg, rgba(139,97,169, 1) 0%, rgba(246,166,146, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg, rgba(139,97,169, 1) 0%, rgba(246,166,146, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8b61a9', endColorstr='#f6a692',GradientType=1 ); /* IE6-9 */
+}
+
+@mixin empty-gradient() {
+	background-image: rgb(33,165,182);
+	background-image: -moz-linear-gradient(-45deg, rgba(33,165,182,1) 0%, rgba(236,225,162,1) 99%);
+	background-image: -webkit-linear-gradient(-45deg, rgba(33,165,182,1) 0%,rgba(236,225,162,1) 99%);
+	background-image: linear-gradient(135deg, rgba(33,165,182,1) 0%,rgba(236,225,162,1) 99%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#21a5b6', endColorstr='#ece1a2',GradientType=1 );
+}

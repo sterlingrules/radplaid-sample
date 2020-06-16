@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Player renders correctly 1`] = `
+<Player
+  currentTrack={null}
+  isPlaying={false}
+  loadStart={[Function]}
+  onPause={[Function]}
+  onPlay={[Function]}
+  onPlaying={[Function]}
+  pathname=""
+  playNextTrack={[Function]}
+  playlist={null}
+  search=""
+  searchCost=""
+  searchDateFrom="2019-02-09T00:00:00-05:00"
+  searchLocation=""
+  searchQuery=""
+  searchTag=""
+  setNotification={[Function]}
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+  storeSubscription={
+    Subscription {
+      "listeners": Object {
+        "clear": [Function],
+        "get": [Function],
+        "notify": [Function],
+        "subscribe": [Function],
+      },
+      "onStateChange": [Function],
+      "parentSub": undefined,
+      "store": Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      },
+      "unsubscribe": [Function],
+    }
+  }
+  trackPosition={0}
+  user={null}
+  viewportName="large"
+/>
+`;

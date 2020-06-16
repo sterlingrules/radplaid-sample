@@ -1,0 +1,29 @@
+.__react_component_tooltip {
+	@include typography(tiny);
+	vertical-align: middle;
+	display: flex;
+	padding: 0.5rem 1rem;
+	border-radius: $border-width;
+
+	.icon {
+		margin-right: 0.4rem;
+	}
+
+	.tooltip-copy {
+		max-width: 200px;
+		margin-top: -1px;
+	}
+}
+
+.react-tiny-popover-container {
+	overflow: visible !important;
+
+	.popover-content {
+		@include box-shadow(2);
+		padding: 0.4rem 0.8rem;
+		text-align: center;
+		color: color(white);
+		background-color: color(accent-two);
+		border-radius: $border-width;
+	}
+}

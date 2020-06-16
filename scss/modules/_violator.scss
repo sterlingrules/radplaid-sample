@@ -1,0 +1,90 @@
+.violator,
+a.violator {
+	@include typography(tiny-headline);
+	position: relative;
+	display: inline-block;
+	padding: 0.2rem 0.6rem;
+	text-transform: uppercase;
+	color: color(white);
+	white-space: nowrap;
+	background-color: color(secondary);
+	border-radius: $border-width;
+
+	&.violator--live {
+		background-color: color(live);
+	}
+
+	&.violator--location {
+		background-color: color(location);
+	}
+
+	&.violator--genre {
+		background-color: color(genre);
+	}
+
+	&.violator--active {
+		background-color: color(accent-two);
+	}
+
+	&.violator--inactive {
+		background-color: color(disabled);
+
+		@include can-hover() {
+			&:hover {
+				background-color: darken(color(disabled), 10%);
+			}
+		}
+	}
+
+	&.violator--reason {
+		color: color(accent-two);
+		fill: color(accent-two);
+		background-color: color(white);
+
+		.icon {
+			left: 0.35rem;
+		}
+
+		&.violator--reason-icon {
+			padding-left: 1.65rem;
+		}
+	}
+
+	&.violator--free {
+		background-color: color(accent-three);
+	}
+
+	&.violator--radplaid {
+		@include gradient();
+	}
+
+	&.violator--spotify {
+		background-color: color(spotify);
+	}
+
+	&.violator--soundcloud {
+		background-color: color(soundcloud);
+	}
+
+	//
+	&.violator--pill {
+		@include typography(small-headline);
+		margin-right: 0.5rem;
+		padding: 0.25rem 1rem;
+		border-radius: 14px;
+
+		.icon {
+			pointer-events: none;
+			vertical-align: text-top;
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+			margin-left: -0.2rem;
+			fill: color(white);
+		}
+	}
+
+	@include small() {
+		@include typography(tiny-headline);
+	}
+}

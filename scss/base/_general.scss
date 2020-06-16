@@ -1,0 +1,95 @@
+html {
+	background-color: color(page);
+}
+
+body {
+	@include typography-reset();
+	margin: 0;
+	padding: 0;
+	color: color(copy);
+	background-color: color(page);
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	// https://css-tricks.com/hey-hey-font-display/
+	font-display: swap;
+
+	.view {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+
+	main {
+		flex: 1 0 auto;
+		padding: 0 0 80px;
+
+		@include small() {
+			.col {
+				margin-right: 0;
+				margin-left: 0;
+
+				&.col-s-6-of-6 {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	canvas {
+		display: none;
+	}
+
+	@include small() {
+		.survicate-feedback {
+			display: none;
+		}
+	}
+}
+
+a,
+a:visited,
+a:active {
+	color: color(primary);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:not(.btn):hover {
+	text-decoration: none;
+}
+
+.photographer-credit {
+	display: inline-block;
+	position: absolute;
+	right: 1rem;
+	bottom: 1rem;
+	padding: 4px 6px;
+	font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Helvetica, Ubuntu, Roboto, Noto, 'Segoe UI', Arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 1.2;
+	text-decoration: none;
+	color: color(white);
+	background-color: color(primary);
+	border-radius: $border-width;
+
+	svg {
+		vertical-align: middle;
+		position: relative;
+		top: -1px;
+		width: auto;
+		height: 12px;
+		fill: color(white);
+	}
+
+	.photographer-logo,
+	.photographer-author {
+		display: inline-block;
+		padding: 2px 3px;
+	}
+}

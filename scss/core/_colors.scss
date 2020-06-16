@@ -1,0 +1,53 @@
+//
+// Colors
+//
+
+$-swatchbook: (
+    white: #ffffff,
+    black: #000000,
+    gray: #dddddd,
+    copy: #3f5765, // dark gray
+    copy-secondary: #a7bcc5,
+    page: #ffffff,
+    buy: #ff9f00, // orange
+    accent: #58cfd7, // blue
+    accent-two: #8b61a9, // purple
+    accent-three: #f6a692, // pinkish/orange
+
+    love: #ff007f, // bright red
+    feedback: #f0c40f, // yellow
+    primary: #1e4687, // dark blue
+    secondary: #4a87d1, // light blue
+    keyline: #d3e1e7, // grey
+
+    //
+    // TAGS
+    //
+    location: #1D3551,
+    genre: #354251,
+
+    //
+    // SOCIAL
+    //
+    spotify: #1ED760,
+    soundcloud: #FF5500,
+    twitter: #1DA1F2,
+    facebook: #3B5998,
+    tumblr: #36465D,
+    instagram: #E4405F,
+    messenger: #0084ff,
+    medium: #03a87c,
+    mail: #3f5765, // copy
+
+    //
+    // STATES
+    //
+    success: #07d1ba,
+    error: #db415d,
+    warning: #ff9f00,
+    disabled: #bdd4de
+);
+
+@function color($color) {
+    @return map-get($-swatchbook, $color);
+}

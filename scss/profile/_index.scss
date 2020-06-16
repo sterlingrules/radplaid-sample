@@ -1,0 +1,249 @@
+#profile {
+	position: relative;
+
+	.profile-header {
+		position: relative;
+		height: 140px;
+		margin-bottom: calc(40px + 1em);
+	}
+
+	.profile-nav {
+		top: -30px;
+		text-align: left;
+	}
+
+	.profile-control {
+		padding: 180px 1em 0;
+	}
+
+	.typography-hero-headline {
+		margin-bottom: 0.45em;
+	}
+
+	.col:nth-child(2) {
+		margin-top: 60px;
+	}
+
+	.showlist {
+		.blog,
+		.featured {
+			display: none;
+		}
+	}
+
+	@include small() {
+		.show-headline {
+			position: relative;
+			padding-bottom: 0;
+			transform: translateY(0);
+		}
+
+		.profile-nav,
+		.profile-info {
+			position: relative;
+			top: auto;
+			padding: 0 0 25px;
+			text-align: center;
+			color: color(white);
+		}
+
+		.profile-nav {
+			padding: 0;
+			margin: 0;
+		}
+
+		.profile-name {
+			text-align: center;
+		}
+
+		.col:nth-child(2) {
+			margin-top: 0;
+		}
+	}
+}
+
+.profile-nav,
+.profile-info {
+	position: sticky;
+	top: 20px;
+	padding-top: 130px;
+	text-align: right;
+}
+
+.profile-info {
+	.profile-name,
+	.profile-avatar {
+		box-sizing: border-box;
+		vertical-align: middle;
+		display: block;
+		margin-bottom: 1rem;
+	}
+
+	.profile-name {
+		text-align: right;
+	}
+
+	.profile-bio {
+		margin: 1.5rem 0 0;
+	}
+
+	.profile-avatar {
+		position: relative;
+		display: inline-block;
+		margin-top: -40px;
+
+		figure {
+			@include box-shadow(1);
+			margin-right: 0;
+			background-size: cover;
+			background-color: color(primary);
+			border-radius: 50%;
+
+			.icon {
+				width: 64px;
+				height: 64px;
+			}
+
+			&:after {
+				content: '';
+				display: block;
+				padding-bottom: 100%;
+			}
+		}
+	}
+
+	@include small() {
+		position: relative;
+		top: 0;
+		padding: 2rem 0;
+		text-align: center;
+
+		.profile-avatar {
+			margin-top: 0;
+		}
+
+		.profile-name {
+			text-align: center;
+		}
+	}
+}
+
+.profile-nav {
+	margin-top: 24px;
+
+	.is-notice & {
+		top: map-get($header-height, 'large') + 40px;
+	}
+
+	.profile-navitem {
+		@include typography(body-headline);
+		padding: 0.4rem 0;
+
+		a {
+			position: relative;
+			display: block;
+			padding: 0.2rem;
+			padding-left: 0;
+			color: color(primary);
+
+			&,
+			&:before {
+				transition: all 0.2s ease-out 0s;
+				transition-property: transform, color, padding;
+			}
+
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				width: 4px;
+				background-color: color(accent);
+				transform: scaleX(0);
+				border-radius: 4px;
+			}
+
+			&.active {
+				padding-left: 1rem;
+				color: color(accent);
+
+				&:before {
+					transform: scaleX(1);
+				}
+			}
+
+			@include can-hover {
+				&:hover {
+					padding-left: 1rem;
+					color: color(accent);
+
+					&:before {
+						transform: scaleX(1);
+					}
+				}
+			}
+		}
+	}
+}
+
+@include small() {
+	.hero-profile {
+		.show-headline {
+			display: none;
+		}
+	}
+
+	.profile-nav-small {
+		@include box-shadow(1);
+		position: -webkit-sticky;
+		position: sticky;
+		top: map-get($header-height, small); // 34px is the banner
+		width: 100vw;
+		border-radius: 0;
+		margin-left: -2.5vw;
+		margin-right: -2.5vw;
+		margin-bottom: 2rem;
+
+		.is-notice & {
+			top: map-get($header-height, 'small') + 40px;
+		}
+	}
+
+	.profile-nav {
+		display: flex;
+
+		.profile-navitem {
+			flex-grow: 1;
+			padding: 0;
+
+			a {
+				padding: 1em 0;
+				color: color(keyline);
+
+				&:before {
+					content: '';
+					position: absolute;
+					top: auto;
+					right: 0;
+					left: 0;
+					bottom: 0;
+					width: 100%;
+					height: 4px;
+					background-color: color(secondary);
+					transform: scaleY(0);
+					border-radius: 4px;
+				}
+
+				&.active {
+					padding-left: 0;
+					color: color(secondary);
+
+					&:before {
+						transform: scaleY(1);
+					}
+				}
+			}
+		}
+	}
+}

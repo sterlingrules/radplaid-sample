@@ -1,0 +1,93 @@
+/*!
+ * waffle-grid - v1.3.5 - (https://lucasgruwez.github.io/waffle-grid)
+ * Copyright 2017 Lucas Gruwez.
+ * Licensed under MIT
+ * https://lucasgruwez.github.io/waffle-grid
+ */
+
+// Class names
+// Change them to whatever you're used to
+$grid-classname: 'grid' !default;
+$row-classname: 'row' !default;
+$column-classname: 'col' !default;
+$container-classname: 'container' !default;
+
+// Column amounts, results in:
+// .col-n-of-4, or .col-n-of-8
+$grid-columns: (4, 6, 8, 12) !default;
+
+// Gutter width
+$gutter-width: (
+	large: 40px,
+	medium: 20px,
+	small: 0px
+) !default;
+
+//
+// Grid width and max-width.
+// It is automatically centered on the page.
+//
+$grid-width: (
+	large: 90%,
+	medium: 90%,
+	small: 95%
+) !default;
+
+$grid-max-width: 80% !default;
+
+// Pushes and Pulls
+$pushes: true !default;
+$pulls: true !default;
+
+// Breakpoints. Structure:
+// name: (screen-width, column-amounts)
+$breakpoints: (
+	medium: (1023px, (4, 6, 8, 12)),
+	small: (767px, (4, 6, 8, 12))
+) !default;
+
+@mixin columns($index, $col-count, $viewport: 'large') {
+	$-gutter-width: map-get($gutter-width, $viewport);
+
+	.#{$column-classname}-#{$index}-of-#{$col-count} {
+		width: calc(#{percentage($index / $col-count)} - #{$-gutter-width});
+	}
+
+	@if ($pushes) {
+		.push-#{$index}-of-#{$col-count} {
+			margin-left: calc(#{percentage($index / $col-count)} + #{$-gutter-width} / 2);
+		}
+	}
+
+	@if ($pulls) {
+		.pull-#{$index}-of-#{$col-count} {
+			margin-right: calc(#{percentage($index / $col-count)} + #{$-gutter-width} / 2);
+		}
+	}
+}
+
+@function reverse($list, $recursive: false) {
+   $result: ();
+
+   @for $i from length($list)*-1 through -1 {
+		@if type-of(nth($list, abs($i))) == list and $recursive {
+			$result: append($result, reverse(nth($list, abs($i)), $recursive));
+		}
+		@else {
+			$result: append($result, nth($list, abs($i)));
+		}
+   }
+
+   @return $result;
+}
+
+@each $bp in reverse($breakpoints) {
+	$bp-name: nth($bp, 1);
+	$bp-width: nth(nth($bp, 2), 1);
+
+	@media (min-width: $bp-width) {
+		.#{$bp-name}-and-lower {
+			display: none;
+		}
+	}
+}

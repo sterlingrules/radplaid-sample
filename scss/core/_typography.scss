@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow:500,700,900');
+
+$default-font-family: 'Proxima', 'Helvetica', -apple-system, sans-serif;
+
+$default-font-size: (
+	large: 16,
+	medium: 16,
+	small: 16
+);
+
+$-typography: (
+	hero-headline: ('Barlow', 900, 88, 96, 0),
+	hero-subheadline: ('Barlow', 500, 64, 92, 0),
+	hero-body: ('Barlow', 500, 36, 58, 0),
+	hero-body-headline: ('Barlow', 700, 36, 48, 0.04),
+
+	headline: ('Barlow', 700, 64, 76, 0),
+	subheadline: ('Barlow', 700, 44, 56, 0.01),
+	body: ('Barlow', 500, 32, 58, 0),
+	body-headline: ('Barlow', 700, 32, 48, 0.04),
+	small: ('Barlow', 500, 28, 40, 0.02),
+	small-headline: ('Barlow', 700, 28, 40, 0.02),
+	tiny: ('Barlow', 700, 24, 36, 0),
+	tiny-headline: ('Barlow', 700, 24, 36, 0.04),
+
+	hero-button: ('Barlow', 700, 36, 94, 0.04),
+	button: ('Barlow', 700, 28, 64, 0.04),
+	button-bold: ('Barlow', 700, 28, 64, 0.08)
+);
+
+//
+// Sets Typography
+//
+@mixin set-typography($font-style, $default-font-size) {
+	$weight: null;
+
+	@if $font-style {
+		@if $weight == null {
+			$weight: nth($font-style, 2);
+		}
+
+		@if $weight == bold {
+			$weight: 900;
+		}
+
+		$family: nth($font-style, 1);
+		$font-size: nth($font-style, 3) / 2;
+		$line-height: nth($font-style, 4) / 2;
+		$letter-spacing: nth($font-style, 5);
+
+		font-family: $family, $default-font-family;
+		font-weight: $weight;
+		font-size: #{$font-size / $default-font-size}rem;
+		line-height: $line-height / $font-size;
+		letter-spacing: #{$letter-spacing}em;
+		-webkit-font-smoothing: antialiased;
+		font-smoothing: antialiased;
+		font-display: swap;
+	}
+	@else {
+		@warn '#{$name} is not a valid typography style';
+	}
+}
+
+@mixin typography($name, $weight: null) {
+	$font-style: map-get($-typography, $name);
+
+	@include viewport(large, medium, small) {
+		@include set-typography($font-style, map-get($default-font-size, 'large'));
+		@if $weight {
+			font-weight: $weight;
+		}
+	}
+}
+
+@mixin typography-reset() {
+	font: normal #{map-get($default-font-size, 'large')}px / 28px 'Barlow', 'Proxima', 'Helvetica', -apple-system, sans-serif;
+
+	@include medium() {
+		font: normal #{map-get($default-font-size, 'medium')}px / 26px 'Barlow', 'Proxima', 'Helvetica', -apple-system, sans-serif;
+	}
+
+	@include small() {
+		font: normal #{map-get($default-font-size, 'small')}px / 24px 'Barlow', 'Proxima', 'Helvetica', -apple-system, sans-serif;
+	}
+}
+
+@mixin typography-bold() {
+	font-family: 'Barlow', 'Proxima', 'Helvetica', -apple-system, sans-serif;
+	font-weight: 700;
+}
+
+//
+// Returns line height for typography style
+//
+@function lineheight-for($name) {
+	$font-style: map-get($-typography, $name);
+
+	@if $font-style {
+		$font-size: nth($font-style, 3) / 2;
+		$line-height: nth($font-style, 4) / 2;
+
+		// @return #{$line-height}px;
+		@return $line-height / $font-size;
+	}
+	@else {
+		@warn '#{$name} is not a valid typography style';
+	}
+}
+
+//
+// Returns font size for typography style
+//
+@function fontsize-for($name, $viewport: 'large') {
+	$font-style: map-get($-typography, $name);
+
+	@if $font-style {
+		$font-size: nth($font-style, 3) / 2;
+
+		@return #{$font-size}px;
+	}
+	@else {
+		@warn '#{$name} is not a valid typography style';
+	}
+}

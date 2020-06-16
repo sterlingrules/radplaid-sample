@@ -1,0 +1,116 @@
+.view-about,
+.view-what-is-rad-plaid {
+	@include theme-dark();
+}
+
+#about {
+	.slide.selected {
+		.typography-small-headline,
+		.typography-hero-headline {
+			color: color(accent-two);
+
+			&:after {
+				background-color: color(accent-two);
+			}
+		}
+
+		p {
+			color: color(accent-two);
+
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				left: 0;
+				bottom: -2rem;
+				width: 20%;
+				height: 3px;
+				background-color: color(accent-two);
+			}
+		}
+	}
+
+	.control-dots {
+		padding-right: 8.33333%;
+	}
+
+	.about-action {
+		padding-top: 2rem;
+	}
+
+	.about-team {
+		.bubble-content {
+			padding: 1rem 2rem;
+		}
+	}
+
+	.about-missioncopy {
+		margin-left: -2rem;
+		margin-right: 2rem;
+	}
+
+	.about-hero {
+		display: block;
+		padding: 100px 0;
+		color: color(white);
+
+		&.bg-promoters {
+			background-image: url('../img/hero-promoters.jpg');
+			background-position: center top;
+			background-size: auto 100vh;
+		}
+	}
+
+	aside#founders {
+		margin-bottom: -4rem;
+	}
+
+	@include small() {
+		.bubble {
+			margin-bottom: 2em;
+		}
+
+		.about-hero.bg-promoters {
+			background-position: left center;
+		}
+
+		.about-action {
+			padding-top: 1rem;
+
+			.btn {
+				display: block;
+
+				& + .btn {
+					margin-top: 0.6rem;
+					margin-left: 0;
+				}
+			}
+		}
+
+		.about-team {
+			.bubble-content {
+				padding: 1rem;
+			}
+		}
+
+		.about-content {
+			padding-bottom: 2rem;
+		}
+
+		.about-features {
+			p {
+				margin-left: 1rem;
+				margin-right: 1rem;
+			}
+		}
+
+		.about-missioncopy {
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		.carousel .slide {
+			padding-right: 0;
+		}
+	}
+}

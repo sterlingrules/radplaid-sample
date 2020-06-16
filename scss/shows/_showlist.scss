@@ -1,0 +1,162 @@
+.showlist-banner {
+	@include box-shadow();
+	overflow: hidden;
+	display: flex;
+	margin-bottom: 2rem;
+	border-radius: $border-width;
+
+	.showlist-banner-image {
+		flex-grow: 1;
+		width: 100%;
+		background-image: url('https://res.cloudinary.com/radplaid/image/upload/v1584413800/site/livestream.gif');
+		background-position: center;
+		background-size: cover;
+	}
+
+	.showlist-banner-content {
+		flex-grow: 3;
+		padding: 2rem;
+	}
+
+	.list {
+		padding-top: 2rem;
+	}
+
+	@include small() {
+		margin-top: 1rem;
+		flex-direction: column;
+
+		.typography--formatted p {
+			margin-bottom: 1rem;
+		}
+
+		.showlist-banner-image,
+		.btn--accent-two--secondary {
+			display: none;
+		}
+
+		.list {
+			padding-top: 1rem;
+		}
+
+		.btn + .btn,
+		a.btn + a.btn {
+			margin-left: 0;
+		}
+
+		.btn--accept {
+			width: 100%;
+		}
+	}
+}
+
+.showlist-title {
+	@include text-shadow(1);
+	@include typography(hero-headline);
+	padding-bottom: 1rem;
+	line-height: 1.2;
+	color: color(white);
+}
+
+.show-headline {
+	@include typography-reset();
+	color: color(white);
+
+	&.show-headline--relative {
+		position: relative;
+		transform: none;
+	}
+
+	@include small() {
+		line-height: 1.2;
+	}
+}
+
+.show-subheadline {
+	position: relative;
+
+	.typography-hero-subheadline {
+		position: relative;
+		margin-top: 0.5rem;
+		margin-bottom: 0.5rem;
+		color: color(primary);
+	}
+}
+
+.showlist-owner {
+	// @include box-shadow(2);
+	overflow: visible;
+	// margin-bottom: 48px;
+	margin-bottom: 64px;
+	border-radius: $border-width;
+
+	.showitem {
+		overflow: visible;
+		transform: none;
+
+		.bubble:last-child {
+			overflow: visible;
+			margin-bottom: 0;
+			border-bottom: 1px solid color(keyline);
+			border-radius: 0;
+			box-shadow: none;
+		}
+
+		&:first-child {
+			&,
+			.bubble:last-child {
+				border-radius: 4px 4px 0 0;
+			}
+		}
+
+		&:last-child {
+			&,
+			.bubble:last-child {
+				border-bottom: none;
+				border-radius: 0 0 4px 4px;
+			}
+		}
+	}
+}
+
+.showlist-startcap {
+	padding-bottom: 2rem;
+
+	@include small() {
+		text-align: center;
+	}
+}
+
+.showlist-endcap {
+	padding-top: 2rem;
+
+	.icon + h1 {
+		margin-top: 0.4rem;
+	}
+
+	#home-with-feed & .loader {
+		margin-bottom: 4rem;
+	}
+
+	#home-without-feed & {
+		margin-bottom: 6rem;
+	}
+
+	@include small() {
+		#home-with-feed & .loader {
+			margin-bottom: 0;
+		}
+	}
+}
+
+#home-with-feed {
+	.showlist {
+		margin-top: 1rem;
+	}
+
+	@include small() {
+		.showlist {
+			margin-top: 0;
+		}
+	}
+}

@@ -1,0 +1,105 @@
+//
+// App
+//
+export const INITIALIZE_SESSION = 'INITIALIZE_SESSION'
+export const LOGGING_IN = 'LOGGING_IN'
+export const SET_SESSION = 'SET_SESSION'
+export const SET_CONNECTION = 'SET_CONNECTION'
+export const SET_SCENES = 'SET_SCENES'
+export const SET_VENUES = 'SET_VENUES'
+export const SET_VIEWPORT_NAME = 'SET_VIEWPORT_NAME'
+export const SET_WINDOW_PROPS = 'SET_WINDOW_PROPS'
+export const SET_WINDOW_LOAD = 'SET_WINDOW_LOAD'
+export const SET_NOTIFICATION = 'SET_NOTIFICATION'
+export const CLEAR_NOTIFICATION = 'CLEAR_NOTIFICATION'
+export const SET_WELCOME_TOTAL = 'SET_WELCOME_TOTAL'
+export const SET_BLOG_POSTS = 'SET_BLOG_POSTS'
+export const SET_REPORT = 'SET_REPORT'
+export const SET_CLAIM = 'SET_CLAIM'
+export const RUN_HOME_TUTORIAL = 'RUN_HOME_TUTORIAL'
+export const IS_BROWSER = 'IS_BROWSER'
+
+//
+// Search
+//
+export const SET_IS_SEARCHING = 'SET_IS_SEARCHING'
+export const SET_SEARCH_SORT = 'SET_SEARCH_SORT'
+export const SET_SEARCH_QUERY = 'SET_SEARCH_QUERY'
+export const SET_SEARCH_VENUE = 'SET_SEARCH_VENUE'
+export const SET_SEARCH_LIVE_STREAM = 'SET_SEARCH_LIVE_STREAM'
+export const SET_SEARCH_COST = 'SET_SEARCH_COST'
+export const SET_SEARCH_TAG = 'SET_SEARCH_TAG'
+export const SET_SEARCH_LOCATION = 'SET_SEARCH_LOCATION'
+export const SET_SEARCH_DATE_RANGE = 'SET_SEARCH_DATE_RANGE'
+export const SET_INITIAL_SEARCH = 'SET_INITIAL_SEARCH'
+export const SET_USER_IP = 'SET_USER_IP'
+export const SET_USER_LOCATION = 'SET_USER_LOCATION'
+export const RESET_SEARCH = 'RESET_SEARCH'
+
+//
+// User
+//
+export const LOGIN = 'LOGIN'
+export const LOGOUT = 'LOGOUT'
+export const SET_USER = 'SET_USER'
+export const SET_PROFILE = 'SET_PROFILE'
+export const SET_SIMILAR_GENRES = 'SET_SIMILAR_GENRES'
+export const SET_EMAIL_STATUS = 'SET_EMAIL_STATUS'
+export const UPDATE_USER_SHOWLIST = 'UPDATE_USER_SHOWLIST'
+export const APPEND_USER_SHOWLIST = 'APPEND_USER_SHOWLIST'
+
+//
+// Player
+//
+export const PLAY = 'PLAY'
+export const PLAYING = 'PLAYING'
+export const PAUSE = 'PAUSE'
+export const SET_PLAYLIST = 'SET_PLAYLIST'
+export const SET_CURRENT_TRACK = 'SET_CURRENT_TRACK'
+export const SET_NEXT_TRACK = 'SET_NEXT_TRACK'
+
+//
+// Orders
+//
+export const SET_ESTIMATE = 'SET_ESTIMATE'
+export const SET_SETUP_INTENT = 'SET_SETUP_INTENT'
+
+//
+// Voter
+//
+export const SET_CANDIDATES = 'SET_CANDIDATES'
+export const SET_PERMISSION = 'SET_PERMISSION'
+
+//
+// Shows
+//
+export const SET_SHOW_TITLE = 'SET_SHOW_TITLE'
+export const SET_SHOW_SORT = 'SET_SHOW_SORT'
+export const SET_ADMIN_VISIBLE = 'SET_ADMIN_VISIBLE'
+export const SET_ACTIVE_SHOW = 'SET_ACTIVE_SHOW'
+export const SET_FEATURED_SHOWS = 'SET_FEATURED_SHOWS'
+export const SET_POPULAR_SHOWS = 'SET_POPULAR_SHOWS'
+export const SET_SHOWLIST = 'SET_SHOWLIST'
+export const SET_EDIT_SHOW = 'SET_EDIT_SHOW'
+export const UPDATE_ADD_SHOW = 'UPDATE_ADD_SHOW'
+export const UPDATE_EDIT_SHOW = 'UPDATE_EDIT_SHOW'
+export const DELETE_SHOW = 'DELETE_SHOW'
+export const UPDATE_ACTIVE_SHOW = 'UPDATE_ACTIVE_SHOW'
+export const FOLLOW_SHOW = 'FOLLOW_SHOW'
+export const ATTENDING_SHOW = 'ATTENDING_SHOW'
+export const SET_SIMILAR_SHOWS = 'SET_SIMILAR_SHOWS'
+
+export const UPDATE_SHOWLIST = 'UPDATE_SHOWLIST'
+export const UPDATE_WELCOMELIST = 'UPDATE_WELCOMELIST'
+export const APPEND_SHOWLIST = 'APPEND_SHOWLIST'
+
+//
+// Server
+//
+export const LOAD_START = 'LOAD_START'
+export const LOAD_END = 'LOAD_END'
+
+//
+// A/B Test
+export const AB_WIN = 'AB_WIN'
+export const AB_PLAY = 'AB_PLAY'

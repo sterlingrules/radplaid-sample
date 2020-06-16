@@ -1,0 +1,272 @@
+.header-menu {
+	cursor: pointer;
+	vertical-align: middle;
+	box-sizing: border-box;
+	display: inline-block;
+	position: relative;
+	margin-left: ($-menu-width * 0.1) * -1;
+	margin-bottom: -20px;
+	padding-left: ($-menu-width * 0.1) + ($-gutter / 2);
+	padding-bottom: 20px;
+
+	.header-viewprofile {
+		a {
+			padding-top: 0.6rem;
+			padding-bottom: 0.8rem;
+		}
+
+		span {
+			pointer-events: none;
+			display: block;
+			line-height: 1.4;
+		}
+	}
+
+	.dropdown-menu {
+		right: 0;
+		width: $-menu-width;
+		margin-top: -16px;
+	}
+
+	&:hover .dropdown-menu {
+		pointer-events: auto;
+		transform: translateY(0);
+		opacity: 1.0;
+	}
+}
+
+.dropdown-menu li a {
+	@include typography(button);
+	cursor: pointer;
+	display: block;
+	padding: 0.3rem 1rem;
+	color: color(primary);
+	letter-spacing: 0;
+	box-sizing: border-box;
+
+	&.active {
+		cursor: none;
+		pointer-events: none;
+		color: color(white);
+		background-color: color(keyline);
+	}
+
+	@include can-hover() {
+		&:hover {
+			color: color(white);
+			fill: color(white);
+			text-decoration: none;
+			background-color: color(secondary);
+
+			.icon {
+				fill: color(white);
+			}
+		}
+	}
+}
+
+.dropdown-menu {
+	@include box-shadow(2);
+	pointer-events: none;
+	overflow: hidden;
+	position: absolute;
+	top: 100%;
+	padding: 0.5em 0;
+	background-color: color(white);
+	border-radius: $border-width;
+	transform: translateY(-10px);
+	transition: opacity 0.1s ease-in 0s;
+	transition-property: opacity, transform;
+	opacity: 0;
+
+	.divider {
+		height: 1px;
+		margin: 0.6em 0;
+		background-color: color(keyline);
+		border-bottom: none;
+	}
+
+	.active > & {
+		pointer-events: auto;
+		transform: translateY(0);
+		opacity: 1.0;
+	}
+
+	.dropdown-footer {
+		padding: 0.3rem 1rem;
+
+		li {
+			display: inline-block;
+
+			a {
+				@include typography(tiny);
+				padding: 0.2rem 0;
+				padding-right: 1rem;
+
+				&:active,
+				&.active {
+					color: lighten(color(primary), 20%);
+					background-color: transparent;
+				}
+
+				@include can-hover() {
+					&:hover {
+						// color: lighten(color(primary), 20%);
+						color: color(secondary);
+						text-decoration: underline;
+						background-color: transparent;
+					}
+				}
+			}
+		}
+	}
+
+	@include small() {
+		.dropdown-footer li a {
+			@include typography(small);
+			padding-right: 1.5rem;
+		}
+	}
+}
+
+@include medium() {
+	.header-menu {
+		.avatar {
+			margin-right: 0;
+		}
+	}
+
+	.header-control {
+		margin: 0;
+
+		.btn {
+			padding-left: 10px;
+			padding-right: 10px;
+			opacity: 1;
+
+			// &:last-child {
+			// 	margin-right: -2rem;
+			// }
+		}
+	}
+}
+
+@include small() {
+	.header-control,
+	.header-search {
+		.icon-close {
+			position: absolute;
+			top: 12px;
+			right: 10px;
+			opacity: 0;
+
+			path {
+				fill: color(primary);
+			}
+		}
+	}
+
+	.header-control {
+		visibility: hidden;
+		overflow: hidden;
+		padding-top: 0;
+		padding-bottom: 1rem;
+		text-align: center;
+		border-radius: 0 0 36px 36px;
+	}
+
+	.header-menu {
+		width: 100%;
+		margin: auto;
+		padding: 55px 0 0;
+
+		.dropdown-menu {
+			@include box-shadow(0);
+			pointer-events: auto;
+			position: relative;
+			width: 100%;
+			margin-top: 0;
+			padding: 0 0 1rem;
+			transform: translateY(0);
+			box-sizing: border-box;
+
+			a {
+				padding-left: 5%;
+				padding-right: 5%;
+				font-size: fontsize-for(hero-button, 'small');
+
+				.icon {
+					display: none;
+				}
+			}
+
+			li:first-child a {
+				padding-top: $-header-top-offset;
+			}
+		}
+
+		&:hover .dropdown-menu {
+			pointer-events: auto;
+			transform: translateY(0);
+		}
+
+		& > a {
+			display: none;
+		}
+	}
+
+	.header-menu,
+	.header-control {
+		[class*="view-shows"] & {
+			.icon {
+				fill: color(white);
+			}
+		}
+	}
+}
+
+//
+// Enabled
+//
+@include small() {
+	header.enable-control {
+		.header-control {
+			@include box-shadow(1);
+			visibility: visible;
+			pointer-events: none;
+			transform: translateY(0);
+		}
+
+		.header-menu {
+			pointer-events: auto;
+			font-size: fontsize-for(hero-button, 'small');
+
+			.dropdown-menu {
+				@include box-shadow(0);
+				border-radius: 0;
+				opacity: 1;
+			}
+		}
+
+		.logotype {
+			pointer-events: none;
+			opacity: 0;
+		}
+
+		.btn.btn-search {
+			pointer-events: none;
+			opacity: 0;
+		}
+
+		.btn.btn-menu,
+		.btn.btn-menu:hover {
+			fill: color(primary);
+			opacity: 0;
+		}
+
+		.modal-overlay {
+			pointer-events: auto;
+			opacity: $modal-opacity;
+		}
+	}
+}

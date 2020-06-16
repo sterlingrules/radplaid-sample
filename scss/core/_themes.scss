@@ -1,0 +1,17 @@
+@mixin theme-dark() {
+	header {
+		background-color: color(white);
+
+		.logotype svg path {
+			fill: color(accent-two);
+		}
+	}
+
+	@include small() {
+		.header-nav-small .btn.btn-menu,
+		.header-nav-small .btn.btn-search {
+			fill: color(accent-two);
+			color: color(accent-two);
+		}
+	}
+}

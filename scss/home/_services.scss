@@ -1,0 +1,183 @@
+.view-services {
+	@include theme-dark();
+
+	.icon-certified {
+		margin-top: -0.6rem;
+		margin-left: -0.4rem;
+	}
+
+	.marketing-content .btn .icon {
+		margin-right: -0.5rem;
+	}
+
+	.services-img-boost {
+		display: block;
+		width: 380px;
+		height: 480px;
+		margin-top: -2rem;
+		margin-bottom: 2rem;
+		margin-left: -100px;
+		background-image: url('/img/services/covered-in-bees.jpg');
+		background-size: cover;
+	}
+
+	.services-genres {
+		position: absolute;
+		top: 6rem;
+		right: -3rem;
+
+		.violator {
+			@include box-shadow(1);
+			@include typography(subheadline);
+			margin-bottom: 0.6rem;
+
+			&.violator--reason {
+				margin-bottom: 2rem;
+			}
+		}
+	}
+
+	#boost .marketing-content {
+		padding-bottom: 4rem;
+	}
+
+	.gallery-grid {
+		display: flex;
+
+		.gallery-column {
+			box-sizing: border-box;
+			width: 50%;
+			padding: 0.5rem;
+
+			&:first-child {
+				margin-top: 2rem;
+			}
+
+			&:last-child {
+				margin-top: -5rem;
+			}
+		}
+
+		.img {
+			@include box-shadow(1);
+			display: block;
+			width: 100%;
+			margin-bottom: 1rem;
+			padding-bottom: 154%;
+			background-size: cover;
+			transition: all 0.18s ease-in 0s;
+			transition-property: box-shadow, transform;
+
+			&:hover {
+				@include box-shadow(2);
+				transform: scale(1.05, 1.05);
+			}
+		}
+
+		.img-alsarah { background-image: url('https://res.cloudinary.com/radplaid/image/upload/f_auto/v1555855894/services/01172019-alsarah.jpg'); }
+		.img-papatim-blackcrowes { background-image: url('https://res.cloudinary.com/radplaid/image/upload/f_auto/v1555855894/services/03152019-papatim-blackcrowes.jpg'); }
+		.img-janaesound-rihanna { background-image: url('https://res.cloudinary.com/radplaid/image/upload/f_auto/v1555855894/services/04122019-janaesound-rihanna.jpg'); }
+		.img-seepeoples { background-image: url('https://res.cloudinary.com/radplaid/image/upload/f_auto/v1555855894/services/04272019-seepeoples.jpg'); }
+	}
+
+	@include medium() {
+		.services-genres {
+			top: 8rem;
+			right: 0;
+		}
+	}
+
+	@include small() {
+		.services-genres {
+			text-align: right;
+			right: 0.5rem;
+		}
+
+		.hero {
+			background-attachment: initial;
+		}
+
+		#certified-rad .marketing-content {
+			padding-bottom: 4rem;
+		}
+
+		#physical-promo .bubble-content {
+			padding: 0;
+		}
+	}
+}
+
+.price {
+	display: flex;
+	align-items: center;
+
+	.price-value {
+		@include typography(subheadline);
+		margin-right: 1rem;
+	}
+}
+
+.img-physicalpromo {
+	display: block;
+	position: absolute;
+	top: -4rem;
+	right: -6rem;
+	bottom: -2rem;
+	left: -2rem;
+	width: auto;
+	height: auto;
+	background-image: url('https://res.cloudinary.com/radplaid/image/upload/v1560179826/services/physical-promo.jpg');
+	background-position: center;
+	background-size: cover;
+
+	@include small() {
+		position: relative;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		height: 300px;
+	}
+}
+
+.services-group {
+	display: flex;
+	flex-wrap: wrap;
+
+	.service-item {
+		@include box-shadow(1);
+		display: block;
+		box-sizing: border-box;
+		width: calc(50% - 2rem);
+		margin: 1rem;
+		padding: 2rem 1.2rem;
+		text-align: center;
+		color: color(white);
+		background-color: color(accent-two);
+		border-radius: $border-width;
+		transition: all 0.18s ease-in 0s;
+		transition-property: box-shadow, transform;
+
+		&:hover {
+			@include box-shadow(2);
+			transform: scale(1.04, 1.04);
+		}
+	}
+
+	.text-beard:after {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	@include medium() {
+		.service-item {
+			width: 100%;
+			margin: 0 0 1rem;
+			padding: 1rem;
+		}
+	}
+
+	@include small() {
+		display: none;
+	}
+}

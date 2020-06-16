@@ -1,0 +1,25 @@
+.alert {
+	@include typography(small-headline);
+	margin-bottom: 1rem;
+	padding: 0.6rem 0.8rem;
+	color: color(white);
+	border-width: 1px;
+	border-style: solid;
+	border-radius: $border-width;
+
+	&.alert--success {
+		background-color: lighten(color(success), 30%);
+		border-color: color(success);
+	}
+
+	&.alert--info {
+		background-color: lighten(color(secondary), 30%);
+		border-color: color(secondary);
+	}
+
+	&.alert--error {
+		color: color(error);
+		background-color: lighten(color(error), 30%);
+		border-color: color(error);
+	}
+}

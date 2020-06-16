@@ -1,0 +1,300 @@
+$-folk: hsl(27, 90%, 68%); // orange
+$-hip-hop: hsl(314, 51%, 50%); // indigo
+$-indie: hsl(231, 40%, 66%); // grey/purple
+$-metal: #333333; // black
+$-punk: hsl(255, 29%, 57%); // dark purple
+$-r-b: hsl(339, 65%, 52%); // dark red
+$-rock: hsl(355, 74%, 51%); // red
+
+.view-vote,
+[class*="view-vote-"] {
+	.notice,
+	footer {
+		display: none;
+	}
+
+	.btn-addshow,
+	.header-control,
+	.header-search {
+		visibility: hidden;
+	}
+
+	@include small() {
+		header {
+			z-index: 18;
+		}
+	}
+}
+
+.vote-banner {
+	display: block;
+	margin-bottom: 2rem;
+	padding: 3rem;
+	text-align: center;
+	background-image: url('/img/mvp/mvp-background.jpg');
+	background-position: center;
+	background-size: cover;
+	border-radius: $border-width;
+
+	&,
+	&:active,
+	&:visited {
+		color: color(white);
+	}
+}
+
+.share {
+	.share-copy {
+		margin-bottom: 2rem;
+	}
+
+	li {
+		padding: 0 0.25rem 0.25rem;
+
+		&:first-child {
+			padding-left: 0;
+		}
+
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+}
+
+#voter {
+	position: relative;
+
+	.voter-header {
+		position: sticky;
+		top: map-get($header-height, 'large');
+		margin-bottom: 8px;
+		padding: 0.4rem 0 0.6rem;
+		background-color: color(secondary);
+
+		.btn-back {
+			cursor: pointer;
+			position: absolute;
+			z-index: 1;
+			color: color(white);
+
+			* {
+				pointer-events: none;
+			}
+		}
+
+		// .voter-border {
+		// 	position: absolute;
+		// 	top: 100%;
+		// 	left: 0;
+		// 	display: block;
+		// 	width: 100%;
+		// 	height: 8px;
+		// 	background-image: url('https://res.cloudinary.com/radplaid/image/upload/v1574725540/press/flower-background.jpg');
+		// 	background-size: 100% auto;
+		// }
+
+		// Folk, Hip Hop, Indie, Metal, Punk, R&B, and Rock.
+		&.folk { background-color: $-folk; }
+		&.hip-hop { background-color: $-hip-hop; }
+		&.indie { background-color: $-indie; }
+		&.metal { background-color: $-metal; }
+		&.punk { background-color: $-punk; }
+		&.r-b { background-color: $-r-b; }
+		&.rock { background-color: $-rock; }
+	}
+
+	.voter-title {
+		@include typography(headline);
+		flex-grow: 1;
+		margin-bottom: 0;
+		text-align: center;
+		color: color(white);
+		// text-shadow: 0 0 10px rgba(color(black), 1);
+	}
+
+	.voter-subtitle {
+		@include typography(body-headline);
+	}
+
+	.voter-list {
+		text-align: left;
+
+		li {
+			padding: 0.4rem 0.8rem;
+			border-bottom: 1px solid color(keyline);
+
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+
+	.voter-item {
+		overflow: hidden;
+		padding: 2rem 0 4rem;
+	}
+
+	.voter-item-title {
+		box-sizing: border-box;
+		padding-right: 0.8rem;
+
+		.typography-body {
+			line-height: 1.5;
+		}
+	}
+
+	.voter-item-footer {
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		width: 100%;
+		max-width: 640px;
+		margin: auto;
+		padding: 0 0 0 1rem;
+
+		.voter-item-title {
+			flex-grow: 1;
+		}
+
+		.btn {
+			display: block;
+			margin: auto;
+		}
+
+		.btn-action:hover {
+			color: color(accent-two);
+			background-color: transparent;
+			box-shadow: none;
+		}
+	}
+
+	.mvp-title {
+		display: block;
+		width: 100%;
+		padding-bottom: 65.8%;
+		background-image: url('https://res.cloudinary.com/radplaid/image/upload/v1576598700/press/mvp-title.png');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+	}
+
+	.mvp-sponsors {
+		display: flex;
+		max-width: 320px;
+		margin: auto;
+
+		.mvp-sponsor {
+			flex-grow: 1;
+			display: block;
+			padding-bottom: 50%;
+			background-repeat: no-repeat;
+			background-size: 100% auto;
+
+			&.mvp-sponsor-cbd {
+				background-image: url('/img/mvp/logo-cbd-secondary.png');
+			}
+
+			&.mvp-sponsor-baysidebowl {
+				background-image: url('/img/mvp/logo-baysidebowl-secondary.png');
+			}
+		}
+	}
+
+	//
+	// Confirmation
+	//
+	.voter-confirm {
+		text-align: center;
+
+		a.link {
+			color: color(secondary);
+			text-decoration: underline;
+		}
+
+		.voter-confirm-content {
+			pointer-events: auto;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			max-height: 90vh;
+
+			.modal-body {
+				box-sizing: border-box;
+				overflow: auto;
+				height: 100%;
+				min-width: 100%;
+				padding: 2rem;
+			}
+
+			.show-actionavatars {
+				padding-bottom: 1rem;
+			}
+
+			.btn-action.btn-following {
+				padding-right: 1.5rem;
+				padding-left: 1.5rem;
+			}
+		}
+
+		.show-sharelink input {
+			margin-right: 0;
+		}
+	}
+
+	.is-notice & .voter-header {
+		top: map-get($header-height, 'large');
+
+		@include medium() {
+			top: map-get($header-height, 'medium');
+		}
+
+		@include small() {
+			top: map-get($header-height, 'small');
+		}
+	}
+
+	@include medium() {
+		.voter-header + .voter-item {
+			padding-top: 8rem;
+		}
+	}
+
+	@include small() {
+		.voter-title {
+			@include typography(subheadline);
+			max-width: 70vw;
+			margin: auto;
+		}
+
+		.voter-subtitle {
+			@include typography(small-headline);
+		}
+
+		.voter-carousel {
+			box-sizing: border-box;
+			margin: 0.6rem -2.5vw 2rem 0;
+			padding-right: 2.5vw;
+			width: 100vw;
+
+			.glide__header {
+				padding-left: 2.5vw;
+			}
+		}
+
+		.voter-confirm .voter-confirm-content {
+			max-height: 100vh;
+
+			.modal-body {
+				max-width: 100vw;
+				padding: 4rem 1rem 2rem;
+
+				.bubble-copy {
+					padding-right: 0;
+					padding-left: 0;
+				}
+			}
+		}
+	}
+}

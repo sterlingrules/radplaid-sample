@@ -1,0 +1,123 @@
+.list {
+	list-style: none;
+
+	.divider {
+		border-bottom: 1px solid color(keyline);
+	}
+
+	.list-subheadline {
+		@include typography(small-headline);
+		padding: 0.4rem 1rem 0.5rem;
+
+		& + ul {
+			margin-bottom: 1rem;
+		}
+	}
+
+	.list-scroll,
+	&.list--scroll {
+		box-sizing: border-box;
+		overflow: scroll;
+		position: relative;
+		padding: 0.5rem 0.5rem 1rem;
+		background-color: color(gray);
+
+		.list-scrollcontent {
+			@include box-shadow(1);
+			overflow: hidden;
+			background-color: color(white);
+			border-radius: $border-width;
+		}
+	}
+
+	&.list--scrollable {
+		position: relative;
+
+		&:after,
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			z-index: 1;
+			right: 0;
+			left: 0;
+			height: 10px;
+		}
+
+		&:after {
+			bottom: 0;
+			box-shadow: 0 -4px 8px rgba(color(primary), 0.2) inset;
+		}
+	}
+
+	&.list--info .listitem,
+	.listitem.listitem--info {
+		overflow: hidden;
+		display: flex;
+		padding: 0;
+
+		.listitem-image {
+			@include empty-gradient();
+			width: 20%;
+			min-width: 20%;
+			background-size: cover;
+			background-position: center top;
+		}
+
+		.listitem-action,
+		.listitem-content {
+			align-self: center;
+			padding: 1rem;
+		}
+
+		.listitem-content {
+			flex-grow: 1;
+		}
+
+		.listitem-action {}
+	}
+
+	&.list--default {
+		list-style: square;
+
+		li {
+			margin-left: 1.25rem;
+		}
+	}
+
+	&.list--inlinelinks {
+		li {
+			display: inline-block;
+			margin-left: 0.6rem;
+			margin-right: 0.6rem;
+
+			&:first-child {
+				margin-left: 0;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&.list--flex {
+		display: flex;
+
+		li {
+			flex-grow: 1;
+		}
+	}
+
+	&.list--inline {
+		li {
+			display: inline-block;
+			vertical-align: text-bottom;
+		}
+
+		.divider {
+			border-bottom: none;
+			border-right: 1px solid color(keyline);
+		}
+	}
+}

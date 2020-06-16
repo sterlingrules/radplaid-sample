@@ -1,0 +1,100 @@
+footer {
+	display: block;
+	padding: 2rem 0 102px;
+	text-align: left;
+	background-color: darken(#f0f5ff, 5%);
+
+	.show-share .icon {
+		margin-left: 0;
+		fill: color(primary);
+	}
+
+	.list.list--inline li {
+		vertical-align: middle;
+	}
+
+	.typography-small-headline {
+		margin-bottom: 0.6rem;
+	}
+
+	li + .typography-small-headline {
+		margin-top: 1.5rem;
+	}
+
+	.btn {
+		margin-right: 1rem;
+	}
+
+	.col {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	.form-email {
+		margin-bottom: 2rem;
+	}
+
+	.footer-login {
+		.icon-spotify {
+			display: none;
+		}
+	}
+
+	.footer-footer {
+		margin-top: 2rem;
+		color: color(secondary);
+		border-top: 1px solid lighten(color(secondary), 20%);
+
+		.col {
+			align-self: center;
+		}
+
+		.social-links {
+			a,
+			a:visited,
+			a:active {
+				display: block;
+				margin-right: 0.6rem;
+				fill: color(secondary);
+				color: color(secondary);
+			}
+
+			li:last-child a {
+				margin-right: 0;
+			}
+		}
+	}
+
+	@include small() {
+		padding-top: map-get($gutter-width, 'large');
+
+		.col {
+			text-align: center;
+			margin: 1rem 0;
+		}
+
+		.links a:not(.btn) {
+			display: block;
+			padding: 0.2rem 0 0.6rem;
+		}
+
+		.form-email {
+			padding: 0 2rem;
+		}
+
+		.btn {
+			margin-right: 0;
+		}
+
+		.footer-footer {
+			margin-top: 40px;
+			border-top: none;
+
+			.social-links {
+				a {
+					margin-right: 2rem;
+				}
+			}
+		}
+	}
+}

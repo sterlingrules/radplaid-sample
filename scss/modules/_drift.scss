@@ -1,0 +1,15 @@
+#drift-widget-container {
+	// asdf
+}
+
+#drift-widget {
+	right: auto !important;
+	left: 14px!important;
+	bottom: 62px!important;
+
+	@include small() {
+		left: auto !important;
+		right: 0 !important;
+		bottom: 0 !important;
+	}
+}

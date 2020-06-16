@@ -1,0 +1,365 @@
+$-hero-marketing-delay: 0.3s;
+
+.hero-sticky {
+	position: sticky;
+	top: 0;
+	z-index: 2;
+	background-color: color(white);
+
+	.is-notice & {
+		top: 2rem;
+	}
+}
+
+.hero {
+	@include gradient();
+	overflow: hidden;
+	position: relative;
+	z-index: 0;
+	margin-bottom: -180px;
+    padding: 190px 0 220px;
+	color: color(white);
+
+	h1 {
+		text-shadow: 0 4px 12px rgba(color(primary), .3);
+	}
+
+	canvas {
+		display: block;
+	}
+
+	.hero-content {
+		position: relative;
+		padding-top: 120px;
+	}
+
+	&.hero-about,
+	&.hero-services {
+		background-attachment: fixed;
+		transform: translateZ(0);
+	}
+
+	&.hero--compact {
+		margin-bottom: 0;
+		padding: 140px 0 0;
+
+		.hero-content {
+			padding-top: 40px;
+		}
+	}
+
+	&.hero-home {
+		margin-bottom: -120px;
+		padding: 150px 0 220px;
+	}
+
+	&.hero-show {
+		margin-bottom: -70px;
+		padding-bottom: 110px;
+	}
+
+	&.hero-profile {
+		margin-bottom: -140px;
+		padding: 80px 0 0;
+
+		.hero-content {
+			padding-top: 20px;
+			padding-bottom: 80px;
+		}
+	}
+
+	&.hero-settings {
+		margin-bottom: -60px;
+		padding: 100px 0 60px;
+
+		.hero-content {
+			padding-top: 0;
+		}
+	}
+
+	&.hero-about,
+	&.hero-services {
+		margin-bottom: -200px;
+		padding: 340px 0 140px;
+		background-position: center;
+		background-size: cover;
+	}
+
+	&.hero-about {
+		background-image: url('../img/hero-heart-concert-anthony-delanoix.jpg');
+	}
+
+	&.hero-services {
+		background-image: url('../img/promoter-alice-donovan-rouse.jpg');
+	}
+
+	&.hero-press {
+		margin-bottom: -180px;
+		padding: 196px 0;
+	}
+
+	&.hero-marketing {
+		display: flex;
+		align-items: center;
+		z-index: 2;
+		margin-bottom: 0;
+		padding: 0;
+		background: color(white);
+
+		&:before {
+			content: '';
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 200px;
+			background: -moz-linear-gradient(top, rgba(color(white), 0.45) 0%, rgba(color(white), 0) 100%);
+			background: -webkit-linear-gradient(top, rgba(color(white), 0.45) 0%,rgba(color(white), 0) 100%);
+			background: linear-gradient(to bottom, rgba(color(white), 0.45) 0%,rgba(color(white), 0) 100%);
+			mix-blend-mode: normal;
+		}
+
+		.hero-content {
+			// padding: 6rem 0 0;
+			padding: 0;
+			text-align: center;
+			color: color(accent-two);
+			background: -moz-radial-gradient(center, ellipse cover, rgba(color(white), 0.7) 0%, rgba(color(white), 0.7) 35%, rgba(color(white), 0) 60%, rgba(color(white), 0) 100%);
+			background: -webkit-radial-gradient(center, ellipse cover, rgba(color(white), 0.7) 0%,rgba(color(white), 0.7) 35%,rgba(color(white), 0) 60%,rgba(color(white), 0) 100%);
+			background: radial-gradient(ellipse at center, rgba(color(white), 0.7) 0%,rgba(color(white), 0.7) 35%,rgba(color(white), 0) 60%,rgba(color(white), 0) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 );
+		}
+
+		.hero-headline {
+			display: inline-block;
+			text-align: left;
+
+			.typography-headline,
+			.typography-hero-headline {
+				@include reverse-gradient();
+				-webkit-background-clip: text;
+				background-clip: text;
+				color: transparent;
+			}
+
+			&.is-logged-out {
+				max-width: 520px;
+				text-align: center;
+			}
+		}
+
+		.explore-headline {
+			@include typography(headline);
+			padding: 0.4rem calc(2rem + 10px);
+			text-align: center;
+			color: color(accent-two);
+		}
+
+		.hero-copy,
+		.hero-action {
+			max-width: 580px;
+			margin: 1rem auto 1.4rem;
+		}
+
+		.map-marker {
+			display: none;
+		}
+
+		&.hero-compact .hero-content {
+			background: -moz-radial-gradient(center, ellipse cover, rgba(color(white), 0.5) 0%, rgba(color(white), 0.5) 35%, rgba(color(white), 0) 60%, rgba(color(white), 0) 100%);
+			background: -webkit-radial-gradient(center, ellipse cover, rgba(color(white), 0.5) 0%,rgba(color(white), 0.5) 35%,rgba(color(white), 0) 60%,rgba(color(white), 0) 100%);
+			background: radial-gradient(ellipse at center, rgba(color(white), 0.5) 0%,rgba(color(white), 0.5) 35%,rgba(color(white), 0) 60%,rgba(color(white), 0) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 );
+		}
+
+		&.hero--dark {
+			background-color: color(primary);
+
+			&:before {
+				background: -moz-linear-gradient(top, rgba(color(primary), 0.45) 0%, rgba(color(primary), 0) 100%);
+				background: -webkit-linear-gradient(top, rgba(color(primary), 0.45) 0%,rgba(color(primary), 0) 100%);
+				background: linear-gradient(to bottom, rgba(color(primary), 0.45) 0%,rgba(color(primary), 0) 100%);
+				mix-blend-mode: normal;
+			}
+
+			.hero-content {
+				color: color(white);
+				background: -moz-radial-gradient(center, ellipse cover, rgba(color(primary), 0.7) 0%, rgba(color(primary), 0.7) 35%, rgba(color(primary), 0) 60%, rgba(color(primary), 0) 100%);
+				background: -webkit-radial-gradient(center, ellipse cover, rgba(color(primary), 0.7) 0%,rgba(color(primary), 0.7) 35%,rgba(color(primary), 0) 60%,rgba(color(primary), 0) 100%);
+				background: radial-gradient(ellipse at center, rgba(color(primary), 0.7) 0%,rgba(color(primary), 0.7) 35%,rgba(color(primary), 0) 60%,rgba(color(primary), 0) 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 );
+			}
+
+			.hero-headline {
+				@include text-shadow(2, 0.75);
+
+				.typography-headline,
+				.typography-hero-headline {
+					color: color(white);
+				}
+			}
+		}
+	}
+
+	&.hero-404 {
+		height: 100vh;
+		margin: 0 0 -80px;
+		padding: 0;
+		background-image: url('../img/404-chang-hsien.jpg');
+		background-position: center;
+		background-size: cover;
+
+		.hero-content {
+			top: 50%;
+			padding-top: 0;
+			transform: translateY(-50%);
+		}
+	}
+
+	//
+	// STATES
+	//
+
+	// Logged in/out
+	.is-logged-in & {
+		&.hero-home {
+			margin-bottom: 0;
+			padding: 100px 0 0;
+
+			.hero-content {
+				padding-top: 60px;
+			}
+		}
+	}
+
+	@include medium() {
+		margin-bottom: -120px;
+	}
+
+	@include small() {
+		margin-bottom: -160px;
+		padding: 160px 0;
+
+		.hero-content {
+			width: map-get($grid-width, 'large');
+			padding-top: 40px;
+			text-align: center;
+		}
+
+		h1 {
+			display: inline;
+			margin-right: 0.26em;
+
+			&,
+			&:first-child,
+			&:last-child {
+				transition-delay: $-hero-marketing-delay;
+			}
+		}
+
+		&.hero-home {
+			margin-bottom: -110px;
+			padding: 160px 0;
+		}
+
+		&.hero-profile {
+			margin-bottom: 0;
+			padding-top: map-get($header-height, 'small');
+
+			.hero-content {
+				padding: 0;
+			}
+		}
+
+		&.hero-about {
+			padding: 200px 0 160px;
+			margin-bottom: -100px;
+		}
+
+		&.hero-marketing {
+			background-position: 60% center;
+
+			.hero-content {
+				max-width: 580px;
+				padding: 100px 0 0;
+			}
+
+			.typography-hero-headline {
+				font-size: 2.5rem;
+			}
+
+			.btn-browseshow {
+				display: inline-block;
+			}
+
+			.btn-addshow {
+				display: none;
+			}
+		}
+
+		&.hero-about,
+		&.hero-services {
+			background-attachment: initial;
+		}
+
+		.btn {
+			margin: 0 0.5em 1em;
+		}
+
+		// Logged in/out
+		.is-logged-in & {
+			&.hero-home {
+				margin-bottom: 0;
+				padding: 56px 0 0;
+
+				.hero-content {
+					padding-top: 60px;
+				}
+			}
+		}
+	}
+}
+
+//
+// Animations
+.hero-animation {
+	.hero-copy,
+	.hero-action,
+	.hero-search,
+	.hero-headline,
+	.hero-signup,
+	.header-filter {
+		transform: translateY(20px);
+		transition: all 0.8s cubic-bezier(.6,.09,.27,.97) $-hero-marketing-delay;
+		transition-property: transform, opacity;
+		opacity: 0;
+	}
+
+	.hero-headline {
+		transition-delay: $-hero-marketing-delay + 0.2s;
+	}
+
+	.hero-copy {
+		transition-delay: $-hero-marketing-delay + 0.35s;
+	}
+
+	.hero-action,
+	.hero-search,
+	.hero-signup,
+	.header-filter {
+		transition-delay: $-hero-marketing-delay + 0.5s;
+	}
+
+	&.active {
+		.hero-copy,
+		.hero-action,
+		.hero-search,
+		.hero-signup,
+		.hero-headline,
+		.header-filter {
+			transform: translateY(0);
+			opacity: 1.0;
+		}
+	}
+}

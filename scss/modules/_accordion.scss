@@ -1,0 +1,39 @@
+.accordion {
+	width: 100%;
+
+	.accordion__button,
+	.accordion__panel a {
+		display: block;
+	}
+
+	.accordion__button {
+		@include typography(body-headline);
+		line-height: 1;
+		padding: 1rem;
+		text-transform: uppercase;
+		border-bottom: 1px solid lighten(color(secondary), 20%);
+
+		.icon {
+			margin-top: -0.2rem;
+			fill: color(copy);
+		}
+
+		.icon-remove {
+			display: none;
+		}
+
+		&[aria-expanded="true"] {
+			.icon-remove { display: inline-block; }
+			.icon-plus { display: none; }
+		}
+	}
+
+	.accordion__panel {
+		background-color: color(page);
+		border-radius: $border-width;
+
+		a:not(.btn) {
+			padding: 1rem;
+		}
+	}
+}

@@ -1,0 +1,30 @@
+.DateRangePicker_picker {
+	.CalendarDay__selected_span {
+		background-color: color(accent-two);
+		border-color: darken(color(accent-two), 20%);
+	}
+}
+
+.DateRangePicker {
+	width: 100%;
+
+	.DateRangePickerInput {
+		display: flex;
+		align-items: center;
+	}
+
+	.DateInput {
+		overflow: hidden;
+		flex-grow: 1;
+		border-bottom: 2px solid color(keyline);
+	}
+
+	.DateInput_input {
+		@include typography(body);
+	}
+
+	.DateRangePickerInput_arrow {
+		position: relative;
+		padding: 0 .4rem 0 1rem;
+	}
+}

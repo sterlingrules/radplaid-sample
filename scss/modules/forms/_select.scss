@@ -1,0 +1,160 @@
+//
+// Select
+//
+// @html
+//		<div class="select">
+// 			<div class="select__control">
+// 				<div class="select__value-container">...</div>
+// 				<div class="select__indicators">...</div>
+// 			</div>
+// 			<div class="select__menu">
+// 				<div class="select__menu-list">
+// 					<div class="select__option">...</div>
+// 				</div>
+// 			</div>
+// 		</div>
+//
+
+.select {
+	.select__option {
+		@extend .text-ellipsis;
+
+		&:hover {
+			background-color: colo(keyline);
+		}
+	}
+
+	.select__option--is-focused {
+		background-color: color(keyline);
+	}
+
+	.select__menu {
+		@include box-shadow(2);
+		z-index: 4;
+		cursor: pointer;
+		border-radius: $border-width;
+		border: none;
+	}
+}
+
+// Pill
+.select.select--pill {
+	@include typography(small-headline);
+	color: color(accent-two);
+
+	.select__control {
+		@include box-shadow(1);
+		cursor: pointer;
+		min-height: 44px;
+		color: color(white);
+		background-color: color(accent-two);
+		border: 1px solid transparent;
+		border-radius: 2rem;
+	}
+
+	.select__value-container {
+		padding: 2px 1.2rem;
+	}
+
+	.select__single-value {
+		color: color(white);
+	}
+
+	.select__dropdown-indicator {
+		padding: 8px 1rem 8px 2px;
+		color: color(white);
+	}
+
+	.select__indicator-separator {
+		display: none;
+	}
+
+	.select__menu {
+		overflow: hidden;
+		border-radius: 19px;
+		border: none;
+
+		// &,
+		// .select__option-list {
+		// 	height: 400px;
+		// 	min-height: 400px;
+		// }
+	}
+
+	// Focused Control
+	.select__control--is-focused {
+		@include box-shadow(0);
+		background-color: color(disabled);
+
+		.select__single-value {
+			color: color(white);
+		}
+
+		.select__dropdown-indicator {
+			color: color(white);
+		}
+	}
+
+	// TODO: move this to `_filter.scss`
+	// @include small() {
+	// 	header.active & {
+	// 		.select__control {
+	// 			@include box-shadow(1);
+	// 			background-color: color(white);
+	// 			border: 1px solid color(accent-two);
+	// 		}
+	// 	}
+	// }
+}
+
+// Simple
+.select.select--simple {
+	@include typography(small);
+	color: color(accent-two);
+
+	.select__control {
+		@include box-shadow(1);
+		cursor: pointer;
+		background-color: color(white);
+		border: 1px solid transparent;
+		border-radius: $border-width;
+	}
+
+	.select__single-value {
+		color: color(accent-two);
+	}
+
+	.select__dropdown-indicator {
+		padding: 8px 8px 8px 2px;
+		color: color(accent-two);
+	}
+
+	.select__indicator-separator {
+		display: none;
+	}
+
+	// Focused Control
+	.select__control--is-focused {
+		@include box-shadow(0);
+		background-color: color(white);
+
+		.select__single-value {
+			color: color(keyline);
+		}
+
+		.select__dropdown-indicator {
+			color: color(keyline);
+		}
+	}
+
+	// TODO: move this to `_filter.scss`
+	@include small() {
+		header.active & {
+			.select__control {
+				@include box-shadow(1);
+				background-color: color(white);
+				border: 1px solid color(accent-two);
+			}
+		}
+	}
+}

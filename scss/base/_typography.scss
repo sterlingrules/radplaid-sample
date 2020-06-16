@@ -1,0 +1,153 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 0.4em;
+}
+
+p {
+	margin: 0.2em 0 1.5em;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.typography--formatted {
+	p,
+	ul,
+	ol,
+	address {
+		margin: 0.2rem 0 1rem;
+
+		@include small() {
+			margin-bottom: 2rem;
+		}
+	}
+
+	p +,
+	ul +,
+	ol + {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin-top: 1.6em;
+		}
+	}
+
+	ul,
+	ol {
+		list-style: square;
+		margin-left: 1.3rem;
+	}
+
+	h2 { @include typography(body-headline); }
+
+	a {
+		color: color(secondary);
+		text-decoration: underline;
+		word-break: break-all;
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+}
+
+blockquote {
+	.quote {
+		&:before {
+			content: '“';
+		}
+
+		&:after {
+			content: '”';
+		}
+	}
+}
+
+b,
+strong,
+.strong {
+	font-weight: 700;
+}
+
+.underline { text-decoration: underline; }
+.oblique { font-style: oblique; }
+
+.typography-gradient {
+	@include reverse-gradient();
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+.typography-reset {
+	@include typography-reset();
+}
+
+.text-hat {
+	position: relative;
+	margin-top: 1rem;
+	padding-top: 1.2rem;
+
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 30px;
+		height: 3px;
+		background-color: color(copy);
+	}
+
+	&.color-accent-two:before {
+		background-color: color(accent-two);
+	}
+}
+
+.text-beard {
+	position: relative;
+	margin-bottom: 1rem;
+	padding-bottom: 1.2rem;
+
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 30px;
+		height: 3px;
+		background-color: color(copy);
+	}
+
+	&.color-white:after {
+		background-color: color(white);
+	}
+
+	&.color-accent-two:after {
+		background-color: color(accent-two);
+	}
+
+	&.color-primary:after {
+		background-color: color(primary);
+	}
+
+	&.text-center:after {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+@each $name, $value in $-typography {
+    .typography-#{$name} {
+        @include typography(#{$name});
+    }
+}

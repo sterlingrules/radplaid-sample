@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderSearch large viewport renders correctly 1`] = `
+<Route>
+  <Component />
+</Route>
+`;
+
+exports[`HeaderSearch small viewport renders correctly 1`] = `
+<Route>
+  <Component />
+</Route>
+`;
+
+exports[`InputEmail renders correctly 1`] = `
+<input
+  autoCapitalize="none"
+  autoComplete="off"
+  autoCorrect="off"
+  className="form-input text-right"
+  name="email"
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  placeholder=""
+  spellCheck="false"
+  type="email"
+  value=""
+/>
+`;
+
+exports[`InputScenes renders correctly 1`] = `
+<span
+  className=""
+>
+  <Select
+    options={Array []}
+    settings={
+      Object {
+        "closeMenuOnScroll": false,
+        "closeMenuOnSelect": true,
+        "isMulti": true,
+        "isSearchable": true,
+        "name": "input-scenes",
+        "onChange": [Function],
+        "onInputChange": [Function],
+        "placeholder": "Select your Music Scenes",
+        "value": undefined,
+      }
+    }
+    type="simple"
+  />
+</span>
+`;

@@ -1,0 +1,4 @@
+.widget-control {
+	position: sticky;
+	top: map-get($header-height, 'large');
+}

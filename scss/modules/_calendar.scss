@@ -1,0 +1,167 @@
+.calendar-minimal {
+	color: color(accent-two);
+
+	.DayPicker,
+	.CalendarMonth,
+	.CalendarMonthGrid,
+	.CalendarDay.CalendarDay__default {
+		background-color: transparent;
+	}
+
+	// Day Picker
+	.DayPicker {
+		box-shadow: none;
+
+		&.DayPicker__hidden {
+			visibility: visible;
+		}
+
+		&,
+		& > div > div,
+		.DayPicker_transitionContainer,
+		.CalendarMonthGrid {
+			width: 100% !important;
+		}
+	}
+
+	.DayPicker_weekHeader {
+		box-sizing: border-box;
+		width: 100%;
+		top: 48px;
+		padding: 0 !important;
+		color: color(accent-two);
+
+		.DayPicker_weekHeader_ul {
+			display: flex;
+
+			.DayPicker_weekHeader_li {
+				flex-grow: 1;
+				text-align: center;
+			}
+		}
+	}
+
+	.DayPickerKeyboardShortcuts_buttonReset {
+		display: none;
+	}
+
+	// Buttons
+	// .DayPickerNavigation_leftButton__horizontalDefault {
+	// 	left: 0;
+	// }
+
+	// .DayPickerNavigation_rightButton__horizontalDefault {
+	// 	right: 0;
+	// }
+
+	.DayPickerNavigation_button {
+		position: absolute;
+		top: 1rem;
+		line-height: .78;
+		border-radius: 3px;
+		padding: 6px 9px;
+
+		&:first-child {
+			left: 0;
+		}
+
+		&:last-child {
+			right: 0;
+		}
+	}
+
+	// Calendar Day
+	.CalendarDay {
+		&.CalendarDay__default {
+			@include typography(small-headline);
+			padding: 0.2rem 0.4rem;
+			color: color(accent-two);
+			text-align: left;
+			border-radius: $border-width;
+			border: none;
+
+			&:hover {
+				background-color: lighten(color(accent-two), 30%);
+			}
+		}
+
+		&.CalendarDay__outside,
+		&.CalendarDay__blocked_out_of_range {
+			@include typography(small);
+			color: color(disabled);
+		}
+
+		&.CalendarDay__selected {
+			@include box-shadow(1);
+			color: color(white);
+			background-color: color(accent-two);
+
+			&:hover {
+				background-color: color(secondary);
+			}
+		}
+	}
+
+	// // Will edit everything selected including everything between a range of dates
+	// .CalendarDay__selected_span {
+	//   background: #82e0aa; //background
+	//   color: white; //text
+	//   border: 1px solid color(error); //default styles include a border
+	// }
+
+	// // Will edit selected date or the endpoints of a range of dates
+	// .CalendarDay__selected {
+	//   background: color(error);
+	//   color: white;
+	// }
+
+	// // Will edit when hovered over. _span style also has this property
+	// .CalendarDay__selected:hover {
+	//   background: orange;
+	//   color: white;
+	// }
+
+	// // Will edit when the second date (end date) in a range of dates
+	// // is not yet selected. Edits the dates between your mouse and said date
+	// .CalendarDay__hovered_span:hover,
+	// .CalendarDay__hovered_span {
+	//   background: brown;
+	// }
+
+	// Calendar Month
+	.CalendarMonth_table {
+		width: 100%;
+	}
+
+	.CalendarMonthGrid_month__horizontal {
+		display: block;
+	}
+
+	.CalendarMonthGrid__horizontal {
+		left: 0;
+	}
+
+	.CalendarMonth {
+		padding: 0 !important;
+	}
+
+	.CalendarMonth_caption {
+		@include typography(small-headline);
+		position: relative;
+		padding-bottom: 3rem;
+		color: color(accent-two);
+		text-transform: uppercase;
+
+		.CalendarMonth_today {
+			cursor: pointer;
+			position: absolute;
+			left: 3rem;
+		}
+	}
+
+	@include small() {
+		.CalendarMonth_caption {
+			@include typography(body-headline);
+		}
+	}
+}

@@ -1,52 +1,24 @@
-# radplaid-ssr
+# Rad Plaid Server-Side React Code Sample
 
-# Tracking Events
-edit_show
-add_show
-search
-register
-tour
+Rad Plaid was a project to increase the accessibility of live music events for local music communities.
 
-share
-- twitter
-- facebook
-- email
-- copy
+# Dependencies
 
-visit
-- owner:show_from_show_item
-- show_from_featured
-- show_from_show_item
-- view all events
+High-level libraries included in the project.
 
-more_menu
-- click
+- React
+- Redux
+- Express
+- SCSS
+- Webpack
+- Stripe
+- Handlebars
+- Howler
+- Gulp
 
-showlist
-show_item
-show
-- create
-- view
-- view_not_found
-- event_url
+# Screenshots
 
-filter
+![Rad Plaid Web](screenshots/web/homepage.png)
+[Homepage Video](screenshots/web/homepage.mov) | [Add Live Event](screenshots/web/addshow.mov) | [Sign Up Video](screenshots/web/signup.mov)
 
-cta
-- signup
-- addshow
-- editprofile
-- email
-- play
-- settings
-- ticket
-
-ad
-- visit
-
-## Event States
-upload
-warning
-error
-ab-test
-api
+![Rad Plaid Mobile](screenshots/mobile/explore.jpg)

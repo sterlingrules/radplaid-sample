@@ -1,4 +1,7 @@
-// window.SESSION_ID = JSON.stringify(sessionID)
+/**
+ * Simple code to be quickly loaded in the header
+ */
+
 window.IS_LOADED = false
 
 const getQuery = (param) => {

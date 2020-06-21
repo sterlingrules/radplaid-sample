@@ -67,9 +67,10 @@ export const logError = (err) => {
 	}
 }
 
-//
+// ==============================================================
 // Date Helpers
-//
+// ==============================================================
+
 export const TOMORROW = moment().add(1, 'days').startOf('day').format(process.env.DATE_FORMAT)
 export const WEEKEND = moment().isoWeekday(5).startOf('day').format(process.env.DATE_FORMAT)
 export const END_OF_WEEKEND = moment(WEEKEND).add(2, 'days').endOf('day').format(process.env.DATE_FORMAT)
@@ -225,9 +226,10 @@ export const isHome = (pathname) => {
 	return ([ '/' ].concat(DATE_PATHS).indexOf(pathname) >= 0)
 }
 
-//
+// ==============================================================
 // Number Helpers
-//
+// ==============================================================
+
 export const normalize = (val, max, min) => {
 	return (val - min) / (max - min)
 }
@@ -288,9 +290,10 @@ export const formatPhoneNumber = (phoneNumberString) => {
 	return phoneNumberString
 }
 
-//
+// ==============================================================
 // String Helpers
-//
+// ==============================================================
+
 export const cleanDescription = (description) => {
 	return description
 		.replace(/(?:\r\n|\r|\n)/g, '<br />')
@@ -396,9 +399,10 @@ export const localStorageExpire = {
 	}
 }
 
-//
+// ==============================================================
 // Object Helpers
-//
+// ==============================================================
+
 export const getValues = (arr, name) => {
 	return arr.map((obj, index) => {
 		return obj[name]

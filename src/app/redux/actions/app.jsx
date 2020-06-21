@@ -428,9 +428,6 @@ export const apiSearch = (type = 'shows', queryObject) => {
 			dispatch(setIsSearching(true))
 		}
 
-		//
-		// TODO: Clear `showlist` and display a loading message
-		//
 		if (!queryObject.page) {
 			initialShowRequest = true
 			dispatch(ShowActions.setShowTitle(''))
@@ -605,12 +602,6 @@ export const setUserLocation = () => {
 			return
 		}
 
-		// Let's not nag for a users location
-		// before they've logged in
-		// if (!user) {
-		// 	return
-		// }
-
 		dispatch(loadStart('userLocation'))
 
 		navigator.geolocation.getCurrentPosition((position) => {
@@ -638,7 +629,6 @@ export const setUserLocation = () => {
 
 					dispatch(clearNotifications())
 
-					// if (location && location.coords.length > 0) {
 					if (!prevUserLocation || prevUserLocation.name !== body.name) {
 						User.setLocation(body)
 

@@ -26,28 +26,6 @@ class Home extends Component {
 		this.uri = new URI()
 	}
 
-	componentDidMount() {
-		if (typeof window === 'undefined') {
-			return
-		}
-
-		// let hasScrollRestoration = ('scrollRestoration' in history)
-
-		// if (!this.props.lastLocation) {
-		// 	if (hasScrollRestoration) {
-		// 		history.scrollRestoration = 'manual'
-		// 	}
-
-		// 	window.onload = () => {
-		// 		// scroll(0, 0)
-
-		// 		if (hasScrollRestoration) {
-		// 			history.scrollRestoration = 'auto'
-		// 		}
-		// 	}
-		// }
-	}
-
 	componentWillReceiveProps(nextProps) {
 		let { user, location, shows } = nextProps
 		let { pathname, search } = location
@@ -160,7 +138,6 @@ Home.serverFetch = (pathname, query) => {
 	let _keys = keys(query)
 
 	store.dispatch(AppActions.setSearchSort(query.sort))
-	// store.dispatch(ShowActions.apiFetchFeaturedShows())
 
 	// Should only run when a proper query is involved
 	if (!isEmpty(query) && intersection(_keys, SEARCH_PARAMS).length > 0) {

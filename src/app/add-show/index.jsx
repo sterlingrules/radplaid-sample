@@ -50,7 +50,6 @@ class AddShow extends Component {
 
 		this.state = {
 			update: new Date().getTime(),
-			// formHasChanged: false,
 			promptGenres: false,
 
 			// Required Rules
@@ -391,12 +390,6 @@ class AddShow extends Component {
 				),
 				sticky: true
 			})
-
-			// setNotification({
-			// 	status: 'success',
-			// 	title: 'Show published',
-			// 	message: 'Your show is live and ready to share!',
-			// })
 		})
 	}
 
@@ -419,14 +412,6 @@ class AddShow extends Component {
 				window.scrollTo(0, 0)
 			}
 		})
-
-		window.onbeforeunload = (evt) => {
-			evt.preventDefault()
-
-			// if (this.state.formHasChanged) {
-			// 	return ''
-			// }
-		}
 	}
 
 	_cleanUpShow = (show) => {

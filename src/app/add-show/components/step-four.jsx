@@ -136,10 +136,6 @@ class StepFour extends PureComponent {
 									<label className="form-label form-label--center">Search</label>
 									<input type="text" name="venue" autoComplete="off" className="form-input text-right" value={venue} placeholder="venue name, address, or phone" onChange={this.onSearchVenue} />
 								</li>
-								{/*<li>
-									<label className="form-label form-label--center">Location</label>
-									<input type="text" name="location" autoComplete="off" className="form-input text-right" value={location.name} placeholder="City, State or Zip" onChange={this.onSearchVenue} />
-								</li>*/}
 
 								{/* Venues */}
 								<ul className="playlist playlist--canselect">
@@ -182,7 +178,6 @@ class StepFour extends PureComponent {
 													<li>Double-check your spelling is correct.</li>
 												</ul>
 
-												{/*<p>Still can't find your location? Add it to <a href="https://foursquare.com/add-place" target="_blank" className="strong">Foursquare</a> then try searching again.</p>*/}
 												<p>Still can't find your location? Reach out to us at <a href="mailto:hello@getradplaid.com" target="_blank" className="strong">hello@getradplaid.com</a>.</p>
 											</div>
 										</li>

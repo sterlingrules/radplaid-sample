@@ -7,9 +7,6 @@ const onClick = () => {
 	}
 
 	if (drift.api) {
-		console.log('drift ', drift.api)
-		console.log('drift ', drift.api.sidebar)
-
 		drift.api.sidebar.open()
 	}
 }

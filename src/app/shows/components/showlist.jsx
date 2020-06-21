@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import isEqual from 'lodash/isEqual'
 import { connect } from 'react-redux'
 import InfiniteScroll from 'react-infinite-scroller'
-// import InfiniteLoader from 'react-window-infinite-loader'
 import { withRouter, Link } from 'react-router-dom'
 import { IconDone } from './../../common/icons.jsx'
 import { Loader } from './../../common/loader.jsx'
@@ -46,41 +45,6 @@ class ShowList extends Component {
 		this.scrollPosition = 0
 	}
 
-	// Consider managing window scroll in redux?
-	// componentDidMount() {
-	// 	if (typeof window === 'undefined') {
-	// 		return
-	// 	}
-
-	// 	this.canCheckScroll = true
-	// 	this._prevScrollPosition = this.scrollPosition = window.scrollY
-
-	// 	this._setMetrics()
-	// 	this._checkScroll()
-
-	// 	window.addEventListener('scroll', this._onScroll, false)
-	// 	window.addEventListener('resize', this._setMetrics, false)
-	// }
-
-	// componentDidUpdate(prevProps, prevState) {
-	// 	if (!isEqual(prevProps.shows, this.props.shows)) {
-	// 		this.canCheckScroll = true
-	// 		this._setMetrics()
-	// 		// this._checkScroll()
-	// 	}
-	// }
-
-	// componentWillUnmount() {
-	// 	if (typeof window === 'undefined') {
-	// 		return
-	// 	}
-
-	// 	this.canCheckScroll = false
-
-	// 	window.removeEventListener('scroll', this._onScroll, false)
-	// 	window.removeEventListener('resize', this._setMetrics, false)
-	// }
-
 	shouldComponentUpdate(nextProps, nextState) {
 		return (
 			!isEqual(this.props.progress, nextProps.progress) ||
@@ -108,67 +72,6 @@ class ShowList extends Component {
 			window.history.pushState({}, '', '/')
 		})
 	}
-
-	//
-	// Helpers
-	//
-	// _onScroll = (evt) => {
-	// 	if (typeof window === 'undefined') {
-	// 		return
-	// 	}
-
-	// 	this.scrollPosition = window.scrollY
-	// }
-
-	_onTrackExplore = () => {
-		track('cta', {
-			action: 'view all events',
-			source: 'showlist'
-		})
-	}
-
-	// _setMetrics = (evt) => {
-	// 	if (typeof window === 'undefined') {
-	// 		return
-	// 	}
-
-	// 	let footerEl = document.getElementsByTagName('footer')
-	// 	let footerHeight = footerEl.length ? footerEl[0].offsetHeight : 0
-
-	// 	this.scrollTop = window.scrollY
-	// 	// this.updateThreshold = window.innerHeight * 0.5
-	// 	this.documentHeight = document.documentElement.offsetHeight - window.innerHeight - footerHeight
-	// 	this.updateThreshold = Math.min(window.innerHeight * 2, this.documentHeight)
-	// }
-
-	// _checkScroll = () => {
-	// 	let { onScrollToBottom, shows, showsTotal, after, isEnd } = this.props
-
-	// 	if (!onScrollToBottom) {
-	// 		return
-	// 	}
-
-	// 	if (!this.canCheckScroll || isEnd) {
-	// 		requestAnimationFrame(this._checkScroll)
-	// 		return
-	// 	}
-
-	// 	if (this.scrollPosition > (this.documentHeight - this.updateThreshold) &&
-	// 		this.scrollPosition !== this._prevScrollPosition && !isEnd) {
-
-	// 		if (!showsTotal) {
-	// 			return
-	// 		}
-
-	// 		onScrollToBottom(() => {
-	// 			this.canCheckScroll = false
-	// 		})
-	// 	}
-
-	// 	this._prevScrollPosition = this.scrollPosition
-
-	// 	requestAnimationFrame(this._checkScroll)
-	// }
 
 	onLoadMore = () => {
 		const { progress, onScrollToBottom } = this.props
@@ -296,19 +199,6 @@ class ShowList extends Component {
 			)
 		}) : (<li />)
 
-		// !isLoading ? (
-		// 	<li className="bubble showitem-empty text-center">
-		// 		<div className="bubble-content">
-		// 			{EmptyCopyComponent ? (
-		// 				<EmptyCopyComponent />
-		// 			) : (
-		// 				<DefaultEmptyComponent
-		// 					{...{ title, searchQuery, searchLocation }} />
-		// 			)}
-		// 		</div>
-		// 	</li>
-		// ) :
-
 		return (
 			<InfiniteScroll
 				initialLoad={true}
@@ -412,6 +302,16 @@ class ShowList extends Component {
 				)}
 			</InfiniteScroll>
 		)
+	}
+
+	//
+	// Helpers
+	//
+	_onTrackExplore = () => {
+		track('cta', {
+			action: 'view all events',
+			source: 'showlist'
+		})
 	}
 }
 

@@ -4,14 +4,11 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import clone from 'lodash/clone'
 import isEqual from 'lodash/isEqual'
-// import SingleDatePicker from 'react-dates/lib/components/SingleDatePicker'
 import { getOptionByValue } from './../helpers'
 import Select from './../forms/select.jsx'
 import moment from 'moment'
 
 import DayPickerSingleDateController from 'react-dates/lib/components/DayPickerSingleDateController'
-// import ScrollableOrientationShape from 'react-dates/lib/shapes/ScrollableOrientationShape'
-// import { START_DATE, END_DATE, HORIZONTAL_ORIENTATION } from 'react-dates/lib/constants'
 import isInclusivelyAfterDay from 'react-dates/lib/utils/isInclusivelyAfterDay'
 
 //

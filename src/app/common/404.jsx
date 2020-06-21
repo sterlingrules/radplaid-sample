@@ -29,7 +29,6 @@ class NotFound extends Component {
 					<div className="row">
 						<div className="col col-12-of-12">
 							<Link to='/' className="btn btn--primary btn--hero">Return Home</Link>
-							{/*<Link to="/help" className="btn btn--hero">Need Help?</Link>*/}
 						</div>
 					</div>
 				</div>

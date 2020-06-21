@@ -75,11 +75,6 @@ class Login extends Component {
 		let isLoadingSpotify = (progress.indexOf('login:spotify') >= 0)
 		let isLoadingFacebook = (progress.indexOf('login:facebook') >= 0)
 
-		// TODO: Try to get this method to work
-		// <button className={className} onClick={this.onConnect}>{value}</button>
-
-		// scope="name,profile_picture,email,user_age_range,user_gender"
-
 		return (type === 'facebook' ? (
 			<FacebookLogin
 				appId={process.env.FACEBOOK_APP_ID}

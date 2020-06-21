@@ -370,33 +370,6 @@ const ShowActions = {
 		}
 	},
 
-	// apiFetchFeaturedShows: () => {
-	// 	return (dispatch, getState) => {
-	// 		let uri = new URI('/')
-	// 		let { userLocation } = getState().app
-	// 		let coords = userLocation.coords || LOCATION_FALLBACK
-	// 		let query = {
-	// 			from: getCurrentDate(),
-	// 			coords: coords.join(',')
-	// 		}
-
-	// 		dispatch(AppActions.loadStart('featured'))
-
-	// 		request({ path: `/shows/featured${uri.setSearch(query).search()}` })
-	// 			.end((err, reply) => {
-	// 				dispatch(AppActions.loadEnd(err, 'featured'))
-
-	// 				if (err || !reply) {
-	// 					return
-	// 				}
-
-	// 				let { body } = reply || {}
-
-	// 				return dispatch(ShowActions.updateFeaturedShowList(body.shows))
-	// 			})
-	// 	}
-	// },
-
 	apiFetchPopularShows: (callback) => {
 		return (dispatch, getState) => {
 			let uri = new URI('/')
@@ -652,32 +625,10 @@ const ShowActions = {
 		}
 	},
 
-	// apiFetchShowStats: (slug) => {
-	// 	return (dispatch, getState) => {
-	// 		const settings = {
-	// 			path: `/shows/${slug}/analytics`
-	// 		}
-
-	// 		request(settings)
-	// 			.end((err, reply) => {
-	// 				dispatch(AppActions.loadEnd(err, 'ryc'))
-
-	// 				let { body } = reply || {}
-	// 				let _show = clone(activeShow)
-
-	// 				_show = defaults(body, _show)
-
-	// 				dispatch(ShowActions.updateActiveShow(_show))
-	// 			})
-	// 	}
-	// },
-
 	apiFetchShowById: (slug, query = {}) => {
 		return (dispatch, getState) => {
 			let { shows, user, activeShow, isAdminVisible } = getState().shows
 			let { connection, progress } = getState().app
-			// let recache = (typeof window !== 'undefined' && localStorage.getItem(`recache:${slug}`))
-			// let query = {}
 			let show
 
 			if (!connection || progress.indexOf('activeshow') >= 0) {
@@ -691,10 +642,6 @@ const ShowActions = {
 			if (activeShow && activeShow.slug !== slug) {
 				dispatch(ShowActions.setActiveShow(null))
 			}
-
-			// if (recache) {
-			// 	query.recache = recache
-			// }
 
 			// Check store
 			if (shows) {
@@ -720,21 +667,6 @@ const ShowActions = {
 					if (!reply) {
 						return
 					}
-
-					// if (process.browser) {
-					// 	localStorage.removeItem(`recache:${slug}`)
-
-					// 	if (err || reply.status === '404') {
-					// 		return dispatch(ShowActions.setActiveShow({
-					// 			slug: '404',
-					// 			lineup: [],
-					// 			venue: null,
-					// 			organizer: {
-					// 				id: null
-					// 			}
-					// 		}))
-					// 	}
-					// }
 
 					if (err || reply.status === '404') {
 						return dispatch(ShowActions.setActiveShow({

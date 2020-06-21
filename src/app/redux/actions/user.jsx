@@ -446,11 +446,9 @@ const UserActions = {
 					body.shows = body.shows.filter(s => currentSlugs.indexOf(s.slug) < 0)
 
 					if (query.after) {
-						// dispatch(UserActions.appendShowList(query.action, body.shows))
 						dispatch(UserActions.appendShowList(query.action, body))
 					}
 					else {
-						// dispatch(UserActions.updateShowList(query.action, body.shows))
 						dispatch(UserActions.updateShowList(query.action, body))
 					}
 

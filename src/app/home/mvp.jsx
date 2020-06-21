@@ -16,8 +16,7 @@ const VOTE_DATE = '2019-12-01'
 const countdownRenderer = ({ days, hours, minutes, seconds, completed }) => {
 	if (completed) {
 		// Render a completed state
-		// return <VotingComponent />
-		return <div />
+		return <VotingComponent />
 	} else {
 		// Render a countdown
 		return (
@@ -141,15 +140,11 @@ class MVP extends Component {
 									</figure>
 								</div>
 
-								{/*<p className="hero-copy typography-subheadline">
-									Music Video Portland - Maine’s first, best and ONLY music video awards show - is back for another year of music videos, comedy, dance, live music performance, #nopants, and charming crustaceans with a heart of gold!
-								</p>*/}
-
 								<p className="hero-copy typography-subheadline">
-									January 23, 2020
+									Music Video Portland - Maine’s first, best and ONLY music video awards show - is back for another year of music videos, comedy, dance, live music performance, #nopants, and charming crustaceans with a heart of gold!
 								</p>
 
-								{/*<div className="hero-action">
+								<div className="hero-action">
 									<a
 										href="https://www.musicvideoportland.com/submit"
 										style={{ marginLeft: 0 }}
@@ -165,7 +160,7 @@ class MVP extends Component {
 										onClick={this._trackLearn}>
 										Learn More
 									</a>
-								</div>*/}
+								</div>
 							</div>
 						</div>
 					</div>
@@ -198,39 +193,13 @@ class MVP extends Component {
 					</div>
 				</div>
 
-				{/*<div id="hero" className={`hero hero-mvp`} style={{ padding: '48px 0' }}>
-					<div className="grid">
-						<div className="row">
-							<div className={`col col-6-of-12 col-medium-8-of-12 col-small-12-of-12 text-center center`}>
-								<div className="hero-action">
-									<a
-										href="https://www.musicvideoportland.com/submit"
-										style={{ marginLeft: 0 }}
-										rel="nofollow"
-										className="btn btn--accent-two--secondary btn--hero"
-										onClick={this._trackSubmit}>
-										Submit Video
-									</a>
-									<a
-										href="https://www.musicvideoportland.com/home"
-										style={{ marginBottom: 0, textShadow: 'none' }}
-										className="btn btn--hero"
-										onClick={this._trackLearn}>
-										Learn More
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
 				<div className="marketing-content text-center">
 					<Countdown
 						date={moment(VOTE_DATE).toDate()}
 						renderer={countdownRenderer} />
-				</div>*/}
+				</div>
 
-				{/*<div id="hero" className={`hero hero-mvp`} style={{ padding: '96px 0 0' }} />*/}
+				<div id="hero" className={`hero hero-mvp`} style={{ padding: '96px 0 0' }} />
 
 				<ViewableMonitor minHeight={128} className="marketingsignup bg-relationships" style={{ margin: '0 0 1rem' }}>
 					<div className="grid text-center">
@@ -255,7 +224,7 @@ class MVP extends Component {
 					</div>
 				</div>
 
-				{/*<div id="hero" className={`hero hero-mvp`} style={{ marginBottom: -80 }}>
+				<div id="hero" className={`hero hero-mvp`} style={{ marginBottom: -80 }}>
 					<div className="grid">
 						<div className="row">
 							<div className={`col col-6-of-12 col-medium-8-of-12 col-small-12-of-12 text-center center`}>
@@ -283,7 +252,7 @@ class MVP extends Component {
 							</div>
 						</div>
 					</div>
-				</div>*/}
+				</div>
 
 				<div id="hero" className={`hero hero-mvp`} style={{ padding: '48px 0', marginBottom: -80 }}>
 					<div className="grid">

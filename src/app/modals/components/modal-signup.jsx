@@ -104,19 +104,6 @@ class ModalSignup extends Component {
 					{sendingToken ? (
 						<div className="modal-copy col col-12-of-12 text-center">
 							<h2 className={`typography-headline text-center`}>Now, check your email to complete your signup</h2>
-
-							{/*<img
-								src="//res.cloudinary.com/radplaid/image/upload/f_auto/v1546463735/cat_checking_email_c2u7ro.gif"
-								title="Check your Email"
-								style={{
-									display: 'block',
-									width: '100%',
-									maxWidth: '320px',
-									height: 'auto',
-									margin: '0 auto 1rem',
-									borderRadius: '4px'
-								}} />*/}
-
 							<p className="typography-body">
 								A secure login link has just been sent to <strong>{email}</strong>. You should see this email shortly or check your spam folder.
 							</p>

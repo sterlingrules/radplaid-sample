@@ -39,9 +39,6 @@ class Player extends Component {
 	}
 
 	componentWillMount() {
-		//
-		// TODO: Set this to start when user interacts with the page
-		//
 		// This makes sure the first user
 		// initiated sound will actually play
 		if (typeof document === 'undefined') {
@@ -65,13 +62,6 @@ class Player extends Component {
 			return
 		}
 
-		// Let's minimize player on mobile input focus
-		// const inputEls = document.querySelectorAll('input, textarea')
-
-		// for (let i = 0; i < inputEls.length; i++) {
-		// 	inputEls[i].addEventListener('focus', this._togglePlayerDisplay)
-		// 	inputEls[i].addEventListener('blur', this._togglePlayerDisplay)
-		// }
 		this._inputListen()
 	}
 
@@ -252,7 +242,6 @@ class Player extends Component {
 		let dateFormat = (viewportName === 'small') ? 'ddd, MMM D, YYYY' : 'dddd, MMMM D, YYYY'
 		let isSearchDateFromNotCurrent = (searchDateFrom !== getCurrentDate())
 		let locationName = showsLocation ? showsLocation.name : ''
-		// let isSearching = !!(searchQuery || searchCost || searchTag || searchLocation || isSearchDateFromNotCurrent)
 		let isFirstTrack
 		let isLastTrack
 		let artistName

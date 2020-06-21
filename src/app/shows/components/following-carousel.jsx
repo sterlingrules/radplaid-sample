@@ -31,18 +31,6 @@ class FollowingCarousel extends Component {
 			return
 		}
 
-		// Let's query following
-		// only after shows stops loading
-		// if (progress.indexOf('shows') < 0 &&
-		// 	this.props.progress.indexOf('shows') >= 0 &&
-		// 	!isSearching) {
-		// 	fetchUserShowList({
-		// 		user_id: user.id,
-		// 		action: 'following',
-		// 		from: getCurrentDate()
-		// 	})
-		// }
-
 		if (user && !isEqual(user, this.props.user) && !isSearching) {
 			fetchUserShowList({
 				user_id: user.id,

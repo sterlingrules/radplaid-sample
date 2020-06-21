@@ -28,24 +28,6 @@ class StepTwo extends Component {
 	constructor(props) {
 		super(props)
 
-		// let changedState = {
-		// 	date: false,
-		// 	advance_price: false,
-		// 	door_price: false,
-		// 	age: false,
-		// 	event_url: false,
-		// 	ticket_url: false,
-		// 	title: false,
-		// 	description: false,
-		// 	tags: false
-		// }
-
-		// let savedChangedState = JSON.parse(localStorage.getItem(COMPLETED_FIELDS_KEY) || '{}')
-
-		// this.state = {
-		// 	changed: isEmpty(savedChangedState) ? changedState : savedChangedState
-		// }
-
 		this.state = {
 			changed: {
 				date: false,
@@ -191,12 +173,6 @@ class StepTwo extends Component {
 										<label htmlFor="age-limit-all" className="form-radio">
 											All ages
 										</label>
-
-										{/*<input id="age-limit-16" type="checkbox" name="age" value="16+" onChange={onInputChange} checked={addShow.age === '16+' ? 'checked' : false} />
-										<label htmlFor="age-limit-16" className="form-radio">
-											16+
-										</label>*/}
-
 										<input id="age-limit-18" type="checkbox" name="age" value="18+" onChange={onInputChange} checked={addShow.age === '18+' ? 'checked' : false} />
 										<label htmlFor="age-limit-18" className="form-radio">
 											18+
@@ -252,20 +228,6 @@ class StepTwo extends Component {
 								</li>
 							</ul>
 						</div>
-
-						{/*<div className="bubble bubble--visible">
-							<ul className="form-table">
-								<li className={`form-autocomplete form-complete--center ${changed.tags ? INPUT_COMPLETE_CLASS : ''}`}>
-									<label className="form-label form-label--center form-label--overlay">Tags</label>
-									<div className="form-input text-right">
-										<InputTag
-											value={addShow.tags || []}
-											viewportName={viewportName}
-											onInputChange={onInputChange} />
-									</div>
-								</li>
-							</ul>
-						</div>*/}
 					</div>
 				</div>
 			</div>

@@ -56,24 +56,7 @@ class GenreSelector extends Component {
 
 		if (parent) {
 			this.props.fetchSimilarGenres(
-				intersection(genres, PARENT_GENRES),
-				(similarGenres) => {
-					// if (isActive) {
-					// 	return
-					// }
-
-					// let __genres = clone(this.state.genres || [])
-
-					// genres = uniq(union(__genres, difference(similarGenres[genre] || [], PARENT_GENRES)))
-
-					// this.setState({ genres })
-					// this.props.onChange({
-					// 	target: {
-					// 		name: 'genres',
-					// 		value: genres
-					// 	}
-					// })
-				}
+				intersection(genres, PARENT_GENRES)
 			)
 		}
 

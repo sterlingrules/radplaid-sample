@@ -35,7 +35,6 @@ const DEFAULT_USER = {
 	firstName: '',
 	email: '',
 	zip: '',
-	// lineup: []
 	genres: []
 }
 
@@ -90,7 +89,6 @@ const ModalEditControl = (props) => {
 		firstName.valid &&
 		username.valid &&
 		email.valid
-		// hasLocation
 	)
 
 	return (
@@ -530,10 +528,6 @@ class ModalEditProfile extends Component {
 		register(userReduced)
 		updateUser(this.state.user, true)
 
-		// if (!this.state.user.tutorial_home) {
-		// 	setHomeTutorial(true)
-		// }
-
 		// Handles any redirects after signup
 		if (user && redirectAfterLogin) {
 			localStorage.removeItem('next')
@@ -623,17 +617,12 @@ class ModalEditProfile extends Component {
 		let isValid = false
 		let isExcluded
 
-		// console.log('_validate ', name, value, typeof value)
-
 		if (Array.isArray(this.validationRules[name].regex)) {
 			isExcluded = (value.length === 1 && JSON.stringify(value).indexOf(JSON.stringify(this.validationRules[name].exclude)) >= 0)
 			isValid = (value.length > 0 && !isExcluded)
 		}
 		else if (typeof value === 'string') {
 			isValid = !!(value.match(this.validationRules[name].regex))
-
-			console.log('isValid ', isValid)
-			console.log('value.match(this.validationRules[name].regex) ', value.match(this.validationRules[name].regex))
 		}
 
 		this.setState({
@@ -645,11 +634,8 @@ class ModalEditProfile extends Component {
 
 		if (_request) {
 			delay(() => {
-				// loadStart('profile')
 				_request(user.id, value)
 					.end((err, reply) => {
-						// loadEnd(null, 'profile')
-
 						if (!reply || !reply.text || reply.text === user[name]) {
 							return
 						}
@@ -774,11 +760,6 @@ class ModalEditProfile extends Component {
 										<label htmlFor="editprofile-name" className="form-label form-label--center form-label--overlay">Name</label>
 									</li>
 
-									{/*<li className={this._validClass(lastName.valid)}>
-										<label htmlFor="editprofile-lastname" className="form-label form-label--center form-label--overlay">Last Name</label>
-										<input type="text" id="editprofile-lastname" name="lastName" spellCheck="false" autoCorrect="off" className="form-input text-right" value={user.lastName} onChange={this.onInputChange} />
-									</li>*/}
-
 									<li className={`${this._validClass(username.valid)} form-message`}>{username.message}</li>
 									<li className={this._validClass(username.valid)}>
 										<input
@@ -822,69 +803,6 @@ class ModalEditProfile extends Component {
 										<label htmlFor="editprofile-email" className="form-label form-label--center form-label--overlay">Email</label>
 									</li>
 								</ul>
-
-								{/*<ul className="form-table">
-									<li className={this._validClass(firstName.valid)}>
-										<label htmlFor="editprofile-name" className="form-label form-label--center form-label--overlay">Name</label>
-										<input
-											type="text"
-											id="editprofile-name"
-											name="firstName"
-											spellCheck="false"
-											autoCorrect="off"
-											className="form-input text-right"
-											value={user.firstName}
-											onBlur={this.onBlur}
-											onChange={this.onInputChange} />
-										<div className="form-focus"></div>
-									</li>
-
-									<li className={`${this._validClass(username.valid)} form-message`}>{username.message}</li>
-									<li className={this._validClass(username.valid)}>
-										<label htmlFor="editprofile-username" className="form-label form-label--center form-label--overlay">Username</label>
-										<input
-											type="text"
-											id="editprofile-username"
-											name="username"
-											spellCheck="false"
-											autoCorrect="off"
-											autoComplete="off"
-											className="form-input text-right"
-											pattern="[a-zA-Z0-9-_]"
-											value={user.username}
-											onBlur={this.onBlur}
-											onChange={(evt) => {
-												if (evt.target && evt.target.value) {
-													evt.target.value = evt.target.value.replace(/[^A-Za-z0-9-_]/g, '')
-												}
-
-												return this.onInputChange(evt)
-											}}
-											readOnly={!!(this.props.user.username)} />
-										<div className="form-focus"></div>
-									</li>
-
-									{(hasScenes && zipRequired) && (
-										<li className={this._validClass(zip.valid)}>
-											<label htmlFor="editprofile-zip" className="form-label form-label--center form-label--overlay">Zip Code</label>
-											<input type="text" id="editprofile-zip" name="zip" spellCheck="false" autoCorrect="off" autoComplete="off" className="form-input text-right" value={user.zip} onChange={this.onInputChange} />
-											<div className="form-focus"></div>
-										</li>
-									)}
-
-									<li className={`${email.validClass} form-message`}>{email.message}</li>
-									<li className={email.validClass}>
-										<label htmlFor="editprofile-email" className="form-label form-label--center form-label--overlay">Email</label>
-										<InputEmail
-											id="editprofile-email"
-											className="form-input text-right"
-											userId={user.id}
-											validateDupes={true}
-											value={user.email}
-											onInputChange={this.onInputChange} />
-										<div className="form-focus"></div>
-									</li>
-								</ul>*/}
 							</div>
 						</div>
 					</div>
@@ -896,19 +814,6 @@ class ModalEditProfile extends Component {
 							<div className="modal-copy col col-12-of-12 center">
 								<h2 className={`typography-${this.props.viewportName === 'small' ? 'subheadline' : 'headline'}`}>What are your favorite genres?</h2>
 								<h3 className="typography-subheadline">You can always change these in settings.</h3>
-
-								{/*{(hasTopArtists || !user.spotify_connect) ? (
-									<h3 className="typography-body">Search and select your favorite artists so we can find you the best local events.</h3>
-								) : (
-									<p className="typography-body">Sorry, we couldn't find any recent Spotify history. Please, search and select your favorite artists so we can find you the best local events.</p>
-								)}*/}
-
-								{/*<SpotifyLineup
-									lineup={user.lineup}
-									placeholder={artistPlaceholderCopy}
-									onLineupSelect={this.onLineupSelect}
-									{...this.props} />*/}
-
 								<GenreSelector
 									onChange={this.onInputChange} />
 							</div>

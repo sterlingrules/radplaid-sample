@@ -61,15 +61,6 @@ class Settings extends Component {
 	constructor(props) {
 		super(props)
 
-		// const settings = {
-		// 	bio: '',
-		// 	scenes: [],
-		// 	notification_weekly: false,
-		// 	notification_following: false,
-		// 	notification_similar: false,
-		// 	notification_promoter_digest: false,
-		// }
-
 		const user = clone(this.props.user || {})
 
 		this.state = {
@@ -272,11 +263,6 @@ class Settings extends Component {
 		let { user, photo, crop, zoom = 1 } = this.state
 		let data = null
 
-		console.log('saving... ', user)
-		console.log('saving... ', photo)
-		console.log('saving... ', crop)
-		console.log('saving... ', zoom)
-
 		// Let's upload an avatar
 		if (photo && photo.file) {
 			data = {
@@ -333,14 +319,6 @@ class Settings extends Component {
 			(hasZoom && !isEqual(zoom, parseFloat(this.props.user.photo.zoom))) ||
 			(!hasPhoto && photo && zoom !== 1)
 		)
-
-		// console.log(this.state, this.props)
-		// console.log('user ', user, this.props.user)
-		// console.log('photo, this.props.user.photo: ', photo, this.props.user.photo)
-		// console.log('photoChange ', photoChange)
-		// console.log('cropChange ', cropChange)
-		// console.log('zoomChange ', zoomChange, zoom, hasPhoto && parseFloat(this.props.user.photo.zoom))
-		// console.log('zoomChange prop 1 ', (hasPhoto && !isEqual(zoom, parseFloat(this.props.user.photo.zoom))))
 
 		return (userChange || photoChange || cropChange || zoomChange)
 	}
@@ -430,27 +408,8 @@ class Settings extends Component {
 												label="Genres"
 												onChange={this.onInputChange} />
 										</li>
-										{/*<li className="form-autocomplete form-autocomplete--left">
-											<label className="form-label">Music Scenes</label>
-											<div className="form-input text-left">
-												<InputScenes
-													name="scenes"
-													scenes={scenes}
-													value={user.scenes}
-													className="input-scenes"
-													onInputChange={this.onInputChange} />
-											</div>
-										</li>*/}
 									</ul>
 								</div>
-
-								{/*<div className="text-right" style={{ marginBottom: '2rem' }}>
-									<button
-										className={`btn inlineblock ${canSave ? 'btn--primary' : 'btn--disabled'}`}
-										onClick={this.onSubmit}>
-										Save changes
-									</button>
-								</div>*/}
 
 								<h3 className="typography-body-headline text-uppercase" style={{ marginTop: '4rem' }}>Notifications</h3>
 								<div className="bubble">

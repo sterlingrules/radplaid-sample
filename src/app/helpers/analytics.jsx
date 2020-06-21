@@ -1,17 +1,7 @@
-// import 'cross-fetch/polyfill'
-
 import UAParser from 'ua-parser-js'
-// import mixpanel from 'mixpanel-browser'
 import User from './../authentication/models/user.jsx'
 import { DEBUG } from './../constants.jsx'
 import { isMobile } from './device-detect'
-// import { requestPublic } from './request.jsx'
-
-// if (typeof window !== 'undefined') {
-// 	window.mixpanel = mixpanel
-// }
-
-// mixpanel.init(process.env.MIXPANEL_KEY)
 
 export const getDeviceInfo = () => {
 	if (typeof window === 'undefined') {

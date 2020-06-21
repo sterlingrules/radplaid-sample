@@ -129,15 +129,6 @@ class ShowItemCompact extends Component {
 					<div className="listitem-action">
 						<ShowItemMoreMenu {...this.props} />
 					</div>
-
-					{/*{(firstTrackId) && (
-						<div className="listitem-action">
-							<PlayAllButton
-								type="compact"
-								showId={showId}
-								trackId={firstTrackId} />
-						</div>
-					)}*/}
 				</div>
 			</li>
 

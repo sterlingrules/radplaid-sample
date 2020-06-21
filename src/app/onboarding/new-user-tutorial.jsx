@@ -94,22 +94,7 @@ class NewUserTutorial extends Component {
 				}
 			},
 
-			steps: [
-			// {
-			// 	target: 'body',
-			// 	placement: 'center',
-			// 	disableBeacon: false,
-			// 	content: <div />,
-			// 	locale: {
-			// 		next: 'Begin the Tour'
-			// 	}
-			// },
-			// {
-			// 	target: '.showitem',
-			// 	placement: 'top',
-			// 	content: <div />
-			// },
-			{
+			steps: [{
 				target: '.header-filter .filter-sort',
 				placement: 'bottom-start',
 				content: (
@@ -196,51 +181,7 @@ class NewUserTutorial extends Component {
 						<p className="typography-small">Quickly view all the events you're <strong>Following</strong> here at the top of your feed.</p>
 					</div>
 				)
-			}
-
-			// {
-			// 	target: '.header-content .btn-addshow',
-			// 	placement: 'bottom',
-			// 	content: (
-			// 		<div className="text-left typography-reset">
-			// 			<h3 className="typography-body-headline">Got Events?</h3>
-			// 			<p className="typography-small">
-			// 				Add your upcoming events to share them with your local music scene. We've built one of the simplest and most powerful event adding tools out there.
-			// 			</p>
-			// 		</div>
-			// 	)
-			// }
-
-			// {
-			// 	target: 'body',
-			// 	placement: 'center',
-			// 	disableBeacon: false,
-			// 	content: (
-			// 		<div className="text-center typography-reset">
-			// 			<img
-			// 				src="//res.cloudinary.com/radplaid/image/upload/f_auto/v1546464149/rockon_tenacious_d_t2gvxs.gif"
-			// 				title={`Rock On!`}
-			// 				style={{
-			// 					display: 'block',
-			// 					width: '100%',
-			// 					maxWidth: '320px',
-			// 					height: 'auto',
-			// 					margin: '0 auto 1rem',
-			// 					borderRadius: '4px'
-			// 				}} />
-			// 			<h3 className="typography-body-headline">See you at an event!</h3>
-			// 			<div className="typography-body color-love">
-			// 				<div className="inlineblock" style={{ verticalAlign: 'middle', marginTop: '0.1rem' }}>
-			// 					<IconHeart className="fill-love icon--small" />
-			// 				</div>
-			// 				<p className="inlineblock" style={{ verticalAlign: 'middle', marginTop: 0, marginLeft: '0.4rem' }}>
-			// 					Rad Plaid
-			// 				</p>
-			// 			</div>
-			// 		</div>
-			// 	)
-			// }
-			]
+			}]
 		}
 
 		this.isScrolling = false
@@ -250,10 +191,7 @@ class NewUserTutorial extends Component {
 		this.onChange = this.onChange.bind(this)
 		this._runTutorial = this._runTutorial.bind(this)
 		this._endTutorial = this._endTutorial.bind(this)
-		// this._removeSpotlight = this._removeSpotlight.bind(this)
 		this._updateSpotlight = this._updateSpotlight.bind(this)
-		// this._setupSpotlight = this._setupSpotlight.bind(this)
-		// this._setupOverlay = this._setupOverlay.bind(this)
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -297,79 +235,16 @@ class NewUserTutorial extends Component {
 		}
 	}
 
-	// _setupSpotlight() {
-	// 	if (this.spotlightEl) {
-	// 		return
-	// 	}
-
-	// 	if (!this.overlayEl) {
-	// 		this._setupOverlay()
-	// 	}
-
-	// 	this.spotlightEl = document.createElement('div')
-
-	// 	this.spotlightEl.style.display = 'block'
-	// 	this.spotlightEl.style.position = 'absolute'
-	// 	this.spotlightEl.style.borderRadius = '8px'
-	// 	this.spotlightEl.style.backgroundColor = 'gray'
-
-	// 	this.overlayEl.append(this.spotlightEl)
-	// }
-
-	// _setupOverlay() {
-	// 	if (this.overlayEl) {
-	// 		return
-	// 	}
-
-	// 	this.overlayEl = document.createElement('div')
-	// 	this.overlayEl.style.cursor = 'pointer'
-	// 	this.overlayEl.style.height = `${document.documentElement.offsetHeight}px`
-	// 	this.overlayEl.style['pointer-events'] = 'auto'
-	// 	this.overlayEl.style['background-color'] = 'rgba(0,0,0, 0.5)'
-	// 	this.overlayEl.style['mix-blend-mode'] = 'hard-light'
-	// 	this.overlayEl.style['z-index'] = '20'
-	// 	this.overlayEl.style.overflow = 'hidden'
-	// 	this.overlayEl.style.position = 'absolute'
-	// 	this.overlayEl.style.top = '0'
-	// 	this.overlayEl.style.right = '0'
-	// 	this.overlayEl.style.bottom = '0'
-	// 	this.overlayEl.style.left = '0'
-	// 	this.overlayEl.style.opacity = '0.35'
-	// 	this.overlayEl.style.transition = 'opacity 0.2s ease-in 0s'
-
-	// 	document.body.append(this.overlayEl)
-	// }
-
 	_updateSpotlight(selector, offset = 10) {
-		// if (selector === 'body') {
-		// 	return this._removeSpotlight()
-		// }
-
-		// this._setupOverlay()
-		// this._setupSpotlight()
-
-		// selector = selector || this.spotlightEl.dataset.selector
-
 		let element = document.querySelector(selector)
 
 		if (!element) {
 			return this._endTutorial()
 		}
 
-		// let borderRadius = element.dataset.tutorialRadius || '8px'
-		// let { style } = this.spotlightEl
 		let offsetTooltip = parseInt(element.dataset.tutorialOffset || '0')
 		let { top, left, width, height } = element.getBoundingClientRect()
 		let elementCenter = window.scrollY + top + offsetTooltip + (height / 2) - (window.innerHeight / 2)
-
-		// this.spotlightEl.style.top = `${top + window.scrollY - offset}px`
-		// this.spotlightEl.style.left = `${left - offset}px`,
-		// this.spotlightEl.style.width = (selector === 'body') ? 0 : `${width + (offset * 2)}px`
-		// this.spotlightEl.style.height = (selector === 'body') ? 0 : `${height + (offset * 2)}px`
-		// this.spotlightEl.style.borderRadius = borderRadius
-
-		// add `data-selector`
-		// this.spotlightEl.dataset.selector = selector
 
 		if (elementCenter > 0 && elementCenter < document.body.offsetHeight) {
 			moveTo(elementCenter, 300)
@@ -382,65 +257,15 @@ class NewUserTutorial extends Component {
 		let createdAt = (user && user.createdAt) ? new Date(user.createdAt).getTime() : null
 		let tutorialCreation = new Date('2018-11-13').getTime() // Nov 12, 2018
 
-		//
-		// TODO: This is stupid—let's query the server
-		//		for an updated user schema and bust localStorage user cache
-		//
-		// This is here because we store users locally until they've signed out and
-		// we don't kow whether or not they've already been created for a tutorial
-		//
 		if (createdAt < tutorialCreation) {
 			return
 		}
 
-		// steps[0].content = (
-		// 	<div className="typography-reset">
-		// 		<img
-		// 			src="//res.cloudinary.com/radplaid/image/upload/f_auto/v1546464149/bear_waving_yaczfp.gif"
-		// 			title={`Hello, ${user.firstName}!`}
-		// 			style={{
-		// 				display: 'block',
-		// 				width: '100%',
-		// 				maxWidth: '320px',
-		// 				height: 'auto',
-		// 				margin: '0 auto 1rem',
-		// 				borderRadius: '4px'
-		// 			}} />
-		// 		<h2 className="typography-subheadline">Welcome, {user.firstName}!</h2>
-		// 		<p className="typography-body">Let's show you around.</p>
-		// 	</div>
-		// )
-
-		// steps[1].content = (
-		// 	<div className="text-left typography-reset">
-		// 		<h3 className="typography-body-headline">The Flyer</h3>
-		// 		<p className="typography-small">
-		// 			Get a quick overview of {showsSort === 'best' ? 'personalized ' : ''}local events. Tap the <strong>artwork</strong> to view more info, share with friends, get directions, and more.
-		// 		</p>
-		// 	</div>
-		// )
-
 		this.setState({ steps, run })
 	}
 
-	// _removeSpotlight() {
-	// 	if (!this.spotlightEl) {
-	// 		return
-	// 	}
-
-	// 	this.spotlightEl.remove()
-	// 	this.spotlightEl = null
-	// }
-
 	_endTutorial(type) {
 		let { user, updateUserPassive } = this.props
-
-		// this._removeSpotlight()
-
-		// if (this.overlayEl) {
-		// 	this.overlayEl.remove()
-		// 	this.overlayEl = null
-		// }
 
 		if (type === 'tour:end') {
 			user.tutorial_home = true

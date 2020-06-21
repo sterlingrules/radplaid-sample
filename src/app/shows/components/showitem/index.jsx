@@ -37,7 +37,6 @@ class ShowItem extends Component {
 	static propTypes = {
 		type: PropTypes.string,
 		artwork: PropTypes.object,
-		// scrollPosition: PropTypes.number,
 		className: PropTypes.string,
 
 		id: PropTypes.string,

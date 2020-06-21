@@ -118,7 +118,6 @@ class Modal extends Component {
 			this.scrollPosition = window.scrollY
 		}
 
-		// document.body.style.overflow = clear ? '' : 'hidden'
 		window[`${clear ? 'remove' : 'add'}EventListener`]('keyup', this._onKeyUp)
 
 		let mainEl = document.querySelector('main')

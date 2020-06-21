@@ -105,7 +105,6 @@ const countdownRenderer = ({ days, hours, minutes, seconds, completed }) => (
 				<figcaption className="countdown-caption">seconds</figcaption>
 			</figure>
 		</div>
-		{/*<div className="typography-headline color-accent-two">left to vote again</div>*/}
 	</div>
 )
 
@@ -118,7 +117,6 @@ const VoterWelcome = ({ user, isLoading, onStart, return_time }) => {
 			<div className="modal-content voter-confirm-content">
 				<div className="modal-body">
 					<h2 ref={node => headerEl = node} className="typography-body-headline">Hot Trash: Portland & Rad Plaid present</h2>
-					{/*<figure className="mvp-title" title="MVP III" />*/}
 					<ReactPlayer
 						url="https://www.youtube.com/watch?v=mHqJ5Zxibm8"
 						width="100%"
@@ -573,8 +571,6 @@ class Voter extends Component {
 		const { user, history, location, match, candidates = [], return_time } = this.props
 		const { id } = match.params
 
-		console.log('fetching id ', id)
-
 		if (id) {
 			if (candidates.length && isNull(return_time)) {
 				this.setCategories()
@@ -830,42 +826,6 @@ class Voter extends Component {
 						</div>
 					</div>
 				</div>
-
-				{/*!started ? (
-					<VoterWelcome
-						user={user}
-						isLoading={(progress.indexOf('app') >= 0)}
-						return_time={return_time}
-						onStart={this.onStart} />
-				) : finished ? (
-					<VoterShare
-						title="I voted! Vote for your favorite music videos in this years, Music Video Portland III"
-						setNotification={setNotification}
-						onAction={this.onAction}
-						show={show}
-						username={user.username} />
-				) : confirm ? (
-					<VoterConfirm
-						votes={votes}
-						progress={progress}
-						candidates={candidates}
-						onVoteAll={this.onVoteAll}
-						onSubmit={this.onSubmit}
-						onCancel={this.onCancel} />
-				) : (
-					<VoterCategory
-						index={categories.indexOf(activeCategory)}
-						total={categories.length}
-						user={user}
-						votes={votes}
-						category={activeCategory}
-						isPlaying={isPlaying}
-						candidates={candidates[activeCategory]}
-						onPlay={this.onPlay}
-						onSkip={this.onSkip}
-						onBack={this.onBack}
-						onVote={this.onVote} />
-				)*/}
 			</div>
 		)
 	}

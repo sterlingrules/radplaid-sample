@@ -14,7 +14,6 @@ const AddShowProgress = ({ viewportName, progress = [], slug, ...props }) => {
 			break
 		case '3':
 			stepName = 'Lineup'
-			// nextLabel = `Next${viewportName === 'small' ? '' : ', add venue'}`
 			nextLabel = 'Next'
 			break
 		case '4':

@@ -50,14 +50,6 @@ class Carousel extends Component {
 		this._createCarousel()
 	}
 
-	// componentWillUnmount() {
-	// 	let { carousel } = this.state
-
-	// 	if (carousel && this.carouselEl) {
-	// 		carousel.destroy()
-	// 	}
-	// }
-
 	shouldComponentUpdate(nextProps, nextState) {
 		return (
 			!isEqual(nextProps.children, this.props.children)

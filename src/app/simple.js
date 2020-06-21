@@ -1,3 +1,6 @@
+/**
+ * Simplified javascript for more optimized marketing pages
+ */
 (function () {
 	const App = {
 		_validateEmail: (email) => {

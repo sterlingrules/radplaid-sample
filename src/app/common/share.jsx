@@ -37,19 +37,6 @@ const trackShare = ({ target }) => {
 	})
 }
 
-/**
- * TODO: Update tweet action to this:
- *
- * 	<a
- * 		href="https://twitter.com/share?ref_src=twsrc%5Etfw"
- * 		class="twitter-share-button"
- * 		data-text="Yep"
- * 		data-url="http://localhost:3000/project/6e8aRV3gpiNY9MLFvajV"
- * 		data-show-count="false">
- * 		Tweet
- * 	</a>
- */
-
 export const TwitterButton = ({ path, url, slug, title, date, username, source, btnClass, iconClass }) => {
 	url = url || getSharePath(username, path, slug, source, 'twitter')
 

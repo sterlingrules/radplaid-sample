@@ -17,23 +17,7 @@ const InputRange = ({ value, step, min, max, onChange, onFinalChange }) => {
 						className="form-range-track"
 						style={props.style}>
 
-						{/*<div
-							ref={props.ref}
-							style={{
-								position: 'absolute',
-								height: '5px',
-								width: '100%',
-								borderRadius: '4px',
-								background: getTrackBackground({
-									values: [ value ],
-									colors: [ '#8b61a9', '#d3e1e7' ],
-									min,
-									max,
-								}),
-								alignSelf: 'center',
-							}}>*/}
-							{children}
-						{/*</div>*/}
+						{children}
 
 					</div>
 				)}

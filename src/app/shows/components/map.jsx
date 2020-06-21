@@ -3,8 +3,6 @@ import isObject from 'lodash/isObject'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { isMobile } from './../../helpers/device-detect.js'
-// import { StaticMap, Marker } from 'react-map-gl'
-// import { IconLocation } from './../../common/icons.jsx'
 import { DEBUG } from './../../constants.jsx'
 
 class Map extends Component {
@@ -72,7 +70,6 @@ class Map extends Component {
 			}
 
 			map.markers.forEach(marker => {
-				// overlay.push(`pin-s-${marker.count || marker.label}+${color}(${marker.longitude},${marker.latitude})`)
 				overlay.push(`pin-s-music+${color}(${marker.longitude},${marker.latitude})`)
 			})
 		}
@@ -101,44 +98,16 @@ class Map extends Component {
 		].join('&')
 
 		const staticMapUrl = `${staticMapParams}?${staticMapQuery}`
-		// console.log('staticMapUrl ', staticMapUrl)
+
 		return (
 			<div id="map">
 				{validCoordinates && (
-					<div className="show-map" style={{ backgroundImage: `url("${staticMapUrl}")`, height: `${height}px` }}>
-						{/*<div className="map-marker">
-							<IconLocation className="icon--large" />
-						</div>
-						<div className="map">
-							<img src={staticMapUrl} style={{ objectFit: 'cover' }} />
-							<StaticMap
-								mapboxApiAccessToken={process.env.MAPBOX_ACCESS_TOKEN}
-								mapStyle={`mapbox://styles/radplaid/${style || 'cjlf8qddf0q0p2ss97tknczy3'}${DEBUG ? `?${new Date().getTime()}` : '?optimize=true'}`}
-								reuseMaps={true}
-								width={width || 768}
-								height={height || 200}
-								latitude={isNumber(coordinates[1]) ? coordinates[1] : 0}
-								longitude={isNumber(coordinates[0]) ? coordinates[0] : 0}
-								zoom={zoom || 13}>
-
-								{markers.map((marker, index) => {
-									return (
-										<Marker
-											key={index}
-											latitude={marker.latitude}
-											longitude={marker.longitude}
-											offsetLeft={-16}
-											offsetTop={-16}>
-											<div className="mapboxgl-markerlabel" title={marker.label} aria-label={marker.label}>
-												{marker.count}
-											</div>
-										</Marker>
-									)
-								})}
-
-							</StaticMap>
-						</div>*/}
-					</div>
+					<div
+						className="show-map"
+						style={{
+							backgroundImage: `url("${staticMapUrl}")`,
+							height: `${height}px`
+						}} />
 				)}
 			</div>
 		)

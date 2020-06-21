@@ -13,8 +13,6 @@ import ScrollableOrientationShape from 'react-dates/lib/shapes/ScrollableOrienta
 import { START_DATE, END_DATE, HORIZONTAL_ORIENTATION } from 'react-dates/lib/constants'
 import isInclusivelyAfterDay from 'react-dates/lib/utils/isInclusivelyAfterDay'
 
-// moment.updateLocale('en', { weekdaysMin: 'S_M_T_W_T_F_S'.split('_') })
-
 const defaultProps = {
 	// day presentation and interaction related props
 	renderCalendarDay: undefined,
@@ -86,13 +84,6 @@ class CalendarFilter extends React.Component {
 	onDateChange = (date) => {
 		this.props.onChange(date)
 	}
-
-	// onFocusChange = (focused) => {
-	// 	this.setState({
-	// 		// Force the focused to always be truthy so that dates are always selectable
-	// 		focused: !focused ? START_DATE : focused
-	// 	})
-	// }
 
 	render() {
 		const { value } = this.props

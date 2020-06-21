@@ -215,8 +215,6 @@ class Header extends Component {
 			return
 		}
 
-		// let heroEl = document.querySelector('#hero') || document.querySelector('.hero')
-
 		// Helps submenus look better on transition (ie. profile-nav-small)
 		let smallOffset = (this.props.viewportName == 'small') ? 72 : 0
 
@@ -225,7 +223,6 @@ class Header extends Component {
 			return
 		}
 
-		// this.heroBottom = window.scrollY + this.headerEl.getBoundingClientRect().bottom // - smallOffset
 		this.heroBottom = 0
 		this.isMetricsSet = true
 	}
@@ -450,14 +447,7 @@ const mapStateToProps = ({ app, shows, user, routing }) => ({
 	searchQuery: app.searchQuery,
 	searchLocation: app.searchLocation,
 	searchDateFrom: app.searchDateFrom,
-	searchDateTo: app.searchDateTo
-
-	// searchSort: app.searchSort,
-	// searchVenue: app.searchVenue,
-	// searchCost: app.searchCost,
-	// searchTag: app.searchTag,
-
-	// routing
+	searchDateTo: app.searchDateTo,
 })
 
 const mapDispatchToProps = dispatch => {
@@ -482,10 +472,6 @@ const mapDispatchToProps = dispatch => {
 			dispatch(AppActions.resetHome())
 		},
 
-		// fetchFeaturedShows: () => {
-		// 	dispatch(ShowActions.apiFetchFeaturedShows())
-		// },
-
 		fetchShowList: (query) => {
 			dispatch(ShowActions.apiFetchShowList(query))
 		},
@@ -493,10 +479,6 @@ const mapDispatchToProps = dispatch => {
 		updateShowList: (shows = []) => {
 			dispatch(ShowActions.updateShowList(shows))
 		},
-
-		// getEmailStatus: () => {
-		// 	dispatch(UserActions.getEmailStatus())
-		// },
 
 		logout: (data) => {
 			dispatch(UserActions.logoutUser())

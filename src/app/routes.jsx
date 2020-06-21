@@ -1,5 +1,3 @@
-import union from 'lodash/union'
-import { DATE_PATHS } from './constants.jsx'
 import Home from './home/index.jsx'
 import Shows from './shows/index.jsx'
 import Profile from './profile/index.jsx'
@@ -8,20 +6,10 @@ import AddShow from './add-show/index.jsx'
 import EditShow from './edit-show/index.jsx'
 import About from './home/about.jsx'
 import Press from './home/press.jsx'
-// import Voter from './home/voter.jsx'
-// import MVP from './home/mvp.jsx'
-// import WidgetBuilder from './home/widget-builder.jsx'
 import Services from './home/services.jsx'
 import PrivacyPolicy from './home/privacy-policy.jsx'
 
-const DATE_ROUTES = DATE_PATHS.map((date, index) => {
-	return {
-		path: date,
-		component: Home
-	}
-})
-
-export default union(DATE_ROUTES, [{
+export default [{
 	path: '/',
 	component: Home,
 	exact: true
@@ -88,34 +76,7 @@ export default union(DATE_ROUTES, [{
 }, {
 	path: '/services',
 	component: Services
-},
-// {
-// 	path: '/vote/:id',
-// 	component: Voter,
-// }, {
-// 	path: '/vote',
-// 	component: Voter,
-// },
-// {
-// 	path: '/widget-builder',
-// 	component: WidgetBuilder
-// },
-{
+}, {
 	path: '/privacy-policy',
 	component: PrivacyPolicy
-},
-
-/* Redirects */
-// {
-// 	path: '//',
-// 	redirect: '/',
-// 	component: Home,
-// 	exact: true
-// },
-
-/* SEO Friendly */
-{
-	path: '/portland-music',
-	redirect: '/',
-	component: Home
-}])
+}]

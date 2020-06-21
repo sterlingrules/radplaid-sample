@@ -281,11 +281,8 @@ class Filter extends Component {
 		if (venues && venues.length > 0) {
 			venues.forEach((venue, index) => {
 				_venues.push({
-					// TODO: this should be an ID, but can't
-					// because we have toooooo many dupe
-					// venues with different ID's
 					value: venue.name,
-					label: venue.name
+					label: venue.name,
 				})
 			})
 		}
@@ -378,24 +375,7 @@ class Filter extends Component {
 						<CalendarFilter
 							value={this.state.date}
 							onChange={this._setDateRange} />
-
-						{/*<div className="flex" style={{ alignItems: 'center' }}>
-							<div className="btn btn--small btn--accept">This Weekend</div>
-							<div className="btn btn--small btn--accept">Next Weekend</div>
-						</div>*/}
 					</li>
-
-					{/*{isSearching && (
-						<li className="clear-control">
-							<Link
-								to="/"
-								onClick={this._resetHome}
-								className="btn btn-circlecompact background-accent-two"
-								title="Clear search">
-								<IconClose className="center-center" />
-							</Link>
-						</li>
-					)}*/}
 				</ul>
 			</div>
 		)

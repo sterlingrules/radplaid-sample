@@ -29,12 +29,6 @@ class MarketingSignupSimple extends Component {
 		super(props)
 	}
 
-	// componentDidMount() {
-	// 	if (DEBUG) {
-	// 		experimentDebugger.enable()
-	// 	}
-	// }
-
 	onWin = (name = EXPERIMENT_MARKETING) => {
 		emitter.emitWin(name)
 	}

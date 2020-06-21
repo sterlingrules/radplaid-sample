@@ -62,8 +62,6 @@ class InputTag extends Component {
 	}
 
 	fetchOptions(value) {
-		// callback(err, data) in an Object { options: [] }
-		// options={options}
 		return new Promise((resolve, reject) => {
 			ShowModel
 				.getTags(this._cleanInput(value))
@@ -80,9 +78,6 @@ class InputTag extends Component {
 		})
 	}
 
-	//
-	// TODO: Change to `Select` wrapper
-	//
 	render() {
 		let { viewportName } = this.props
 

@@ -136,24 +136,6 @@ class ShowShare extends Component {
 									source="show"
 									btnClass="btn btn--mail widthfull" />
 							</li>
-
-							{/*<li>
-								<a
-									target="_blank"
-									title="Share on Tumblr"
-									className="show-sharetumblr"
-									name="tumblr"
-									onClick={this.trackShare}
-									href={ `http://tumblr.com/widgets/share/tool?
-										posttype=link&
-										tags=${ pluck(tags, 'value').join(',') }&
-										title=${ title }&
-										show-via=getradplaid&
-										canonicalUrl=${ getSharePath('tumblr') }` }>
-
-									<IconTumblr />
-								</a>
-							</li>*/}
 						</ul>
 					</div>
 					<div className="listitem-content show-sharelink">

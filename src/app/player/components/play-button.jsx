@@ -11,13 +11,7 @@ export class PlayButton extends Component {
 	static propTypes = {
 		type: PropTypes.string,
 		showId: PropTypes.string,
-		trackId: PropTypes.string
-
-		// Create custom type:
-		// http://stackoverflow.com/questions/31166687/multiple-validations-on-react-proptypes
-		//
-		// spotifyTrack: PropTypes.object || PropTypes.bool,
-		// trackId: PropTypes.string
+		trackId: PropTypes.string,
 	}
 
 	constructor(props) {
@@ -27,8 +21,6 @@ export class PlayButton extends Component {
 			isPlaying: false,
 			isAttemptingToPlay: false
 		}
-
-		// this.isAttemptingToPlay = false
 
 		this.play = this.play.bind(this)
 		this._prevTrackPosition = null

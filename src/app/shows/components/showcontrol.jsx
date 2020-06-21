@@ -5,7 +5,6 @@ import ReactTooltip from 'react-tooltip'
 import PropTypes from 'prop-types'
 import { track } from './../../helpers/analytics.jsx'
 import FollowButton from './../../common/buttons/follow-button.jsx'
-import InviteButton from './../../common/buttons/invite-button.jsx'
 import TicketButton, { TicketButtonFull } from './../../common/buttons/ticket-button.jsx'
 import LiveStreamButton, { LiveStreamButtonFull } from './../../common/buttons/livestream-button.jsx'
 import ShareButton from './../../common/buttons/share-button.jsx'
@@ -113,19 +112,6 @@ const CompactControl = (props) => {
 					url={livestreamUrl} />
 			</li>
 			<li>
-				{/*<ReactTooltip
-					id={`follow-${showId}`}
-					effect="solid"
-					placement="bottomRight">
-					<span className="tooltip-copy">Follow</span>
-				</ReactTooltip>
-				<ReactTooltip
-					id={`share-${showId}`}
-					effect="solid"
-					placement="bottomRight">
-					<span className="tooltip-copy">Share</span>
-				</ReactTooltip>*/}
-
 				<FollowButton
 					type="show"
 					slug={showId}
@@ -238,7 +224,6 @@ class FullControl extends Component {
 							onAction={onAction}
 							source="show" />
 					</div>
-					{/*<InviteButton />*/}
 				</div>
 			</div>
 		)

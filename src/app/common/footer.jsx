@@ -180,7 +180,6 @@ class Footer extends Component {
 								<AccordionItemPanel>
 									<ul className="col col-3-of-12 col-small-12-of-12 links list">
 										<li><Link to="/add/1" onClick={this.onChangePage} name="addshow">Add Your Events</Link></li>
-										{/*<li><Link to="/widget">Event Widget</Link></li>*/}
 										<li><a href="https://forms.gle/YwHhRfgong94bqZS6" title="Submit News" target="_blank">Submit News</a></li>
 										<li><a href="mailto:hello@getradplaid.com">Contact Us</a></li>
 									</ul>
@@ -283,31 +282,16 @@ class Footer extends Component {
 							<li>
 								<a href="/?location=Biddeford, ME">Southern Maine</a>
 							</li>
-							{/*<li>
-								<a href="/?location=San Francisco, CA">San Francisco, CA</a>
-							</li>*/}
 
 							<li className="typography-small-headline text-uppercase">Coming Soon</li>
 							<li>Dover, NH</li>
-							{/*<li>Mid-Coast, ME</li>*/}
 							<li>Boston, MA</li>
-							{/*<li>New York, NY</li>
-							<li>Miami, FL</li>
-							<li>Chicago, IL</li>*/}
 						</ul>
 
 						<ul className="col col-3-of-12 col-small-12-of-12 text-right">
 							{!this.props.user && (
 								<li><SimpleEmailSignup /></li>
 							)}
-							{/*<li>
-								<a href="https://getradplaid.com/profile/5beb30409d24f94e7c4c7634/managing?utm_source=website&utm_medium=banner" target="_blank" style="border:none;">
-									<img src="/img/banners/rp-banner-gradient@2x.png" width="178" height="48" style="display:inline-block;width:178px;height:48px;" />
-								</a>
-								<a href="https://getradplaid.com/profile/5beb30409d24f94e7c4c7634/managing?utm_source=website&utm_medium=banner" target="_blank" style={{ border: 'none' }}>
-									<img src="/img/banners/rp-banner-gradient@2x.png" width="178" height="48" style={{ display: 'inline-block', width: '178px', height: '48px' }} />
-								</a>
-							</li>*/}
 							<li>
 								<a href="https://algolia.com/" className="inlineblock" target="_blank">
 									<svg className="logo-algolia" viewBox="0 0 130 21" xmlns="http://www.w3.org/2000/svg">

@@ -224,11 +224,6 @@ class Search extends Component {
 		let { pathname, search } = this.props.history.location
 		let tag = getQuery('tag')
 
-		// If tag path changes, let's set the `searchTag`
-		// if (!isEqual(searchPath, this.props.searchPath) && tag) {
-		// 	this.props.setSearchTag(getQuery('tag'))
-		// }
-
 		if (searchLocation !== this.props.searchLocation) {
 			this.setState({ searchLocation })
 		}
@@ -264,7 +259,6 @@ class Search extends Component {
 
 		let currentDate = getCurrentDate()
 		let isLoggedIn = !!(this.props.user)
-		// let isUserLocationChanged = (!isEqual(userLocation, this.props.userLocation) && userLocation !== showsLocation)
 		let isLiveStreamChanged = (searchLiveStream !== this.props.searchLiveStream)
 		let isLocationChanged = ((searchLocation !== this.props.searchLocation) && (searchLocation !== this.state.searchLocation))
 		let isTagChanged = (searchTag !== this.props.searchTag)
@@ -287,7 +281,6 @@ class Search extends Component {
 		}
 
 		if (pathname === '/' || viewportName === 'small') {
-			// if (isSortChanged || isVenueChanged || isDateChanged || isCostChanged || isTagChanged || isLocationChanged || isUserLocationChanged) {
 			if (isSortChanged ||
 				isVenueChanged ||
 				isDateChanged ||
@@ -433,7 +426,6 @@ class Search extends Component {
 		this.props.search(query)
 
 		if (typeof window !== 'undefined') {
-			// requestAnimationFrame(() => window.scroll(0, 0))
 			window.history.replaceState({ searchPath }, '', searchPath)
 		}
 
@@ -593,7 +585,6 @@ const mapDispatchToProps = dispatch => {
 			dispatch(AppActions.setUserLocation())
 		},
 
-		// Search
 		search: (query) => {
 			dispatch(AppActions.apiSearch('shows', query))
 		}

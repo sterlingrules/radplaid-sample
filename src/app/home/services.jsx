@@ -108,7 +108,6 @@ class Services extends Component {
 								Digital &amp; Print Design
 							</h3>
 							<p>With over ten years of experience creating artwork for nationally touring artists and events, let us handle your artwork to make your event visually standout. We’ll also develop matching elements for your social media channels to make your events recognizable across the internet.</p>
-							{/*<p>And as with all our services, we’ll be sure to feature you on one of our social media channels during the week leading up to your event.</p>*/}
 							<ul className="list list--default" style={{ paddingBottom: '2rem' }}>
 								<li>Custom created, artfully designed show flyer.</li>
 								<li>Matching social media artwork.</li>
@@ -117,7 +116,6 @@ class Services extends Component {
 							</ul>
 
 							<div className="price">
-								{/*<div className="price-value">Starts at $75</div>*/}
 								<a href="mailto:hello@getradplaid.com" className="price-action btn btn--accept">
 									Contact us <IconChevron className="fill-white" />
 								</a>
@@ -125,37 +123,6 @@ class Services extends Component {
 						</div>
 					</div>
 				</div>
-
-				{/*<div id="boost" className="grid relative">
-					<div className="row marketing-content">
-						<div className="col col-5-of-12 push-1-of-12 col-medium-6-of-12 medium-un-push col-small-12-of-12 relative">
-							<figure className="services-img-boost" />
-							<ul className="services-genres">
-								<li><div className="violator violator--reason">Punk</div></li>
-								<li className="typography-small-headline typography-gradient text-uppercase" style={{ marginBottom: '0.6rem' }}>Boosted Genres</li>
-								<li><div className="violator violator--radplaid">Horror Punk</div></li>
-								<li><div className="violator violator--radplaid">Pop Punk</div></li>
-								<li><div className="violator violator--radplaid">Hardcore Punk</div></li>
-								<li><div className="violator violator--radplaid">Power-Pop Punk</div></li>
-								<li><div className="violator violator--radplaid">Garage Punk</div></li>
-								<li><div className="violator violator--radplaid">Gothic Post-Punk</div></li>
-								<li><div className="violator violator--radplaid">Modern Rock</div></li>
-							</ul>
-						</div>
-						<div className="col col-4-of-12 push-1-of-12 col-medium-6-of-12 medium-un-push col-small-12-of-12">
-							<h1 className="typography-small-headline text-uppercase text-beard color-accent-two">Work With Us</h1>
-							<h2 className="typography-hero-headline typography-gradient">
-								Boost Your Reach
-							</h2>
-							<p>We’ll strategically improve your events reach to a broader range of fans. With deep insights into the genres our fans love, we can get your shows in front of the people most likely to appreciate your music and attend. We’ll even feature you on one of our social media channels during the week leading up to your event.</p>
-							<p>
-								<a href="mailto:hello@getradplaid.com" className="btn btn--accept">
-									Contact us <IconChevron className="fill-white" />
-								</a>
-							</p>
-						</div>
-					</div>
-				</div>*/}
 
 				<div id="certified-rad" className="grid relative">
 					<div className="row marketing-content">
@@ -165,7 +132,6 @@ class Services extends Component {
 								<IconVerified className="icon-certified fill-accent-two icon--large inlineblock" /> Digital Promotion
 							</h3>
 							<p>Our fans are always looking for unique live music experiences. Let us improve your shows reach by certifying it with our <span className="violator violator--radplaid">Certified Rad</span> badge.</p>
-							{/*<p><strong>Certified Rad</strong> means everything in a <Link to="#boost">boosted event</Link>, plus being featured in fan show feeds, emails, and our homepage. We’ll also feature you in one of our social media channels during the week leading up to your event.</p>*/}
 							<ul className="list list--default" style={{ paddingBottom: '2rem' }}>
 								<li>Get featured on our homepage</li>
 								<li>Get featured in similar show listings found on our other event pages</li>
@@ -175,12 +141,10 @@ class Services extends Component {
 								<li>Get featured throughout our partner network</li>
 							</ul>
 							<div className="price">
-								{/*<div className="price-value">$30 per week*</div>*/}
 								<a href="mailto:hello@getradplaid.com" className="price-action btn btn--accept">
 									Contact us <IconChevron className="fill-white" />
 								</a>
 							</div>
-							{/*<p className="typography-tiny">*As low as $20 per week after 4 consecutive weeks.</p>*/}
 						</div>
 
 						<div className="col col-6-of-12 col-small-12-of-12">
@@ -213,38 +177,6 @@ class Services extends Component {
 						</div>
 					</div>
 				</div>
-
-				{/*<div id="physical-promo" className="grid relative">
-					<div className="row marketing-content">
-						<div className="col col-6-of-12 col-medium-5-of-12 col-small-12-of-12 relative">
-							<figure className="img-physicalpromo" />
-						</div>
-
-						<div className="col col-6-of-12 col-medium-7-of-12 col-small-12-of-12">
-							<div className="bubble">
-								<div className="bubble-copy bubble-content">
-									<h2 className="typography-small-headline text-uppercase text-beard color-accent-two">To the Streets</h2>
-									<h3 className="typography-hero-headline typography-gradient">
-										Physical Promotion
-									</h3>
-									<p>If you have a larger event, then creating that physical impact to match your digital strategies with fans is especially important. With our street team and local business partnerships, let us take care of the printing and distribution. We put up flyers and posters in dozens of locations around downtown Portland, Maine.</p>
-									<ul className="list list--default" style={{ paddingBottom: '2rem' }}>
-										<li>Get a free week of <strong>Certified Rad</strong>.</li>
-										<li>Custom created, artfully designed show flyer.</li>
-										<li>Matching social media artwork.</li>
-										<li>Full-color, single-side gloss printing with distribution around Portland.</li>
-										<li>Get featured on our social media channels</li>
-									</ul>
-									<div className="price">
-										<a href="mailto:hello@getradplaid.com" className="btn btn--accept">
-											Contact us <IconChevron className="fill-white" />
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>*/}
 
 				<div id="contact" className="grid relative" style={{ zIndex: 1, marginTop: '-3rem' }}>
 					<div className="row">

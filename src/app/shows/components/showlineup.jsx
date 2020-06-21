@@ -10,7 +10,6 @@ import ArtistArtwork from './../../artists/components/artistartwork.jsx'
 import PlayButton from './../../player/components/play-button.jsx'
 import ShowLineupCompact from './showlineup-compact.jsx'
 import MoreMenu from './../../common/more-menu.jsx'
-// import Carousel from './../../common/carousel.jsx'
 
 const LineupItem = (props) => {
 	return (
@@ -30,7 +29,6 @@ class ShowLineup extends Component {
 		isSelected: PropTypes.array,
 
 		type: PropTypes.string, // ie. Full, Compact, Carousel
-		// carouselOptions: PropTypes.object, // options if type is carousel
 		index: PropTypes.number,
 		spotifyTrack: PropTypes.array,
 		lineup: PropTypes.array.isRequired,
@@ -82,7 +80,6 @@ class ShowLineup extends Component {
 			type,
 			index,
 			lineup,
-			// carouselOptions,
 			onSortChange,
 			onSortRemove,
 			spotifyTrack,
@@ -224,27 +221,6 @@ class ShowLineup extends Component {
 				{showLineup}
 			</ul>
 		)
-
-		// return (type === 'carousel' ? (
-		// 		<Carousel
-		// 			id={id}
-		// 			className={[ 'playlist', canSelect ].join(' ').trim()}
-		// 			options={carouselOptions}
-		// 			onMountAfter={() => {
-		// 				document
-		// 					.querySelectorAll(`#${id} .glide__slide`)
-		// 					.forEach((item, index) => {
-		// 						item.addEventListener('click', this._onSelect)
-		// 					})
-		// 			}}>
-		// 			{showLineup}
-		// 		</Carousel>
-		// 	) : (
-		// 		<ul className={[ 'playlist', canSelect ].join(' ').trim()}>
-		// 			{showLineup}
-		// 		</ul>
-		// 	)
-		// )
 	}
 }
 

@@ -47,7 +47,7 @@
     "express-session": "^1.15.6",
     "fix-image-rotation": "^2.0.0",
     "gulp-sourcemaps": "^2.2.0",
-    "handlebars": "^4.1.2",
+    "handlebars": "^4.5.3",
     "history": "^4.7.2",
     "howler": "^2.1.2",
     "html-to-react": "~0.1.2",

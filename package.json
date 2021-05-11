@@ -54,7 +54,7 @@
     "intersection-observer": "^0.5.1",
     "invariant": "~2.2.1",
     "js-cookie": "^2.2.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "mapbox-gl": "^0.53.1",
     "medium-editor": "^5.23.3",
     "mixpanel-browser": "^2.22.4",

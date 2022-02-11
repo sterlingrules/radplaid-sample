@@ -62,7 +62,7 @@
     "moment-locales-webpack-plugin": "^1.0.7",
     "moment-timezone": "^0.5.21",
     "node-gyp": "^3.6.2",
-    "node-sass": "^4.9.2",
+    "node-sass": "^7.0.0",
     "object.values": "^1.0.4",
     "prerender-node": "^3.1.1",
     "prop-types": "^15.5.10",

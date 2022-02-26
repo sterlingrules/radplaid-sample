@@ -118,7 +118,7 @@
     "tiny-emitter": "^2.0.2",
     "ua-parser-js": "^0.7.20",
     "underscore": "^1.8.3",
-    "urijs": "^1.19.6",
+    "urijs": "^1.19.8",
     "viewport-mercator-project": "^6.1.1",
     "webpack-manifest-plugin": "^2.0.4"
   },

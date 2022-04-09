@@ -58,7 +58,7 @@
     "mapbox-gl": "^0.53.1",
     "medium-editor": "^5.23.3",
     "mixpanel-browser": "^2.22.4",
-    "moment": "^2.18.1",
+    "moment": "^2.29.2",
     "moment-locales-webpack-plugin": "^1.0.7",
     "moment-timezone": "^0.5.21",
     "node-gyp": "^3.6.2",

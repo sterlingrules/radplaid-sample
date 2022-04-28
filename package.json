@@ -41,7 +41,7 @@
     "core-js": "^2.6.2",
     "cors": "^2.8.5",
     "cron": "^1.7.1",
-    "cross-fetch": "^3.0.4",
+    "cross-fetch": "^3.1.5",
     "es6-event-emitter": "^1.9.0",
     "exit-intent": "^1.1.0",
     "express-session": "^1.15.6",
